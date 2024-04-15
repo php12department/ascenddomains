@@ -1,0 +1,2158 @@
+/* Fonts */
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+/* Default CSS */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: var(--body-font);
+}
+
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: var(--body-font);
+    background: #ffffff;
+    max-width: 1920px;
+    margin: 0 auto;
+}
+
+img  {
+    max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: var(--heading-font);
+}
+
+p {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    outline: none;
+    border: none;
+    font-weight: 500;
+    -webkit-transition: color 350ms ease-in-out;
+    -moz-transition: color 350ms ease-in-out;
+    -ms-transition: color 350ms ease-in-out;
+    -o-transition: color 350ms ease-in-out;
+    transition: color 350ms ease-in-out;
+}
+
+a:focus,
+a:hover {
+    text-decoration: none;
+    outline: none;
+}
+
+title {
+    text-transform: capitalize;
+}
+
+:root {
+    --heading-font: "Outfit", sans-serif;
+    --body-font: "Outfit", sans-serif;
+    --primary-color: #367BF5;
+    --secondary-color: #F3AA18;
+    --black-color: #000;
+    --lightblack: #222222;
+    --white-color: #fff;
+    --darkgrey: #868686;
+    --lightgrey: #636363;
+    --green: #069697;
+    --red: #EA3D2F;
+}
+
+.green {
+    color: var(--green) !important;
+}
+
+.lightblack {
+    color: var(--lightblack) !important;
+}
+
+.blue {
+    color: var(--primary-color) !important;
+}
+
+.red {
+    color: var(--red) !important;
+}
+.pt-120 {
+    padding-top: 120px;
+} 
+.pb-120 {
+    padding-bottom: 120px;
+}
+.theme-color {
+    color: #EC681B !important;
+}
+.section-header h2 {
+    font-size: 48px;
+    line-height: 60px;
+    font-weight: 500;
+    padding-bottom: 40px;
+    color: #000000;
+}
+.section-header h4 {
+    font-size: 32px;
+    line-height: 42px;
+    font-weight: 500;
+    padding-bottom: 10px;
+    color: #000000;
+}
+.section-header p { 
+    color: #787878;
+    font-size: 18px;
+    line-height: 28px;
+    padding-bottom: 5px;
+    font-weight: 400;
+}
+
+/* main css start */
+
+.Header-1 {
+    position: relative;
+    padding: 10px 0;
+}
+.Header-1 .navbar-nav .nav-link {
+    color: #000000;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 400;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.Header-1 .navbar .right-btn .btn.btn-primary {
+    background: #EC681B;
+    border-color: #EC681B;
+    border-radius: 100%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.Header-1 .navbar .navbar-brand {
+    width: 200px;
+}
+.Banner-section {
+    width: 100%;
+    position: relative;
+}
+.Banner-section .hero-image img {
+    width: 100%;
+    height: 800px;
+    object-fit: cover;
+    object-position: center;
+}
+.Banner-section .banner-caption {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -40%);
+    text-align: center;
+    width: 80%;
+    max-width: 840px;
+}
+.Banner-section .banner-caption h2 {
+    font-size: 72px;
+    line-height: 78px;
+    color: #ffffff;
+    font-weight: bold;
+    padding-bottom: 40px;
+}
+.Banner-section .banner-caption .form-control {
+    padding: 1rem 1.4rem;
+    border-radius: 50px;
+}
+.Banner-section .banner-caption .form-control:focus {
+    box-shadow: none;
+    border-color: #FF621F;
+}
+.Banner-section .banner-caption .btn.btn-primary {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 5px;
+    border-radius: 50px;
+    padding: 0.7rem 3rem;
+    background: #FF621F;
+    border-color: #FF621F;
+}
+.Banner-section .Scrolldown {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 40px;
+}
+.Banner-section .Scrolldown::before {
+    content: '';
+    bottom: -40px;
+    position: absolute;
+    background: url(../../public/assets/img/home/shape.png);
+    width: 750px;
+    height: 253px;
+    z-index: -1;
+    left: 50%;
+    transform: translateX(-50%);
+    background-size: 100% 100%;
+}
+
+.Domains-section .nav-tabs .nav-item.show .nav-link, 
+.Domains-section .nav-tabs .nav-link.active {
+    color: #ffffff;
+    background-color: #000000;
+    border-color: var(--bs-nav-tabs-link-active-border-color);
+}
+.Domains-section .nav-tabs .nav-link:hover,
+.Domains-section .nav-tabs .nav-link {
+    border: 1px solid rgba(0, 0, 0, 0.3);
+}
+.Domains-section .nav-tabs .nav-link {
+    border-radius: 10px;
+    color: #000000;
+    padding: 0.8rem 2rem;
+    font-size: 18px;
+    line-height: 24px;
+}
+
+.Domains-section .nav-tabs .nav-item:not(:last-child) {
+    margin-right: 20px;
+}
+.Domains-section .domain-card {
+    margin-bottom: 20px;
+}
+.domain-card .domain-image {
+    background: #E9E9E9;
+    border-radius: 10px;
+    width: 100%;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.domain-card .domain-image img {
+    width: 100%;
+    height: 140px;
+    object-fit: contain;
+    object-position: center;
+    margin-bottom: 15px;
+}
+.domain-card .buy-btn .btn.btn-primary {
+    width: 100%;
+    background: rgba(236, 104, 27, 0.1);
+    color: #EC681B;
+    padding: 0.8rem 2rem;
+    border: none;
+}
+.domain-card .buy-btn .btn.btn-primary:hover {
+    background: rgba(236, 104, 27, 1);
+    color: #ffffff;
+}
+.Domains-section .view-more .btn {
+    background: #000;
+    border-radius: 50px;
+    padding: 0.75rem 2rem;
+    color: #ffffff;
+    font-size: 16px;
+    text-transform: uppercase;
+    border: none;
+}
+
+.Services-section {
+    position: relative;
+    padding: 80px 0;
+}
+.Services-section::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 300px;
+    background: rgba(0, 0, 0, 0.05);
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+.Services-section .services-card {
+    background: #ffffff;
+    padding: 40px 30px 30px;
+    border-radius: 20px;
+    text-align: center;
+    -webkit-box-shadow: 17px 0px 50px 0px rgba(0,0,0,0.1);
+    -moz-box-shadow: 17px 0px 50px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: 17px 0px 50px 0px rgba(0,0,0,0.1);
+}
+.Services-section .services-card .services-text h4 {
+    color: #000000;
+    font-size: 24px;
+    line-height: 36px;
+    padding-bottom: 10px;
+    font-weight: 600;
+}
+.Services-section .services-card .services-text p {
+    color: #787878;
+    font-size: 16px;
+    line-height: 24px;
+    padding-bottom: 30px;
+    min-height: 180px;
+}
+.Services-section .services-card .services-text .btn {
+    color: #ffffff;
+    background: #EC681B;
+    padding: 0.8rem 2rem;
+    border: none;
+    margin-bottom: 10px;
+}
+.Buydomain-section .Buydomain-box {
+    position: relative;
+    background: rgba(236, 104, 27, 0.08);
+    border-radius: 15px;
+    padding: 30px 30px;
+}
+.Buydomain-section .Buydomain-box h4 {
+    color: #000000;
+    font-size: 24px;
+    line-height: 30px;
+    padding-bottom: 15px;
+    text-align: center;
+    font-weight: bold;
+}
+.Buydomain-section .Buydomain-box .list-inline {
+    padding: 30px 60px 0px;
+    background: #ffffff;
+    border-radius: 20px;
+    margin-bottom: 5px;
+}
+.Buydomain-section .Buydomain-box .list-inline li:not(:last-child) {
+    margin-bottom: 15px;
+}
+.Buydomain-section .Buydomain-box .list-inline li span {
+    color: #787878;
+    padding-left: 15px;
+}
+.Buydomain-section .Buydomain-box .more-btn .btn {
+    color: #ffffff;
+    background: #EC681B;
+    border: none;
+    margin-bottom: 0;
+    padding: 14px 40px;
+    text-align: center;
+    font-size: 18px;
+    margin-top: 10px;
+    border-radius: 0px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    width: 100%;
+}
+
+.Domain-categories .list-categories {
+    background: #F2F2F2;
+    padding: 16px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+.Domain-categories .list-categories a {
+    display: block;
+    width: 100%;
+    color: #000000;
+    text-transform: uppercase;
+}
+.Domain-categories .list-categories img {
+    margin-right: 10px;
+}
+.Howitwork-section .auto-container {
+    max-width: 1440px;
+    margin: 0 auto;
+}
+.Howitwork-section .card {
+    background: rgba(236, 104, 27, 0.05);
+    border-radius: 15px;
+    padding: 30px 30px;
+    border: none;
+}
+.Howitwork-section .cardbody {
+    text-align: center;
+    padding: 50px 60px;
+}
+.Howitwork-section .cardbody .card-image {
+    position: relative;
+    width: 140px;
+    height: 140px;
+    line-height: 140px;
+    border-radius: 100%;
+    text-align: center;
+    background: #ffffff;
+    border: 1px dotted #EC681B;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+.Howitwork-section .cardbody .card-image .count-num {
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 40px;
+    width: 40px;
+    line-height: 40px;
+    background: #ffffff;
+    border-radius: 100%;
+    color: #EC681B;
+    -webkit-box-shadow: 17px 0px 50px 0px rgba(0,0,0,0.1);
+    -moz-box-shadow: 17px 0px 50px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: 17px 0px 50px 0px rgba(0,0,0,0.1);
+}
+.Howitwork-section .cardbody .card-image.step1,
+.Howitwork-section .cardbody .card-image.step2,
+.Howitwork-section .cardbody .card-image.step3 {
+    position: relative;
+}
+.Howitwork-section .cardbody .card-image.step1::after {
+    content: '';
+    position: absolute;
+    display: block;
+    background: url(../../public/assets/img/home/step-vector.svg);
+    width: 152px;
+    height: 100%;
+    right: -180px;
+    top: 30px;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+.Howitwork-section .cardbody .card-image.step2::after {
+    content: '';
+    position: absolute;
+    display: block;
+    background: url(../../public/assets/img/home/step-vector2.svg);
+    width: 152px;
+    height: 100%;
+    right: -180px;
+    top: 60px;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+.Howitwork-section .cardbody .card-image.step3::after {
+    content: '';
+    position: absolute;
+    display: block;
+    background: url(../../public/assets/img/home/step-vector.svg);
+    width: 152px;
+    height: 100%;
+    right: -180px;
+    top: 30px;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+.Howitwork-section .cardbody .card-content h4 {
+    font-size: 24px;
+    line-height: 30px;
+    text-transform: uppercase;
+    padding-top: 20px;
+    padding-bottom: 5px;
+}
+.Howitwork-section .cardbody .card-content p {
+    color: #787878;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 400;
+}
+.Newsletter-section .newsletter-form {
+    background: #EC681B;
+    border-radius: 20px;
+    padding: 40px;
+    text-align: center;
+}
+.Newsletter-section .newsletter-form h2 {
+    font-size: 42px;
+    line-height: 54px;
+    font-weight: 500;
+    padding-bottom: 5px;
+    color: #ffffff;
+}
+.Newsletter-section .newsletter-form p {
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: 400;
+    padding-bottom: 25px;
+    color: #ffffff;
+}
+.Newsletter-section .newsletter-form .form-group {
+    width: 100%;
+    max-width: 720px;
+    margin: 0 auto;
+}
+.Newsletter-section .newsletter-form .form-control {
+    padding: 1rem 1.4rem;
+    border-radius: 50px;
+}
+.Newsletter-section .newsletter-form .btn.btn-primary {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 5px;
+    border-radius: 50px;
+    padding: 0.7rem 3rem;
+    background: #FF621F;
+    border-color: #FF621F;
+}
+
+.footer-section {
+    position: relative;
+    padding: 80px 0px 0px
+}
+.footer-section::before {
+    content:'';
+    position: absolute;
+    top: -140px;
+    left: 0;
+    width: 100%;
+    height: -webkit-fill-available;
+    background: #f2f2f2;
+    z-index: -1;
+}
+.footer-section .useful-link h4 {
+    font-size: 20px;
+    line-height: 28px;
+    text-transform: uppercase;
+    padding-bottom: 10px;
+    font-weight: bold;
+}
+.footer-section .useful-link li a {
+    color: #787878;
+    font-size: 16px;
+    line-height: 28px;
+    text-transform: uppercase;
+    padding-bottom: 10px;
+    font-weight: 400;
+}
+.footer-section .copyright {
+    padding: 20px 0;
+    text-align: center;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+.footer-section .copyright p {
+    color: #000000;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+}
+.footer-section .copyright p a {
+    color: #000000;
+    text-decoration: underline;
+}
+.social-list li a {
+    display: block;
+    background: #ffffff;
+    width: 36px;
+    height: 36px;
+    line-height: 36px;
+    color: #FF621F;
+    text-align: center;
+    border-radius: 100%;
+}
+
+.Page-header {
+    width: 100%;
+    position: relative;
+}
+.Page-header .hero-image img {
+    width: 100%;
+    height: 440px;
+    object-position: center;
+    object-fit: cover;
+}
+.Page-header .hero-image::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+.Page-header .ps-breadcrumb {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 90%;
+}
+.Page-header .ps-breadcrumb h2 {
+    font-size: 48px;
+    line-height: 60px;
+    font-weight: 500;
+    padding-bottom: 10px;
+    color: #ffffff;
+}
+.ps-breadcrumb .breadcrumb-item a {
+    color: #ffffff;
+}
+.ps-breadcrumb .breadcrumb-item+.breadcrumb-item::before {
+    color: rgb(255 255 255 / 100%);
+}
+.ps-breadcrumb .breadcrumb-item.active {
+    color: #EC681B;
+}
+
+.Premium-domain .sidebar {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 20px;
+    -webkit-box-shadow: 17px 0px 50px 0px rgba(0,0,0,0.05);
+    -moz-box-shadow: 17px 0px 50px 0px rgba(0, 0, 0, 0.05);
+    box-shadow: 17px 0px 50px 0px rgba(0,0,0,0.05);
+}
+.Premium-domain .sidebar .sec-title h4 {
+    font-size: 24px;
+    line-height: 36px;
+    font-weight: 500;
+    padding-bottom: 15px;
+    color: #000000;
+    border-bottom: 1px solid #eeeeee;
+    position: relative;
+    margin-bottom: 20px;
+}
+.Premium-domain .sidebar .sec-title h4::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    background: #EC681B;
+    width: 40%;
+    height: 6px;
+}
+.Premium-domain .sidebar .list-inline li a {
+    color: #787878;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 500;
+    width: 100%;
+    display: block;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+}
+
+.Domain-datatable {
+    width: 100%;
+    position: relative;
+}
+.Domain-datatable .select-range {
+    position: absolute;
+    right: 10px;
+    top: 5px;
+}
+.Domain-datatable .select-range .form-select {
+    border-radius: 10px;
+    color: #000000;
+    font-size: 16px;
+    line-height: 24px;
+    border: 1px solid #EC681B;
+}
+.Domain-datatable div.dt-length select {
+    border-radius: 10px;
+    color: #000000;
+    padding: 0.5rem 2rem;
+    font-size: 16px;
+    line-height: 24px;
+    border: 1px solid #EC681B;
+}
+.Domain-datatable .select-range .form-select:focus,
+.Domain-datatable div.dt-length select:focus {
+    box-shadow: none;
+}
+.Domain-datatable table thead {
+   border-bottom: 1px solid #c2c2c2;
+}
+.Domain-datatable table thead th:first-child {
+    /* border-bottom-left-radius: 10px; */
+    border-top-left-radius: 10px;
+}
+.Domain-datatable table thead th:last-child {
+    /* border-bottom-right-radius: 10px; */
+    border-top-right-radius: 10px;
+}
+table.dataTable thead > tr > th.dt-orderable-asc:hover, table.dataTable thead > tr > th.dt-orderable-desc:hover, 
+table.dataTable thead > tr > td.dt-orderable-asc:hover, table.dataTable thead > tr > td.dt-orderable-desc:hover {
+    outline: none;
+    outline-offset: -2px;
+}
+.Domain-datatable table thead th {
+    padding: 16px;
+    color: #000000;
+    font-size: 16px;
+    font-weight: 500;
+    border-bottom: none;
+    text-align: center;
+}
+/* .Domain-datatable table tbody {
+    background: #ffffff;
+} */
+.Domain-datatable table tbody td {
+    padding: 14px;
+    font-weight: 400;
+    font-size: 16px;
+    color: #868686;
+    vertical-align: middle;
+    border-bottom: 1px solid #dee2e6;
+    border-top: none;
+    text-align: center;
+}
+table.table.dataTable > :not(caption) > * > * {
+    background-color: rgba(0, 0, 0, 0.03);
+}
+.Domain-datatable .data-btn .btn {
+    color: #ffffff;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+    width: 100px;
+}
+.Domain-datatable .data-btn .btn.make-btn {
+    background-color: #000000;
+    border-color: #000000;
+}
+.Domain-datatable .data-btn .btn.view-btn {
+    background-color: #EC681B;
+    border-color: #EC681B;
+}
+table.dataTable th.dt-type-numeric, table.dataTable th.dt-type-date, 
+table.dataTable td.dt-type-numeric, table.dataTable td.dt-type-date {
+    text-align: center;
+}
+.Domain-datatable div.dt-container div.dt-search {
+    display: none;
+}
+div.dt-container div.dt-info {
+    color: #EC681B;
+}
+.Domain-datatable .active>.page-link, .page-link.active {
+    z-index: 3;
+    color: var(--bs-pagination-active-color);
+    background-color: #EC681B;
+    border-color: #EC681B;
+}
+.Domain-datatable .disabled>.page-link, .Domain-datatable .page-link.disabled {
+    color: var(--bs-pagination-disabled-color);
+    pointer-events: none;
+    background-color: rgba(236, 104, 27, 0.1);
+    border-color:rgba(236, 104, 27, 0.1);
+}
+.Domains-search .form-control {
+    position: relative;
+    padding: 1rem 3rem;
+    background: rgba(0, 0, 0, 0.05);
+    border-color: rgba(0, 0, 0, 0.05);
+}
+.Domains-search .form-control:focus {
+    box-shadow: none;
+}
+.Domains-search .btn-search {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 5px;
+    border-radius: 10px;
+    padding: 0.7rem 3rem;
+    background: #FF621F;
+    border-color: #FF621F;
+    color: #ffffff;
+    font-size: 16px;
+}
+.Domains-search .form-group.search::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 15px;
+    background: url(../img/home/search-icon.png);
+    z-index: 1;
+}
+
+
+/* Range Slider */
+
+.Domains-search .price-input {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+  }
+  .Domains-search .price-input .field {
+    display: flex;
+    width: 80px;
+    height: 40px;
+    align-items: center;
+    position: relative;
+  }
+  .Domains-search .field::before {
+    position: absolute;
+    content: '$';
+    font-size: 18px;
+    color: #000000;
+    margin: auto;
+    bottom: 0;
+    display: table;
+    left: 10px;
+    top: 64%;
+    transform: translateY(-50%);
+}
+  .Domains-search .field input {
+    width: 100%;
+    height: 100%;
+    outline: none;
+    font-size: 14px;
+    border-radius: 5px;
+    text-align: center;
+    border: 1px solid rgba(236, 104, 27, 0.1);
+    -moz-appearance: textfield;
+    background: rgba(236, 104, 27, 0.1);
+    font-weight: 600;
+  }
+ 
+  .Domains-search input[type="number"]::-webkit-outer-spin-button,
+  .Domains-search input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
+  .Domains-search .price-input .separator {
+    width: 130px;
+    display: flex;
+    font-size: 19px;
+    align-items: center;
+    justify-content: center;
+  }
+  .Domains-search .slider {
+    height: 5px;
+    position: relative;
+    background: #ddd;
+    border-radius: 5px;
+  }
+  .Domains-search .slider .progress {
+    height: 100%;
+    left: 25%;
+    right: 25%;
+    position: absolute;
+    border-radius: 5px;
+    background: #EC681B;
+  }
+  .Domains-search .range-input {
+    position: relative;
+  }
+  .Domains-search .range-input input {
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    top: -5px;
+    background: none;
+    pointer-events: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+  }
+  .Domains-search input[type="range"]::-webkit-slider-thumb {
+    height: 17px;
+    width: 17px;
+    border-radius: 50%;
+    background: #EC681B;
+    pointer-events: auto;
+    -webkit-appearance: none;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.05);
+  }
+  .Domains-search input[type="range"]::-moz-range-thumb {
+    height: 17px;
+    width: 17px;
+    border: none;
+    border-radius: 50%;
+    background: #EC681B;
+    pointer-events: auto;
+    -moz-appearance: none;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.05);
+  }
+.Domains-search .form-group.price {
+    background: rgba(0, 0, 0, 0.05);
+    border-color: rgba(0, 0, 0, 0.05);
+    padding: 20px 20px 30px;
+    border-radius: 10px;
+}
+.Domains-search .form-group.price .form-check-inline {
+    display: inline-block;
+    margin-right: 1rem;
+    background: #ffffff;
+    padding-left: 1.8em;
+    padding-right: 0.4em;
+    border-radius: 4px;
+}
+.Domains-search .form-group.price .form-check .form-check-input {
+    float: left;
+    margin-left: -1.4em;
+    border-radius: 0px;
+    border-color: #ec681b;
+}
+.Domains-search .form-group.price .form-check-input:checked {
+    background-color: #EC681B;
+    border-color: #EC681B;
+}
+.Domains-search .form-group.price .form-check-input:focus {
+    box-shadow: none;
+}
+.Domains-search .form-group .btn.btn-apply {
+    background: #000;
+    border-radius: 10px;
+    padding: 0.75rem 2rem;
+    color: #ffffff;
+    font-size: 16px;
+    text-transform: uppercase;
+    border: none;
+}
+.Domains-search .form-group .btn.btn-rsearch {
+    background: #EC681B;
+    border-radius: 10px;
+    padding: 0.75rem 2rem;
+    color: #ffffff;
+    font-size: 16px;
+    text-transform: uppercase;
+    border: none;
+    margin-left: 10px;
+}
+.Sell-domains .whytrade-sec {
+    padding: 30px 0;
+}
+.section-header ol li {
+    color: #787878;
+    font-size: 16px;
+    line-height: 24px;
+    padding-bottom: 5px;
+    font-weight: 400;
+}
+.whytrade-sec .buy-now .badge.btn-badge {
+    color: #ffffff;
+    background: #EC681B;
+    border: none;
+    margin-bottom: 0;
+    padding: 12px 14px;
+    text-align: center;
+    font-size: 16px;
+    border-radius: 0px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    width: auto;
+}
+.whytrade-sec .buy-now .badge-box {
+    padding: 20px;
+    border: 1px solid #c9c9c9;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.whytrade-sec .buy-now .badge-box p {
+    color: #787878;
+    font-size: 16px;
+    line-height: 24px;
+    padding-bottom: 5px;
+    font-weight: 400;
+}
+.domains-auction .auction-box {
+    position: relative;
+    background: rgba(236, 104, 27, 0.08);
+    border-radius: 15px;
+    padding: 30px 30px;
+}
+.domains-auction .auction-box h4 {
+    color: #EC681B;
+    font-size: 24px;
+    line-height: 30px;
+    padding-bottom: 10px;
+}
+.domains-auction .auction-box p {
+    color: #787878;
+    font-size: 16px;
+    line-height: 24px;
+    padding-bottom: 15px;
+    font-weight: 400;
+}
+.domains-auction .auction-box h6 {
+    color: #000000;
+    font-size: 16px;
+    line-height: 24px;
+    padding-bottom: 10px;
+}
+.domains-auction .auction-box .btn {
+    background: #000;
+    border-radius: 10px;
+    padding: 0.75rem 2rem;
+    color: #ffffff;
+    font-size: 16px;
+    text-transform: uppercase;
+    border: none;
+}
+.domains-auction .features-list {
+    padding: 20px 0;
+}
+.domains-auction .features-list h5 {
+    color: #000000;
+    font-size: 24px;
+    line-height: 32px;
+    padding-bottom: 10px;
+    font-weight: 600;
+}
+.domains-auction .features-list .list-inline {
+    list-style: disc;
+   padding-left: 20px;
+   margin-bottom: 10px;
+}
+.domains-auction .features-list .list-inline li {
+    color: #787878;
+    font-size: 16px;
+    line-height: 24px;
+    padding-bottom: 5px;
+    font-weight: 400;
+}
+.domains-auction .features-list p {
+    color: #787878;
+    font-size: 16px;
+    line-height: 24px;
+    padding-bottom: 5px;
+    font-weight: 400;
+}
+.domains-auction .section-header .btn {
+    background: #000;
+    border-radius: 10px;
+    padding: 0.75rem 2rem;
+    color: #ffffff;
+    font-size: 16px;
+    text-transform: uppercase;
+    border: none;
+}
+.domains-auction .features-list h4 {
+    font-size: 32px;
+    line-height: 42px;
+    font-weight: 500;
+    padding-bottom: 10px;
+    color: #000000;
+}
+
+.Faq-section {
+    width: 100%;
+    position: relative;
+    background: rgba(236, 104, 27, 0.08);
+    padding: 80px 0;
+}
+.Faq-section .accordion-item {
+    border-radius: 10px;
+    margin-bottom: 15px;
+    border: none;
+    -webkit-box-shadow: 5px 0px 45px 0px rgba(34,45,77,0.1);
+    -moz-box-shadow: 5px 0px 45px 0px rgba(34,45,77,0.1);
+    box-shadow: 5px 0px 45px 0px rgba(34,45,77,0.1);
+    padding: 10px;
+}
+.Faq-section .accordion-button:not(.collapsed) {
+    background-color: #ffffff;
+    border: 2px solid rgba(236, 104, 27, 0.4);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.Faq-section .accordion-button:focus { 
+    box-shadow: none;
+}
+.accordion-item .accordion-button {
+    font-weight: 500;
+}
+.accordion-item  .accordion-body {
+    background: rgba(236, 104, 27, 0.08);
+    color: #787878;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+}
+
+.Pricing-section .pricing-card {
+    background: rgba(236, 104, 27, 0.1);
+    border-radius: 30px;
+    padding: 60px;
+}
+.Pricing-section .card-1 {
+  margin-right: -40px;
+} 
+.Pricing-section .card-3 {
+    margin-left: -40px;
+  } 
+  .Pricing-section .card-2 {
+    background-color: #ffffff;
+  } 
+  .Pricing-section .card-2 {
+    background-color: #ffffff;
+    -webkit-box-shadow: 17px 0px 50px 0px rgba(0,0,0,0.1);
+    -moz-box-shadow: 17px 0px 50px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: 17px 0px 50px 0px rgba(0,0,0,0.1);
+    position: relative;
+    transform: scale(1.1);
+}
+.Pricing-section .pricing-card .sec-title h2 {
+    font-size: 32px;
+    line-height: 40px;
+    font-weight: 500;
+    padding-bottom: 10px;
+}
+.Pricing-section .pricing-card .sec-title p {
+    color: #EC681B;
+    font-size: 16px;
+    line-height: 24px;
+    padding-bottom: 25px;
+}
+.Pricing-section .pricing-card .text-content h5 {
+    color: #000000;
+    font-size: 20px;
+    line-height: 28px;
+    padding-bottom: 10px;
+}
+.Pricing-section .pricing-card .text-content .list-inline {
+    list-style: disc;
+    padding-left: 20px;
+}
+.Pricing-section .pricing-card .feaer-list p,
+.Pricing-section .pricing-card .text-content .list-inline li {
+    color: #787878;
+    font-size: 16px;
+    line-height: 24px;
+    padding-bottom: 5px;
+    font-weight: 400;
+}
+.Pricing-section .pricing-card .feaer-list {
+    border-top: 1px solid #a5a5a5;
+    padding-top: 15px;
+}
+.Pricing-section .pricing-card .feaer-list p img {
+    margin-right: 4px;
+}
+.Pricing-section .pricing-card .buy-btn {
+    margin-top: 25px;
+}
+.Pricing-section .pricing-card .buy-btn .btn {
+    background: #000;
+    border-radius: 10px;
+    padding: 0.75rem 2rem;
+    color: #ffffff;
+    font-size: 16px;
+    text-transform: uppercase;
+    border: none;
+    width: 100%;
+}
+.Pricing-section .pricing-card.card-2 .buy-btn .btn { 
+    background: #EC681B;
+}
+.Premium-domain .sidebar .list-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.Premium-domain .sidebar .list-item.gray-column {
+    background-color: rgba(0, 0, 0, 0.03);
+}
+.Premium-domain .sidebar .list-item.white-column {
+   color: #787878;
+}
+.Buydomain-section .Domain-text h4 {
+    font-size: 36px;
+    line-height: 48px;
+    font-weight: 500;
+    padding-bottom: 15px;
+    color: #000000;
+}
+.Buydomain-section .Domain-text p {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    padding-bottom: 15px;
+    color: #787878;
+}
+.whytrade-sec.buyDomains .buy-now .badge-box {
+    background: rgba(236, 104, 27, 0.08);
+    border: none;
+    border-radius: 10px;
+}
+.whytrade-sec.buyDomains .buy-now .badge.btn-badge {
+    margin-left: 30px;
+    border-top-left-radius: 0px;
+}
+.Negotiate-price .Negotiate-text h2 {
+    font-size: 36px;
+    line-height: 48px;
+    font-weight: 500;
+    padding-bottom: 15px;
+    color: #000000;
+}
+.Negotiate-price .Negotiate-text p {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    padding-bottom: 15px;
+    color: #787878;
+}
+
+.Login-section .login-inner-box-sec {
+    position: relative;
+    border-radius: 20px;
+    background: rgba(0, 0, 0, 0.05);
+    padding: 40px;
+}
+.login-inner-box-sec .login-column .sec-title {
+    background: #000000;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+.login-inner-box-sec .login-column .sec-title h2 {
+    font-size: 30px;
+    line-height: 36px;
+    font-weight: 500;
+    text-align: center;
+    color: #ffffff;
+}
+.login-inner-box-sec .login-column .continue-btn .btn {
+    background: #EC681B;
+    color: #ffffff;
+    padding: 0.8rem 2rem;
+    font-size: 18px;
+    line-height: 24px;
+    text-transform: uppercase;
+}
+.login-form .form-group h4 {
+    color: #787878;
+    font-size: 24px;
+    line-height: 36px;
+    font-weight: 500;
+}
+.login-form .form-group h4 a {
+    color: #EC681B;
+    padding-left: 10px;
+}
+.login-form .form-group .form-label {
+    font-size: 18px;
+    line-height: 18px;
+    font-weight: 600;
+    color: #787878;
+}
+.login-form .form-group .form-control {
+    padding: 0.75rem 1rem;
+    border: none;
+}
+.login-form .form-group .form-control:focus {
+    box-shadow: none;
+}
+.login-form .form-group .btn {
+    background: #EC681B;
+    color: #ffffff;
+    padding: 0.8rem 2rem;
+    font-size: 18px;
+    line-height: 24px;
+    text-transform: uppercase;
+}
+.login-form .forgot-password a {
+    color: #EC681B;
+}
+
+.Blog-section .blog-card {
+    -webkit-box-shadow: 0px 0px 50px 0px rgba(0,0,0,0.07);
+    -moz-box-shadow: 0px 0px 50px 0px rgba(0, 0, 0, 0.07);
+    box-shadow: 0px 0px 50px 0px rgba(0,0,0,0.07);
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    margin-bottom: 30px;
+}
+.Blog-section .blog-card .blog-image img {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 10px;
+}
+.Blog-section .blog-card .blog-text .badge.bg-primary {
+    background-color: #EC681B !important;
+    padding: 0.75rem 1rem;
+    font-size: 16px;
+    line-height: 16px;
+    font-weight: 400;
+}
+.Blog-section .blog-card .blog-text h4 {
+    font-size: 22px;
+    line-height: 26px;
+    font-weight: 500;
+    padding-bottom: 10px;
+}
+.Blog-section .blog-card .profile-sec {
+    display: flex;
+    align-items: center;
+}
+.Blog-section .blog-card .profile-sec .img-rounded img {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.Blog-section .blog-card .profile-sec .name-info {
+    flex: 1;
+    margin-left: 15px;
+}
+.Blog-section .blog-card .profile-sec .name-info p {
+    color: #787878;
+}
+.blog-header .list-inline li {
+    margin-right: 1.5rem;
+    color: #787878;
+}
+.Blog-details-card-sec {
+    -webkit-box-shadow: 0px 0px 50px 0px rgba(0,0,0,0.07);
+    -moz-box-shadow: 0px 0px 50px 0px rgba(0, 0, 0, 0.07);
+    box-shadow: 0px 0px 50px 0px rgba(0,0,0,0.07);
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 20px;
+}
+.Blog-details-card-sec .blog-text p {
+    color: #787878;
+    font-size: 18px;
+    line-height: 28px;
+    padding-bottom: 15px;
+}
+.Blog-details-card-sec .blog-text h4 {
+    font-size: 30px;
+    line-height: 42px;
+    font-weight: 500;
+    padding-bottom: 10px;
+    color: #000000;
+}
+.Blog-details-card-sec .search-bar {
+    position: relative;
+}
+.Blog-details-card-sec .search-bar .form-control {
+   padding: 0.75rem 1rem;
+   border-radius: 0px;
+   background: rgba(236, 104, 27, 0.08);
+   border: none;
+}
+.Blog-details-card-sec .search-bar .form-control:focus {
+    box-shadow: none;
+}
+.Blog-details-card-sec .search-bar .search-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #EC681B;
+    border-radius: 0px;
+    color: #ffffff;
+    height: 48px;
+}
+
+.Blog-details-card-sec .sec-title h4 {
+    font-size: 24px;
+    line-height: 36px;
+    font-weight: 500;
+    padding-bottom: 15px;
+    color: #000000;
+    border-bottom: 1px solid #eeeeee;
+    position: relative;
+    margin-bottom: 20px;
+}
+.Blog-details-card-sec .sec-title h4::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    background: #EC681B;
+    width: 40%;
+    height: 6px;
+}
+.Blog-details-card-sec .Recent-post h4 {
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 500;
+    padding-bottom: 10px;
+    color: #000000;
+}
+
+.Aboutus-section .About-text h4 {
+    font-size: 42px;
+    line-height: 54px;
+    font-weight: 500;
+    padding-bottom: 30px;
+    color: #000000;
+}
+.Aboutus-section .About-text p {
+    color: #787878;
+    font-size: 18px;
+    line-height: 28px;
+    padding-bottom: 15px;
+}
+
+.Best-service .service-box h4 {
+    color: #000000;
+    font-size: 24px;
+    line-height: 30px;
+    font-weight: 600;
+    padding-bottom: 10px;
+}
+.Best-service .service-box p {
+    color: #787878;
+    font-size: 16px;
+    line-height: 24px;
+}
+.Best-service .service-box {
+    padding: 20px;
+    margin-bottom: 40px;
+}
+
+.Vivamus-elementum .Ourwork-sec {
+    -webkit-box-shadow: 17px 0px 50px 0px rgba(0,0,0,0.1);
+    -moz-box-shadow: 17px 0px 50px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: 17px 0px 50px 0px rgba(0,0,0,0.1);
+    padding: 25px;
+    border-radius: 20px;
+}
+.Vivamus-elementum .Ourwork-sec h4 { 
+    color: #000000;
+    font-size: 24px;
+    line-height: 36px;
+    padding-bottom: 10px;
+    font-weight: 600;
+}
+.Vivamus-elementum .Ourwork-sec p { 
+    color: #868686;
+    font-size: 16px;
+    line-height: 24px;
+}
+.Vivamus-elementum .Ourwork-sec {
+    width: 100%;
+    position: relative;
+    margin-top: 50px
+}
+.Vivamus-elementum .Ourwork-sec::after {
+   content: '';
+   position: absolute;
+   background: url(../img/home/trigle.png);
+   top: 0;
+   right: 0;
+   width: 80px;
+   height: 80px;
+   background-size: 100% 100%;
+}
+
+.Phasellus-luctus {
+    width: 100%;
+    position: relative;
+}
+.Phasellus-luctus::before {
+  content: '';
+  position: absolute;
+  top: -20%;
+  left: 0px;
+  width: 100%;
+  height: 800px;
+  background: rgba(0, 0, 0, 0.05);
+  z-index: -1;
+}
+.Terms-section .Suspendisse-potenti {
+    position: relative;
+    padding: 25px;
+    background: rgba(236, 104, 27, 0.05);
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+.Terms-section .terms-content h4,
+.Terms-section .Suspendisse-potenti h4 {
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 500;
+    padding-bottom: 10px;
+    color: #000000;
+}
+.Terms-section .terms-content p,
+.Terms-section .Suspendisse-potenti p {
+    color: #787878;
+    font-size: 16px;
+    line-height: 24px;
+}
+.Terms-section .terms-content p {
+    padding-bottom: 20px;
+}
+
+.Account-section {
+    position: relative;
+    width: 100%;
+}
+.Account-section .profile-user {
+    display: flex;
+    align-items: center;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+.Account-section .profile-user .user-image {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    object-position: center;
+}
+.Account-section .profile-user .user-text h2 {
+    font-size: 42px;
+    line-height: 54px;
+    font-weight: 600;
+    color: #000000;
+    padding-left: 20px;
+}
+.Account-section .account-form .sec-title {
+    font-size: 36px;
+    line-height: 42px;
+    font-weight: 500;
+    padding-bottom: 15px;
+    color: #EC681B;
+}
+.Account-section .account-form .form-label {
+    color: #787878;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 500;
+}
+.Account-section .account-form .form-control {
+    background: rgba(120, 120, 120, 0.1);
+    padding: 0.8rem 1rem;
+    border: none;
+    color: #000000;
+}
+.Account-section .account-form .form-control:focus {
+    box-shadow: none;
+}
+.Account-section .account-form .btn.btn-primary {
+    background: #EC681B;
+    border: none;
+    padding: 0.8rem 2rem;
+    font-size: 16px;
+    line-height: 20px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+.Single-domain .domain-leftinfo .domain-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 320px;
+    border-radius: 20px;
+    -webkit-box-shadow: 17px 0px 50px 0px rgba(0,0,0,0.1);
+    -moz-box-shadow: 17px 0px 50px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: 17px 0px 50px 0px rgba(0,0,0,0.1);
+    margin-bottom: 40px;
+}
+.Single-domain .domain-leftinfo .action-btn {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.Single-domain .domain-leftinfo .action-btn .btn {
+    width: calc(50% - 15px);
+    padding: 0.75rem 1rem;
+}
+.Single-domain .domain-leftinfo .action-btn .btn.add-btn {
+    background: #000000;
+    color: #ffffff;
+}
+.Single-domain .domain-leftinfo .action-btn .btn.make-btn {
+    background: #EC681B;
+    color: #ffffff;
+}
+.Single-domain .domain-rightinfo .section-header h4 {
+    font-size: 48px;
+    line-height: 60px;
+    font-weight: 500;
+    padding-bottom: 10px;
+    color: #000000;
+}
+.Single-domain .domain-rightinfo .section-header p {
+    color: #EC681B;
+    font-size: 18px;
+    line-height: 24px;
+    padding-bottom: 15px;
+}
+.Single-domain .domain-information {
+    padding: 20px;
+    background: rgba(120, 120, 120, 0.1);
+    border-radius: 15px;
+}
+.Single-domain .domain-information h5 {
+    color: #000000;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    padding-bottom: 10px;
+}
+.Single-domain .domain-information p {
+    color: #787878;
+    font-size: 16px;
+    line-height: 20px;
+    padding-bottom: 10px;
+}
+.Single-domain .deal-bestprice .heading {
+    width: 100%;
+    background: rgba(236, 104, 27, 0.1);
+    border-radius: 10px;
+}
+.Single-domain .deal-bestprice .heading svg {
+    background: #EC681B;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    padding: 8px;
+}
+.Single-domain .deal-bestprice .heading span {
+    color: #000000;
+    font-size: 16px;
+    line-height: 16px;
+    text-transform: uppercase;
+}
+.Single-domain .deal-bestprice .table td {
+    color: #787878;
+}
+
+
+/* === Responsive CSS Start === */
+
+@media screen and (max-width: 1440px) {
+    .login-form .form-group .form-label {
+        font-size: 16px;
+        line-height: 16px;
+    }
+    .login-form .form-group h4 {
+        font-size: 20px;
+        line-height: 28px;
+    }
+    .login-inner-box-sec .login-column .sec-title h2,
+    .Pricing-section .pricing-card .sec-title h2,
+    .domains-auction .features-list h4,
+    .section-header h4 {
+        font-size: 24px;
+        line-height: 36px;
+    }
+    .Premium-domain .sidebar .sec-title h4 {
+        font-size: 22px;
+        line-height: 30px;
+    }
+    .Page-header .ps-breadcrumb h2 {
+        font-size: 44px;
+        line-height: 54px;
+    }
+    .Page-header .hero-image img {
+        width: 100%;
+        height: 400px;
+    }
+    .Banner-section .Scrolldown::before {
+        width: 600px;
+        height: 200px;
+    }
+    .Banner-section .banner-caption h2 {
+        font-size: 60px;
+        line-height: 72px;
+    }
+    .Banner-section .hero-image img {
+        width: 100%;
+        height: 720px;
+    }
+    .pt-120 {
+        padding-top: 80px;
+    } 
+    .pb-120 {
+        padding-bottom: 80px;
+    }
+
+    .Single-domain .domain-rightinfo .section-header h4,
+    .section-header h2 {
+        font-size: 42px;
+        line-height: 54px;
+    }
+    .Single-domain .domain-information h5 {
+        font-size: 18px;
+        line-height: 24px;
+    }
+    .Aboutus-section .About-text h4 {
+        font-size: 36px;
+        line-height: 42px;
+        padding-bottom: 20px;
+    }
+    .Vivamus-elementum .section-header h2 {
+        font-size: 36px;
+        line-height: 42px;
+    }
+    .Account-section .profile-user .user-image {
+        width: 100px;
+        height: 100px;
+    }
+    .Account-section .account-form .sec-title {
+        font-size: 30px;
+        line-height: 36px;
+    }
+}
+@media screen and (min-width: 1400px) {
+    .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+        max-width: 1280px;
+    }
+}
+@media screen and (min-width: 1280px) {
+   
+    .Domains-section .tab-content .col-lg-3 {
+        flex: 0 0 auto;
+        width: 20%;
+    }
+}
+@media screen and (max-width: 1280px) {
+    .Single-domain .domain-rightinfo .section-header h4  {
+        font-size: 36px;
+        line-height: 42px;
+    }
+    .Pricing-section .pricing-card {
+        padding: 40px;
+    }
+    .Page-header .ps-breadcrumb h2 {
+        font-size: 36px;
+        line-height: 40px;
+    }
+    .Page-header .hero-image img {
+        width: 100%;
+        height: 320px;
+    }
+    .Banner-section .hero-image img {
+        width: 100%;
+        height: 640px;
+    }
+    .pt-120 {
+        padding-top: 80px;
+    } 
+    .pb-120 {
+        padding-bottom: 80px;
+    }
+    .footer-section .useful-link li a {
+        font-size: 14px;
+        line-height: 24px;
+    }
+    .Newsletter-section .newsletter-form h2 {
+        font-size: 36px;
+        line-height: 42px;
+    }
+    .Howitwork-section .cardbody .card-image.step3::after,
+    .Howitwork-section .cardbody .card-image.step2::after,
+    .Howitwork-section .cardbody .card-image.step1::after {
+        width: 130px;
+        right: -150px;
+    }
+    .Header-1 .navbar-nav .nav-link,
+    .Howitwork-section .cardbody .card-content p {
+        font-size: 16px;
+        line-height: 20px;
+    }
+    .section-header h2 {
+        font-size: 40px;
+        line-height: 48px;
+    }
+    .Howitwork-section .cardbody .card-content h4,
+    .Buydomain-section .Buydomain-box h4,
+    .Services-section .services-card .services-text h4 {
+        font-size: 18px;
+        line-height: 24px;
+    }
+    .Banner-section .banner-caption h2 {
+        font-size: 48px;
+        line-height: 54px;
+    }
+    .Buydomain-section .Domain-text h4 {
+        font-size: 30px;
+        line-height: 36px;
+        padding-bottom: 10px;
+    }
+}
+@media screen and (min-width: 1200px) {
+    .container, .container-lg, .container-md, .container-sm, .container-xl {
+        max-width: 1200px;
+    }
+}
+@media screen and (max-width: 1024px) {
+    .Howitwork-section .cardbody .card-image.step3::after, 
+    .Howitwork-section .cardbody .card-image.step2::after, 
+    .Howitwork-section .cardbody .card-image.step1::after {
+        width: 100px;
+        right: -120px;
+    }
+    .Howitwork-section .cardbody {
+        padding: 40px 40px;
+    }
+    .Howitwork-section .cardbody .card-image .count-num {
+        height: 30px;
+        width: 30px;
+        line-height: 30px;
+    }
+    .Howitwork-section .cardbody .card-image img { 
+        width: 40px;
+        height: 40px;
+    }
+    .Howitwork-section .cardbody .card-image {
+        position: relative;
+        width: 100px;
+        height: 100px;
+        line-height: 100px;
+    }
+    .Buydomain-section .Buydomain-box .list-inline {
+        padding: 20px 20px 0px;
+    }
+    .Services-section .services-card {
+        padding: 30px 20px 20px;
+    }
+    .Banner-section .banner-caption {
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .Banner-section .Scrolldown {
+        display: none;
+    }
+    .Header-1 .navbar .right-btn .btn.btn-primary {
+        width: 40px;
+        height: 40px;
+    }
+    .Header-1 .navbar .navbar-brand {
+        width: 140px;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .Aboutus-section .row.align-items-center {
+        flex-direction: column-reverse;
+    }
+    .Vivamus-elementum .Ourwork-sec {
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+    .Vivamus-elementum .section-header h2 {
+        font-size: 24px;
+        line-height: 32px;
+        padding-bottom: 0px;
+    }
+    .Aboutus-section .About-Image {
+        padding-bottom: 20px;
+    }
+    .Single-domain .domain-rightinfo {
+        margin-top: 40px;
+    }
+    .login-inner-box-sec .login-column .sec-title {
+        padding: 14px;
+    }
+    .login-inner-box-sec .login-column {
+        margin-bottom: 40px;
+    }
+    .Faq-section {
+        padding: 40px 0;
+    }
+    .Pricing-section .card-3 {
+        margin-left: -0px;
+    }
+    .Pricing-section .card-2 {
+        transform: scale(1);
+        margin: 40px 0;
+    }
+    .Pricing-section .card-3,
+    .Pricing-section .card-1 {
+        margin-right: 0px;
+    }
+    .Buydomain-section .Domain-text h4 {
+        font-size: 24px;
+        line-height: 30px;
+        padding-bottom: 10px;
+    }
+    .Buydomain-section .row {
+        flex-direction: column-reverse;
+    }
+    .Header-1 .navbar .navbar-collapse {
+        padding: 20px 0;
+    }
+    .Header-1 .navbar-nav .nav-link {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    .Header-1 .navbar .navbar-toggler:focus {
+        box-shadow: none;
+    }
+    .Domains-section .nav-tabs .nav-link {
+        font-size: 16px;
+        line-height: 24px;
+    }
+    .Buydomain-section .Buydomain-box .list-inline li span,
+    .footer-section .copyright p,
+    .Domain-categories .list-categories a {
+        font-size: 14px;
+        line-height: 20px;
+    }
+    .pt-120 {
+        padding-top: 40px;
+    } 
+    .pb-120 {
+        padding-bottom: 40px;
+    }
+    .Howitwork-section .cardbody .card-image.step3::after, 
+    .Howitwork-section .cardbody .card-image.step2::after, 
+    .Howitwork-section .cardbody .card-image.step1::after {
+        display: none;
+    }
+    .Services-section {
+        padding: 40px 0px 20px;
+    }
+    .Buydomain-section .Domain-text,
+    .Premium-domain .sidebar,
+    .Buydomain-section .Buydomain-box,
+    .Services-section .services-card {
+        margin-bottom: 40px;
+    }
+    .Domains-section .nav-tabs .nav-item:not(:last-child) {
+        margin-right: 15px;
+    }
+    .Blog-details-card-sec .blog-text h4 {
+        font-size: 24px;
+        line-height: 30px;
+    }
+    .Blog-details-card-sec .blog-text p {
+        font-size: 16px;
+        line-height: 26px;
+    }
+    .Blog-details-card-sec {
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+}
+
+
+@media screen and (max-width: 767px) {
+    .Aboutus-section .About-text h4 {
+        font-size: 32px;
+        line-height: 36px;
+        padding-bottom: 15px;
+    }
+    .Blog-details-card-sec .Recent-post h4 {
+        padding-top: 20px;
+    }
+    .Login-section .login-inner-box-sec {
+        padding: 20px;
+    }
+    .Domains-search .form-group.price .form-check-inline {
+        margin-right: 0.5rem;
+        margin-bottom: 0.5rem;
+    }
+    .Page-header .ps-breadcrumb h2 {
+        font-size: 30px;
+        line-height: 36px;
+    }
+    .Domain-datatable .select-range {
+        top: 10px;
+    }
+    .footer-section {
+        padding: 40px 0px 0px;
+    }
+    .Domain-datatable div.dt-container div.dt-length {
+        text-align: left;
+    }
+    .Domains-section .nav-tabs .nav-item {
+        margin-bottom: 20px;
+    }
+    .Newsletter-section .newsletter-form p {
+        font-size: 16px;
+        line-height: 24px;
+    }
+    .Newsletter-section .newsletter-form h2 {
+        font-size: 24px;
+        line-height: 36px;
+    }
+    .Negotiate-price .Negotiate-text h2,
+    .section-header h2 {
+        font-size: 32px;
+        line-height: 40px;
+        padding-bottom: 20px;
+    }
+    .Services-section .services-card .services-text p {
+        min-height: auto;
+    }
+    .Domains-section .nav-tabs .nav-link {
+        padding: 0.6rem 1rem;
+    }
+    .Banner-section .hero-image img {
+        width: 100%;
+        height: 540px;
+    }
+    .Banner-section .banner-caption h2 {
+        font-size: 36px;
+        line-height: 42px;
+    }
+    .Howitwork-section .card {
+        border-radius: 0px;
+    }
+    .Domain-datatable table thead th,
+    .Domain-datatable table tbody td {
+        padding: 10px;
+        font-size: 14px;
+        white-space: nowrap;
+    }
+}
+
+
+@media screen and (max-width: 576px) {
+    .Account-section .profile-user .user-text h2 {
+        font-size: 30px;
+        line-height: 42px;
+    }
+    .Account-section .profile-user .user-image {
+        width: 80px;
+        height: 80px;
+    }
+    .Account-section .account-form .sec-title,
+    .Terms-section .terms-content h4, 
+    .Terms-section .Suspendisse-potenti h4 {
+        font-size: 20px;
+        line-height: 24px;
+    }
+    .Vivamus-elementum .Ourwork-sec h4 {
+        font-size: 20px;
+        line-height: 30px;
+    }
+    .Blog-details-card-sec .blog-text h4 {
+        font-size: 18px;
+        line-height: 24px;
+    }
+    .Single-domain .domain-rightinfo .section-header h4 {
+        font-size: 24px;
+        line-height: 30px;
+    }
+    .section-header p {
+        font-size: 16px;
+        line-height: 24px;
+    }
+    .Pricing-section .pricing-card {
+        padding: 25px;
+    }
+    .Domain-datatable .select-range {
+        top: 20px;
+        right: 0px;
+    }
+    .Domain-datatable {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    .Page-header .hero-image img {
+        width: 100%;
+        height: 280px;
+    }
+    .Domains-section .nav-tabs .nav-item:not(:last-child) {
+        margin-right: 10px;
+    }
+    .domain-card .domain-image img {
+        width: 100%;
+        height: 100px;
+    }
+    .Domains-search .form-control {
+        padding: 0.8rem 2.4rem;
+    }
+    .Banner-section .banner-caption .form-control,
+    .Newsletter-section .newsletter-form .form-control {
+        padding: 0.8rem 1.2rem;
+    }
+    .Domains-search .btn-search,
+    .Banner-section .banner-caption .btn.btn-primary,
+    .Newsletter-section .newsletter-form .btn.btn-primary {
+        padding: 0.5rem 2rem;
+    }
+    .Banner-section .banner-caption h2 {
+        font-size: 30px;
+        line-height: 36px;
+        padding-bottom: 20px;
+    }
+    .Banner-section .banner-caption {
+        width: 90%;
+    }
+    .footer-section .useful-link h4 {
+        font-size: 18px;
+        line-height: 28px;
+    }
+    .footer-section .logo-sec.mb-5 {
+        margin-bottom: 2rem !important;
+    }
+    .Banner-section .hero-image img {
+        width: 100%;
+        height: 400px;
+    }
+    .Domains-search .form-group .btn.btn-rsearch,
+    .Domains-search .form-group .btn.btn-apply {
+        padding: 0.75rem 1rem;
+        font-size: 14px;
+    }
+    .Domain-datatable div.dt-length select {
+        padding: 0.5rem 1rem;
+        font-size: 14px;
+    }
+   
+}
+
+@media screen and (max-width: 400px) {
+    .Aboutus-section .About-text h4,
+    .Page-header .ps-breadcrumb h2 {
+        font-size: 24px;
+        line-height: 30px;
+    }
+    .Newsletter-section .newsletter-form p {
+        font-size: 14px;
+        line-height: 20px;
+    }
+    .Newsletter-section .newsletter-form h2 {
+        font-size: 20px;
+        line-height: 30px;
+    }
+    .Howitwork-section .cardbody .card-content h4, 
+    .Buydomain-section .Buydomain-box h4, 
+    .Services-section .services-card .services-text h4 {
+        font-size: 16px;
+        line-height: 24px;
+    }
+    .Negotiate-price .Negotiate-text h2,
+    .section-header h2 {
+        font-size: 28px;
+        line-height: 36px;
+    }
+    .domain-card .domain-image img {
+        width: 100%;
+        height: 80px;
+    }
+    .domain-card .domain-image {
+        height: 140px;
+    }
+    .Banner-section .banner-caption h2 {
+        font-size: 24px;
+        line-height: 30px;
+    }
+}
