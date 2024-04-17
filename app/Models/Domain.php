@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Domain extends Model
 {
     use HasFactory;
-
+    protected $table = 'domains';
     protected $fillable = [
         'name',
         'name_uppercase',

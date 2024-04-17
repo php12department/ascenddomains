@@ -9,48 +9,6 @@
                     </div>
                     <div>Dashboard</div>
                 </div>
-                <div class="page-title-actions">
-                    <div class="d-inline-block dropdown">
-                        <div tabindex="-1" role="menu" aria-hidden="true" class="dropdown-menu dropdown-menu-right">
-                            <ul class="nav flex-column">
-                                <li class="nav-item">
-                                    <a href="javascript:void(0);" class="nav-link">
-                                        <i class="nav-link-icon lnr-inbox"></i>
-                                        <span>
-                                            Inbox
-                                        </span>
-                                        <div class="ml-auto badge badge-pill badge-secondary">86</div>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="javascript:void(0);" class="nav-link">
-                                        <i class="nav-link-icon lnr-book"></i>
-                                        <span>
-                                            Book
-                                        </span>
-                                        <div class="ml-auto badge badge-pill badge-danger">5</div>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="javascript:void(0);" class="nav-link">
-                                        <i class="nav-link-icon lnr-picture"></i>
-                                        <span>
-                                            Picture
-                                        </span>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a disabled href="javascript:void(0);" class="nav-link disabled">
-                                        <i class="nav-link-icon lnr-file-empty"></i>
-                                        <span>
-                                            File Disabled
-                                        </span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
         <div class="row">
@@ -61,7 +19,7 @@
                             <div class="widget-heading">Total Domain</div>
                         </div>
                         <div class="widget-content-right">
-                            <div class="widget-numbers text-white"><span>0</span></div>
+                            <div class="widget-numbers text-white"><span>{{ $domainCount }}</span></div>
                         </div>
                     </div>
                 </div>
@@ -73,7 +31,7 @@
                             <div class="widget-heading">Total Clients</div>
                         </div>
                         <div class="widget-content-right">
-                            <div class="widget-numbers text-white"><span>0</span></div>
+                            <div class="widget-numbers text-white"><span>{{ $userCount }}</span></div>
                         </div>
                     </div>
                 </div>

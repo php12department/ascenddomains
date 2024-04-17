@@ -11,8 +11,7 @@
         content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" />
     <meta name="description" content="This is an example dashboard created using build-in elements and components.">
     <meta name="msapplication-tap-highlight" content="no">
-    {{-- <link href="https://demo.dashboardpack.com/architectui-html-free/main.css" rel="stylesheet"> --}}
-    <link rel="stylesheet" href="{{ asset('assets/css/adminstyle.css') }}">
+    @include('layouts.admincss')
 </head>
 
 <body>
@@ -68,6 +67,8 @@
                                                 Account</button>
                                             <button type="button" tabindex="0"
                                                 class="dropdown-item">Settings</button>
+                                            <a href="{{ route('adminlogout') }}" class="dropdown-item">Logout</a>
+
                                         </div>
                                     </div>
                                 </div>
@@ -119,37 +120,19 @@
                         </button>
                     </span>
                 </div>
-                <div class="scrollbar-sidebar">
-                    <div class="app-sidebar__inner">
-                        <ul class="vertical-nav-menu">
-                            <li class="app-sidebar__heading">Dashboards</li>
-                            <li>
-                                <a href="index.html" class="mm-active">
-                                    <i class="fas fa-tachometer-alt"></i>
-                                    Dashboard
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
+                <!--  inclde adminsidebar.blade.php -->
+                @include('layouts.adminsidebar')
 
-                </div>
+
             </div>
             <div class="app-main__outer">
                 @yield('content')
-                <div class="app-wrapper-footer">
-                    <div class="app-footer">
-                        <div class="app-footer__inner">
-                            <div class="app-footer-left">
-                                <span>&copy; {{ date('Y') }} {{ config('app.name') }}. All rights reserved.</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @include('layouts.adminfooter')
             </div>
         </div>
     </div>
-    <script type="text/javascript" src="https://demo.dashboardpack.com/architectui-html-free/assets/scripts/main.js">
-    </script>
+    @include('layouts.adminjs')
+    
 </body>
 
 </html>
