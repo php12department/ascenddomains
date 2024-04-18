@@ -63,16 +63,14 @@
                             @endif
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Lorem Ispum</a></li>
-                            <li><a class="dropdown-item" href="#">Lorem Ispum</a></li>
-                            <li><a class="dropdown-item" href="#">Lorem Ispum</a></li>
-                            <li><a class="dropdown-item" href="#">Lorem Ispum</a></li>
                             @if (Auth::check())
                                 <li><a class="dropdown-item" href="{{ route('logout') }}"
                                         onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
                                 </li>
                             @else
                                 <li><a class="dropdown-item" href="{{ route('login') }}">Login</a>
+                                </li>
+                                <li><a class="dropdown-item" href="{{ route('register') }}">Register</a>
                                 </li>
                             @endif
                         </ul>

@@ -63,10 +63,6 @@
                                         </a>
                                         <div tabindex="-1" role="menu" aria-hidden="true"
                                             class="dropdown-menu dropdown-menu-right">
-                                            <button type="button" tabindex="0" class="dropdown-item">User
-                                                Account</button>
-                                            <button type="button" tabindex="0"
-                                                class="dropdown-item">Settings</button>
                                             <a href="{{ route('adminlogout') }}" class="dropdown-item">Logout</a>
 
                                         </div>
@@ -74,10 +70,7 @@
                                 </div>
                                 <div class="widget-content-left  ml-3 header-user-info">
                                     <div class="widget-heading">
-                                        Alina Mclourd
-                                    </div>
-                                    <div class="widget-subheading">
-                                        VP People Manager
+                                        {{ auth()->guard('admin')->user()->name }}
                                     </div>
                                 </div>
                             </div>
