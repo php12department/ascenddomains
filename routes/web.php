@@ -3,6 +3,11 @@
 use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DomainController;
+use App\Http\Controllers\NewsletterController;
+use App\Http\Controllers\Admin\NewsletterController as  AdminNewsletterController;
+
+
+
 
 
 /*
@@ -27,9 +32,11 @@ Route::prefix('admin')->group(function () {
         Route::get('logout', [AdminController::class, 'logout'])->name('adminlogout');
         Route::get('dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
         Route::get('/domains', [DomainController::class, 'index'])->name('admin.domains');
-
+        Route::get('/newsletter', [AdminNewsletterController::class, 'index'])->name('admin.newsletter.index');
     });
 });
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::post('/subscribe', [NewsletterController::class, 'subscribe'])->name('subscribe');
+

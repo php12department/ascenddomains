@@ -21,4 +21,14 @@
             </li>
         </ul>
     </div>
+    <div class="app-sidebar__inner">
+        <ul class="vertical-nav-menu">
+            <li class="app-sidebar__heading">NEWSLETTER SUBSCRIBE</li>
+            <li>
+                <a href="{{ route('admin.newsletter.index') }}" class="mm-active">
+                    <i class="fa fa-bell" aria-hidden="true"></i>SUBSCRIBE
+                </a>
+            </li>
+        </ul>
+    </div>
 </div>

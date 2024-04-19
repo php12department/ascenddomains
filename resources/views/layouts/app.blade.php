@@ -92,20 +92,51 @@
     </nav>
 </header>
 <!-- header end -->
+
+@if (session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+@endif
+
+@if (session('error'))
+    <div class="alert alert-danger">
+        {{ session('error') }}
+    </div>
+@endif
+
+@if (session('warning'))
+    <div class="alert alert-warning">
+        {{ session('warning') }}
+    </div>
+@endif
+
+@if (session('info'))
+    <div class="alert alert-info">
+        {{ session('info') }}
+    </div>
+@endif
+
 @yield('content');
-<!-- Newsletter section start -->
+
 <section class="Newsletter-section">
     <div class="container">
-        <form class="newsletter-form" action="">
+        <form class="newsletter-form" action="{{ route('subscribe') }}" method="POST">
+            @csrf
             <h2>NEWSLETTER SUBSCRIBE</h2>
-            <p>Subscribe to our newsletter and keep up with news, promotions, sales and discounts!</p>
+            <p>Subscribe to our newsletter and keep up with news, promotions, sales, and discounts!</p>
             <div class="form-group position-relative">
-                <input type="text" placeholder="Email Address" class="form-control" />
-                <button type="button" class="btn btn-primary">Subscribe</button>
+                <input type="email" name="email" placeholder="Email Address" class="form-control" required />
+                <button type="submit" class="btn btn-primary">Subscribe</button>
             </div>
+            <!-- Display validation errors -->
+            @error('email')
+                <span class="text-danger">{{ $message }}</span>
+            @enderror
         </form>
     </div>
 </section>
+
 <!-- Newsletter section end -->
 
 <!-- footer section start -->
