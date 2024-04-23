@@ -4,7 +4,10 @@ use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DomainController;
 use App\Http\Controllers\NewsletterController;
-use App\Http\Controllers\Admin\NewsletterController as  AdminNewsletterController;
+use App\Http\Controllers\Admin\NewsletterController as AdminNewsletterController;
+use App\Http\Controllers\Admin\FaqController as AdminFaqController;
+use App\Http\Controllers\FaqController;
+
 
 
 
@@ -33,10 +36,20 @@ Route::prefix('admin')->group(function () {
         Route::get('dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
         Route::get('/domains', [DomainController::class, 'index'])->name('admin.domains');
         Route::get('/newsletter', [AdminNewsletterController::class, 'index'])->name('admin.newsletter.index');
+        Route::get('/faqs', [AdminFaqController::class, 'index'])->name('admin.faq.index');
+        Route::get('/faqs/create', [AdminFaqController::class, 'create'])->name('admin.faqs.create');
+        Route::post('/faqs', [AdminFaqController::class, 'store'])->name('admin.faqs.store');
+        Route::get('/admin/faqs/{faq}/edit', [AdminFaqController::class, 'edit'])->name('admin.faqs.edit');
+        Route::put('/admin/faqs/{faq}', [AdminFaqController::class, 'update'])->name('admin.faqs.update');
+        Route::delete('/admin/faqs/{faq}', [AdminFaqController::class, 'destroy'])->name('admin.faqs.destroy');
+
+
     });
 });
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::post('/subscribe', [NewsletterController::class, 'subscribe'])->name('subscribe');
+Route::get('/faqs', [FaqController::class, 'index'])->name('faqs.index');
+Route::get('/faqs/{id}', [FaqController::class, 'show'])->name('faqs.show');
 

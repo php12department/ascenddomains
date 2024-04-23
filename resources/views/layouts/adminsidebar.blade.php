@@ -31,4 +31,15 @@
             </li>
         </ul>
     </div>
+    <div class="app-sidebar__inner">
+        <ul class="vertical-nav-menu">
+            <li class="app-sidebar__heading">Faq</li>
+            <li>
+                <a href="{{ route('admin.faq.index') }}" class="mm-active">
+                    <i class="fas fa-question-circle"></i>
+                    Faq
+                </a>
+            </li>
+        </ul>
+    </div>
 </div>

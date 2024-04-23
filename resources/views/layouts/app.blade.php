@@ -186,7 +186,7 @@
                         <li><a href="#">BLOG</a></li>
                         <li><a href="#">Contact Us</a></li>
                         <li><a href="#">Site Map</a></li>
-                        <li><a href="#">Faq</a></li>
+                        <li><a href="{{ route('faqs.index') }}">Faq</a></li>
                     </ul>
                 </div>
             </div>
