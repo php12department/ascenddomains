@@ -34,7 +34,13 @@ Route::prefix('admin')->group(function () {
     Route::group(['middleware' => 'admin'], function () {
         Route::get('logout', [AdminController::class, 'logout'])->name('adminlogout');
         Route::get('dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
+        // Domains
         Route::get('/domains', [DomainController::class, 'index'])->name('admin.domains');
+        Route::get('/admin/domains/{id}', [DomainController::class, 'show'])->name('admin.domains.show');
+        Route::get('/admin/domains/{id}/edit', [DomainController::class, 'edit'])->name('admin.domains.edit');
+        Route::put('/admin/domains/{id}', [DomainController::class, 'update'])->name('admin.domains.update');
+        //Domain types
+        Route::get('/admin/domain-types', [DomainController::class, 'domainTypes'])->name('admin.domain-types.index');
         Route::get('/newsletter', [AdminNewsletterController::class, 'index'])->name('admin.newsletter.index');
         Route::get('/faqs', [AdminFaqController::class, 'index'])->name('admin.faq.index');
         Route::get('/faqs/create', [AdminFaqController::class, 'create'])->name('admin.faqs.create');

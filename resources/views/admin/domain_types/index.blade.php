@@ -14,44 +14,33 @@
                     <div class="page-title-icon">
                         <i class="fa fa-globe"></i>
                     </div>
-                    <div>Domains</div>
+                    <div>Domain Types</div>
                 </div>
             </div>
         </div>
-        @if (session('status'))
-            <div class="alert alert-success">
-                {{ session('status') }}
-            </div>
-        @endif
-        <table id="domains-table" class="table table-striped" style="width:100%">
-            <thead>
-                <tr>
-                    <th>No</th>
-                    <th>Name</th>
-                    <th>Type</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach ($domains as $domain)
+        <div class="app-sidebar__inner">
+            <table id="domains-table" class="table table-striped" style="width:100%">
+                <thead>
                     <tr>
-                        <td>{{ $domain->id }}</td>
-                        <td>{{ $domain->name }}</td>
-                        <td>{{ optional($domain->type)->name ?? '' }}</td>
-                        <td>
-                            <a href="{{ route('admin.domains.show', $domain->id) }}" class="btn btn-primary">Show</a>
-                            <a href="{{ route('admin.domains.edit', $domain->id) }}" class="btn btn-info">Edit</a>
-
-                        </td>
+                        <th>No</th>
+                        <th>Name</th>
                     </tr>
-                @endforeach
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                    @foreach ($domainTypes as $index => $domainType)
+                        <tr>
+                            <td>{{ $index + 1 }}</td>
+                            <td>{{ $domainType->name }}</td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
     </div>
 @endsection
+
 @section('scripts')
     <script>
-        // Domain listing in admin panel
         $(document).ready(function() {
             $('#domains-table').DataTable({
                 paging: true,

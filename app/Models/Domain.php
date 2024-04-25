@@ -23,4 +23,9 @@ class Domain extends Model
         'min_offer',
         'floor_usd',
     ];
+
+    public function type()
+    {
+        return $this->belongsTo(DomainType::class, 'type_id');
+    }
 }

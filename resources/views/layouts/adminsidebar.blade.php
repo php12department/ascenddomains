@@ -10,7 +10,7 @@
             </li>
         </ul>
     </div>
-    <div class="app-sidebar__inner">
+    {{-- <div class="app-sidebar__inner">
         <ul class="vertical-nav-menu">
             <li class="app-sidebar__heading">Domains</li>
             <li>
@@ -18,6 +18,30 @@
                     <i class="fa fa-globe"></i>
                     Domains
                 </a>
+            </li>
+        </ul>
+    </div> --}}
+    <div class="app-sidebar__inner">
+        <ul class="vertical-nav-menu">
+            <li class="app-sidebar__heading">Domains</li>
+            <li>
+                <a href="{{ route('admin.domains') }}" class="mm-active">
+                    <i class="fa fa-globe"></i>
+                    Domains<i class="fa fa-angle-down" style="margin-left: 60px;"></i> 
+                </a>
+                <ul> <!-- Add sub-menu for domain types -->
+                    <li>
+                        <a href="{{ route('admin.domains') }}" class="mm-active"> <!-- Adjust route as needed -->
+                            Domains
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('admin.domain-types.index') }}" class="mm-active"> <!-- Adjust route as needed -->
+                            Domain Types
+                        </a>
+                    </li>
+                    <!-- Add more sub-menu items for other domain types -->
+                </ul>
             </li>
         </ul>
     </div>
