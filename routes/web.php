@@ -1,13 +1,14 @@
 <?php
 
-use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
+
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\DomainController;
 use App\Http\Controllers\NewsletterController;
+use App\Http\Controllers\Admin\StaticPageController;
 use App\Http\Controllers\Admin\NewsletterController as AdminNewsletterController;
 use App\Http\Controllers\Admin\FaqController as AdminFaqController;
 use App\Http\Controllers\FaqController;
-
 
 
 
@@ -41,6 +42,10 @@ Route::prefix('admin')->group(function () {
         Route::put('/admin/domains/{id}', [DomainController::class, 'update'])->name('admin.domains.update');
         //Domain types
         Route::get('/admin/domain-types', [DomainController::class, 'domainTypes'])->name('admin.domain-types.index');
+        // Static Page
+        Route::get('/admin/staticpage', [StaticPageController::class, 'index'])->name('admin.StaticPage.index');
+        Route::get('/admin/staticpage/{id}/edit', [StaticPageController::class, 'edit'])->name('admin.StaticPage.edit');
+        Route::put('/admin/staticpage/{id}', [StaticPageController::class, 'update'])->name('admin.StaticPage.update');
         Route::get('/newsletter', [AdminNewsletterController::class, 'index'])->name('admin.newsletter.index');
         Route::get('/faqs', [AdminFaqController::class, 'index'])->name('admin.faq.index');
         Route::get('/faqs/create', [AdminFaqController::class, 'create'])->name('admin.faqs.create');

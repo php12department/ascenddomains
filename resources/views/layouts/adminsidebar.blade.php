@@ -66,4 +66,15 @@
             </li>
         </ul>
     </div>
+    <div class="app-sidebar__inner">
+        <ul class="vertical-nav-menu">
+            <li class="app-sidebar__heading">Static Page</li>
+            <li>
+                <a href="{{ route('admin.StaticPage.index') }}" class="mm-active">
+                    <i class="fas fa-question-circle"></i>
+                    Static Page
+                </a>
+            </li>
+        </ul>
+    </div>
 </div>
