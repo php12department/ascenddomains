@@ -1,7 +1,7 @@
 <div class="scrollbar-sidebar">
     <div class="app-sidebar__inner">
         <ul class="vertical-nav-menu">
-            <li class="app-sidebar__heading">Dashboards</li>
+            <li class="app-sidebar__heading">Dashboard</li>
             <li>
                 <a href="{{ route('dashboard') }}" class="mm-active">
                     <i class="fas fa-tachometer-alt"></i>
@@ -10,24 +10,13 @@
             </li>
         </ul>
     </div>
-    {{-- <div class="app-sidebar__inner">
-        <ul class="vertical-nav-menu">
-            <li class="app-sidebar__heading">Domains</li>
-            <li>
-                <a href="{{ route('admin.domains') }}" class="mm-active">
-                    <i class="fa fa-globe"></i>
-                    Domains
-                </a>
-            </li>
-        </ul>
-    </div> --}}
     <div class="app-sidebar__inner">
         <ul class="vertical-nav-menu">
-            <li class="app-sidebar__heading">Domains</li>
+            {{-- <li class="app-sidebar__heading">Domains</li> --}}
             <li>
                 <a href="{{ route('admin.domains') }}" class="mm-active">
                     <i class="fa fa-globe"></i>
-                    Domains<i class="fa fa-angle-down" style="margin-left: 60px;"></i> 
+                    Domains<i class="fa fa-angle-down" style="margin-left: 60px;"></i>
                 </a>
                 <ul> <!-- Add sub-menu for domain types -->
                     <li>
@@ -36,7 +25,8 @@
                         </a>
                     </li>
                     <li>
-                        <a href="{{ route('admin.domain-types.index') }}" class="mm-active"> <!-- Adjust route as needed -->
+                        <a href="{{ route('admin.domain-types.index') }}" class="mm-active">
+                            <!-- Adjust route as needed -->
                             Domain Types
                         </a>
                     </li>
@@ -47,7 +37,7 @@
     </div>
     <div class="app-sidebar__inner">
         <ul class="vertical-nav-menu">
-            <li class="app-sidebar__heading">NEWSLETTER SUBSCRIBE</li>
+            {{-- <li class="app-sidebar__heading">NEWSLETTER SUBSCRIBE</li> --}}
             <li>
                 <a href="{{ route('admin.newsletter.index') }}" class="mm-active">
                     <i class="fa fa-bell" aria-hidden="true"></i>SUBSCRIBE
@@ -57,7 +47,7 @@
     </div>
     <div class="app-sidebar__inner">
         <ul class="vertical-nav-menu">
-            <li class="app-sidebar__heading">Faq</li>
+            {{-- <li class="app-sidebar__heading">Faq</li> --}}
             <li>
                 <a href="{{ route('admin.faq.index') }}" class="mm-active">
                     <i class="fas fa-question-circle"></i>
@@ -68,11 +58,22 @@
     </div>
     <div class="app-sidebar__inner">
         <ul class="vertical-nav-menu">
-            <li class="app-sidebar__heading">Static Page</li>
+            {{-- <li class="app-sidebar__heading">Static Page</li> --}}
             <li>
                 <a href="{{ route('admin.StaticPage.index') }}" class="mm-active">
                     <i class="fas fa-question-circle"></i>
                     Static Page
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="app-sidebar__inner">
+        <ul class="vertical-nav-menu">
+            {{-- <li class="app-sidebar__heading">Blogs</li> --}}
+            <li>
+                <a href="{{ route('admin.blogs.index') }}" class="mm-active">
+                    <i class="fas fa-question-circle"></i>
+                    Blog
                 </a>
             </li>
         </ul>

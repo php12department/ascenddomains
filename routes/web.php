@@ -2,13 +2,14 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\FaqController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\DomainController;
+use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\Admin\StaticPageController;
-use App\Http\Controllers\Admin\NewsletterController as AdminNewsletterController;
 use App\Http\Controllers\Admin\FaqController as AdminFaqController;
-use App\Http\Controllers\FaqController;
+use App\Http\Controllers\Admin\NewsletterController as AdminNewsletterController;
 
 
 
@@ -53,6 +54,13 @@ Route::prefix('admin')->group(function () {
         Route::get('/admin/faqs/{faq}/edit', [AdminFaqController::class, 'edit'])->name('admin.faqs.edit');
         Route::put('/admin/faqs/{faq}', [AdminFaqController::class, 'update'])->name('admin.faqs.update');
         Route::delete('/admin/faqs/{faq}', [AdminFaqController::class, 'destroy'])->name('admin.faqs.destroy');
+        // Blog
+        Route::get('blogs', [BlogController::class, 'index'])->name('admin.blogs.index');
+        Route::get('blogs/create', [BlogController::class, 'create'])->name('admin.blogs.create');
+        Route::post('blogs', [BlogController::class, 'store'])->name('admin.blogs.store');
+        Route::get('blogs/{blog}/edit', [BlogController::class, 'edit'])->name('admin.blogs.edit');
+        Route::put('blogs/{blog}', [BlogController::class, 'update'])->name('admin.blogs.update');
+        Route::delete('blogs/{blog}', [BlogController::class, 'destroy'])->name('admin.blogs.destroy');
 
 
     });
