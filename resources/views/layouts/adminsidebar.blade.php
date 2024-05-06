@@ -18,19 +18,22 @@
                     <i class="fa fa-globe"></i>
                     Domains<i class="fa fa-angle-down" style="margin-left: 60px;"></i>
                 </a>
-                <ul> <!-- Add sub-menu for domain types -->
+                <ul> 
                     <li>
-                        <a href="{{ route('admin.domains') }}" class="mm-active"> <!-- Adjust route as needed -->
+                        <a href="{{ route('admin.domains') }}" class="mm-active"> 
                             Domains
                         </a>
                     </li>
                     <li>
                         <a href="{{ route('admin.domain-types.index') }}" class="mm-active">
-                            <!-- Adjust route as needed -->
                             Domain Types
                         </a>
                     </li>
-                    <!-- Add more sub-menu items for other domain types -->
+                    <li>
+                        <a href="{{ route('admin.domaincategories.index') }}" class="mm-active">
+                            Domain categories
+                        </a>
+                    </li>
                 </ul>
             </li>
         </ul>

@@ -8,6 +8,7 @@ use App\Http\Controllers\DomainController;
 use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\Admin\StaticPageController;
+use App\Http\Controllers\Admin\DomainCategoryController;
 use App\Http\Controllers\Admin\FaqController as AdminFaqController;
 use App\Http\Controllers\Admin\NewsletterController as AdminNewsletterController;
 
@@ -43,6 +44,14 @@ Route::prefix('admin')->group(function () {
         Route::put('/admin/domains/{id}', [DomainController::class, 'update'])->name('admin.domains.update');
         //Domain types
         Route::get('/admin/domain-types', [DomainController::class, 'domainTypes'])->name('admin.domain-types.index');
+        // Domain Category 
+        Route::get('domaincategory', [DomainCategoryController::class, 'index'])->name('admin.domaincategories.index');
+        Route::get('domaincategory/create', [DomainCategoryController::class, 'create'])->name('admin.domaincategories.create');
+        Route::post('domaincategory', [DomainCategoryController::class, 'store'])->name('admin.domaincategories.store');
+        Route::get('domaincategory/{domaincategory}/edit', [DomainCategoryController::class, 'edit'])->name('admin.domaincategories.edit');
+        Route::put('domaincategory/{domaincategory}', [DomainCategoryController::class, 'update'])->name('admin.domaincategories.update');
+        Route::delete('domaincategory/{domaincategory}', [DomainCategoryController::class, 'destroy'])->name('admin.domaincategories.destroy');
+
         // Static Page
         Route::get('/admin/staticpage', [StaticPageController::class, 'index'])->name('admin.StaticPage.index');
         Route::get('/admin/staticpage/{id}/edit', [StaticPageController::class, 'edit'])->name('admin.StaticPage.edit');
