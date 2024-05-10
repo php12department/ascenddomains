@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AccountController;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\FaqController;
@@ -71,13 +72,21 @@ Route::prefix('admin')->group(function () {
         Route::put('blogs/{blog}', [BlogController::class, 'update'])->name('admin.blogs.update');
         Route::delete('blogs/{blog}', [BlogController::class, 'destroy'])->name('admin.blogs.destroy');
 
+        Route::get('my-account', [AccountController::class, 'show'])->name('admin.my-account.show');
+        Route::put('my-account/update/{id}', [AccountController::class, 'update'])->name('admin.my-account.update');
+
+
 
     });
 });
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/myaccount', [App\Http\Controllers\HomeController::class, 'myaccount'])->name('myaccount');
+Route::post('/update-account-info', [App\Http\Controllers\HomeController::class, 'updateaccountinfo'])->name('update-account-info');
 Route::post('/subscribe', [NewsletterController::class, 'subscribe'])->name('subscribe');
 Route::get('/faqs', [FaqController::class, 'index'])->name('faqs.index');
 Route::get('/faqs/{id}', [FaqController::class, 'show'])->name('faqs.show');
+Route::get('/blog', [App\Http\Controllers\HomeController::class, 'blog'])->name('blog');
+
 

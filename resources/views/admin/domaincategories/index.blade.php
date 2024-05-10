@@ -41,6 +41,11 @@
                         <td>{{ $domaincategories->name }}</td>
                         <td>
                             <a href="{{ route('admin.domaincategories.edit', $domaincategories->id) }}" class="btn btn-info">Edit</a>
+                            <form action="{{ route('admin.domaincategories.destroy', $domaincategories->id) }}" method="POST" style="display: inline;">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn btn-danger" onclick="return confirm('Are you sure you want to delete this category?')">Delete</button>
+                            </form>
                         </td>
                     </tr>
                 @endforeach

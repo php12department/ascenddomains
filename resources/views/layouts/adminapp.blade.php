@@ -63,8 +63,8 @@
                                         </a>
                                         <div tabindex="-1" role="menu" aria-hidden="true"
                                             class="dropdown-menu dropdown-menu-right">
+                                            <a href="{{ route('admin.my-account.show') }}" class="dropdown-item">My Account</a>
                                             <a href="{{ route('adminlogout') }}" class="dropdown-item">Logout</a>
-
                                         </div>
                                     </div>
                                 </div>

@@ -11,7 +11,7 @@ class DomainCategoryController extends Controller
 {
     public function index()
     {
-        $categories = DomainCategory::all();
+        $categories = DomainCategory::where('is_delete', 0)->get();
         return view('admin.domaincategories.index', compact('categories'));
     }
 
@@ -51,9 +51,9 @@ class DomainCategoryController extends Controller
             ->with('success', 'Category updated successfully.');
     }
 
-    public function destroy(DomainCategory $category)
+    public function destroy(DomainCategory $domaincategory)
     {
-        $category->delete();
+        $domaincategory->update(['is_delete' => 1]);
         return redirect()->route('admin.domaincategories.index')
             ->with('success', 'Category deleted successfully.');
     }

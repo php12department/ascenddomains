@@ -37,11 +37,13 @@
                             aria-expanded="false">
                             Categories
                         </a>
+                        @php  $categories = App\Models\DomainCategory::where('is_delete',0)->latest()->get();  @endphp
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Lorem Ispum</a></li>
-                            <li><a class="dropdown-item" href="#">Lorem Ispum</a></li>
-                            <li><a class="dropdown-item" href="#">Lorem Ispum</a></li>
-                            <li><a class="dropdown-item" href="#">Lorem Ispum</a></li>
+                            @if($categories->count() > 0)
+                            @foreach($categories as $category)
+                            <li><a class="dropdown-item" href="#">{{ $category->name }}</a></li>
+                            @endforeach
+                            @endif
                         </ul>
                     </li>
                     <li class="nav-item">
@@ -64,9 +66,11 @@
                         </a>
                         <ul class="dropdown-menu">
                             @if (Auth::check())
-                                <li><a class="dropdown-item" href="{{ route('logout') }}"
-                                        onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+                                <li><a class="dropdown-item" href="{{ route('myaccount') }}">My account</a>
                                 </li>
+                                <li><a class="dropdown-item" href="{{ route('logout') }}"
+                                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+                            </li>
                             @else
                                 <li><a class="dropdown-item" href="{{ route('login') }}">Login</a>
                                 </li>
@@ -183,7 +187,7 @@
                 <div class="useful-link ms-lg-5 ms-0">
                     <h4>CUSTOMER SERVICES</h4>
                     <ul class="list-inline">
-                        <li><a href="#">BLOG</a></li>
+                        <li><a href="{{ route('blog') }}">BLOG</a></li>
                         <li><a href="#">Contact Us</a></li>
                         <li><a href="#">Site Map</a></li>
                         <li><a href="{{ route('faqs.index') }}">Faq</a></li>

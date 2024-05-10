@@ -11,5 +11,5 @@ class DomainCategory extends Model
 
     protected $table = 'domain_categories';
 
-    protected $fillable = ['id','name'];
+    protected $fillable = ['id','name','is_delete'];
 }
