@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Blog;
+use App\Models\BlogDetail;
 
 class HomeController extends Controller
 {
@@ -74,6 +76,20 @@ class HomeController extends Controller
 
     public function blog()
     {
-        return view('blog');
+        $data['blogs'] = Blog::where('is_hide',0)->where('is_delete',0)->paginate(6);
+        return view('blog')->with($data);
+    }
+
+    public function blogDetail(Request $request,$id){
+        $data['blog'] = Blog::where('id',$id)->where('is_hide',0)->where('is_delete',0)->first();
+        $data['recent_blogs'] = Blog::where('is_hide',0)->where('is_delete',0)->latest()->take(2)->get();
+        return view('blog_detail')->with($data);
+    }
+
+    public function blogSearch(Request $request){
+        $blog = Blog::where('blog_name','LIKE','%'.$request->search.'%')->first();
+        $recent_blogs = Blog::where('is_hide',0)->where('is_delete',0)->latest()->take(2)->get();
+        return view('blog_detail',compact('blog','recent_blogs'));
+      
     }
 }

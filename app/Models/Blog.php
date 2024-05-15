@@ -17,4 +17,8 @@ class Blog extends Model
         'blog_img',
         'is_delete',
     ];
+
+    public function getBlogDetail(){
+        return $this->belongsTo(BlogDetail::class,'id','blog_id');
+    }
 }

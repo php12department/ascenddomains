@@ -88,5 +88,7 @@ Route::post('/subscribe', [NewsletterController::class, 'subscribe'])->name('sub
 Route::get('/faqs', [FaqController::class, 'index'])->name('faqs.index');
 Route::get('/faqs/{id}', [FaqController::class, 'show'])->name('faqs.show');
 Route::get('/blog', [App\Http\Controllers\HomeController::class, 'blog'])->name('blog');
+Route::get('/blog-detail/{id}', [App\Http\Controllers\HomeController::class, 'blogDetail'])->name('blogDetail');
+Route::get('/search-blog', [App\Http\Controllers\HomeController::class, 'blogSearch'])->name('blog.search');
 
 
