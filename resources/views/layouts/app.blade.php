@@ -10,6 +10,8 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css">
+
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
     <!-- Styles -->
@@ -20,7 +22,7 @@
     <nav class="navbar navbar-expand-lg bg-white">
         <div class="container">
             <a class="navbar-brand" href="{{ route('index') }}"><img src="{{ asset('assets/img/logo/logo.png') }}"
-                    alt="logo" /></a>
+                    alt="{{ config('app.name') }}" /></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -149,16 +151,16 @@
         <div class="row">
             <div class="col-lg-3 col-md-6">
                 <div class="logo-sec mb-5">
-                    <a href="#">
-                        <img src="{{ asset('assets/img/logo/logo.png') }}" alt="logo" />
+                    <a href="{{ route('index') }}">
+                        <img src="{{ asset('assets/img/logo/logo.png') }}" alt="{{ config('app.name') }}" />
                     </a>
                 </div>
                 <ul class="social-list list-inline">
-                    <li class="list-inline-item"><a href="#"><i class="fa-brands fa-vimeo-v"></i></a></li>
-                    <li class="list-inline-item"><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
-                    <li class="list-inline-item"><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
-                    <li class="list-inline-item"><a href="#"><i class="fa-brands fa-flickr"></i></a></li>
-                    <li class="list-inline-item"><a href="#"><i class="fa-brands fa-dribbble"></i></a></li>
+                    <li class="list-inline-item"><a href="#" title="Vimeo" aria-label="Vimeo"><i class="fa-brands fa-vimeo-v"></i></a></li>
+                    <li class="list-inline-item"><a href="#" title="Facebook" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a></li>
+                    <li class="list-inline-item"><a href="#" title="Twitter" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a></li>
+                    <li class="list-inline-item"><a href="#" title="Flickr" aria-label="Flickr"><i class="fa-brands fa-flickr"></i></a></li>
+                    <li class="list-inline-item"><a href="#" title="Dribbble" aria-label="Dribbble"><i class="fa-brands fa-dribbble"></i></a></li>
                 </ul>
             </div>
             <div class="col-lg-3 col-md-6">
@@ -188,7 +190,7 @@
                     <h4>CUSTOMER SERVICES</h4>
                     <ul class="list-inline">
                         <li><a href="{{ route('blog') }}">BLOG</a></li>
-                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="{{ route('contactus') }}">Contact Us</a></li>
                         <li><a href="#">Site Map</a></li>
                         <li><a href="{{ route('faqs.index') }}">Faq</a></li>
                     </ul>
@@ -196,8 +198,8 @@
             </div>
         </div>
         <div class="copyright">
-            <p>Copyright © 2015 All rights reserved | Designed and Crafted by<a class="ms-1"
-                    href="#">AscendDomains</a> <a href="#">Privacy Policy</a> <a href="#">
+            <p>Copyright © {{ date('Y') }} All rights reserved | Designed and Crafted by<a class="ms-1"
+                    href="{{ route('index') }}">{{ config('app.name') }}</a> <a href="#">Privacy Policy</a> <a href="#">
                     Terms</a></p>
         </div>
     </div>

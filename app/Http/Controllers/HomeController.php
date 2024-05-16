@@ -4,8 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use App\Models\Blog;
-use App\Models\BlogDetail;
+
 
 class HomeController extends Controller
 {
@@ -32,12 +31,11 @@ class HomeController extends Controller
     public function myaccount()
     {
         return view('myaccount');
-
     }
 
     public function updateaccountinfo(Request $request)
     {
-       
+
         $request->validate([
             'user_name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users,email,' . Auth::id(),
@@ -58,7 +56,7 @@ class HomeController extends Controller
         $user->email = $request->email;
         $user->save();
 
-        
+
         $user->billingInformation->update([
             'first_name' => $request->billing_first_name,
             'last_name' => $request->billing_last_name,
@@ -71,25 +69,6 @@ class HomeController extends Controller
             'phone_number' => $request->phone_number,
         ]);
         return redirect()->route('myaccount')->with('success', 'Account information updated successfully.');
-    
-    }
 
-    public function blog()
-    {
-        $data['blogs'] = Blog::where('is_hide',0)->where('is_delete',0)->paginate(6);
-        return view('blog')->with($data);
-    }
-
-    public function blogDetail(Request $request,$id){
-        $data['blog'] = Blog::where('id',$id)->where('is_hide',0)->where('is_delete',0)->first();
-        $data['recent_blogs'] = Blog::where('is_hide',0)->where('is_delete',0)->latest()->take(2)->get();
-        return view('blog_detail')->with($data);
-    }
-
-    public function blogSearch(Request $request){
-        $blog = Blog::where('blog_name','LIKE','%'.$request->search.'%')->first();
-        $recent_blogs = Blog::where('is_hide',0)->where('is_delete',0)->latest()->take(2)->get();
-        return view('blog_detail',compact('blog','recent_blogs'));
-      
     }
 }

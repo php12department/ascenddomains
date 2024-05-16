@@ -81,4 +81,15 @@
             </li>
         </ul>
     </div>
+    <div class="app-sidebar__inner">
+        <ul class="vertical-nav-menu">
+            {{-- <li class="app-sidebar__heading">Blogs</li> --}}
+            <li>
+                <a href="{{ route('admin.contacts.index') }}" class="mm-active">
+                    <i class="fa fa-envelope"></i>
+                    Contact
+                </a>
+            </li>
+        </ul>
+    </div>
 </div>

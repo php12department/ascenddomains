@@ -5,7 +5,7 @@
 <!-- Page header section start -->
 <section class="Page-header">
     <div class="hero-image">
-        <img src="{{ asset('assets/img/home/login-header.png')}}" alt="" />
+        <img src="{{ asset('assets/img/home/login-header.png')}}" alt="{{config('app.name') }}" />
     </div>
     <div class="ps-breadcrumb">
         <h2>Login</h2>
@@ -81,7 +81,6 @@
                               <path d="M19.0097 1C18.8433 3.66667 20.8072 9 26 9C20.8072 9 18.8433 14.3333 19.0097 17" stroke="white" stroke-width="1.5" stroke-linecap="round"></path>
                               </svg></button>
                           </div>
-                         
                       </form>
                   </div>
              </div>

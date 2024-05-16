@@ -1,13 +1,13 @@
 <?php
 
-use App\Http\Controllers\Admin\AccountController;
 use Illuminate\Support\Facades\Route;
-
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\DomainController;
 use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\NewsletterController;
+use App\Http\Controllers\Admin\AccountController;
+use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Admin\StaticPageController;
 use App\Http\Controllers\Admin\DomainCategoryController;
 use App\Http\Controllers\Admin\FaqController as AdminFaqController;
@@ -45,7 +45,7 @@ Route::prefix('admin')->group(function () {
         Route::put('/admin/domains/{id}', [DomainController::class, 'update'])->name('admin.domains.update');
         //Domain types
         Route::get('/admin/domain-types', [DomainController::class, 'domainTypes'])->name('admin.domain-types.index');
-        // Domain Category 
+        // Domain Category
         Route::get('domaincategory', [DomainCategoryController::class, 'index'])->name('admin.domaincategories.index');
         Route::get('domaincategory/create', [DomainCategoryController::class, 'create'])->name('admin.domaincategories.create');
         Route::post('domaincategory', [DomainCategoryController::class, 'store'])->name('admin.domaincategories.store');
@@ -75,6 +75,7 @@ Route::prefix('admin')->group(function () {
         Route::get('my-account', [AccountController::class, 'show'])->name('admin.my-account.show');
         Route::put('my-account/update/{id}', [AccountController::class, 'update'])->name('admin.my-account.update');
 
+        Route::get('/contact', [ContactController::class, 'index'])->name('admin.contacts.index');
 
 
     });
@@ -87,8 +88,11 @@ Route::post('/update-account-info', [App\Http\Controllers\HomeController::class,
 Route::post('/subscribe', [NewsletterController::class, 'subscribe'])->name('subscribe');
 Route::get('/faqs', [FaqController::class, 'index'])->name('faqs.index');
 Route::get('/faqs/{id}', [FaqController::class, 'show'])->name('faqs.show');
-Route::get('/blog', [App\Http\Controllers\HomeController::class, 'blog'])->name('blog');
-Route::get('/blog-detail/{id}', [App\Http\Controllers\HomeController::class, 'blogDetail'])->name('blogDetail');
-Route::get('/search-blog', [App\Http\Controllers\HomeController::class, 'blogSearch'])->name('blog.search');
+Route::get('/blog', [App\Http\Controllers\FrontController::class, 'blog'])->name('blog');
+Route::get('/blog-detail/{id}', [App\Http\Controllers\FrontController::class, 'blogDetail'])->name('blogDetail');
+Route::get('/search-blog', [App\Http\Controllers\FrontController::class, 'blogSearch'])->name('blog.search');
+Route::get('/contactus', [App\Http\Controllers\FrontController::class, 'contactus'])->name('contactus');
+Route::post('/submitContactForm', [App\Http\Controllers\FrontController::class, 'submitContactForm'])->name('submitContactForm');
+
 
 

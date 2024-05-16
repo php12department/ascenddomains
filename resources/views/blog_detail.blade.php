@@ -4,7 +4,7 @@
 <!-- Page header section start -->
 <section class="Page-header">
     <div class="hero-image">
-        <img src="{{ asset('assets/img/home/blog-detail-header.png')}}" alt="" />
+        <img src="{{ asset('assets/img/home/blog-detail-header.png')}}" alt="{{config('app.name') }}" />
     </div>
     <div class="ps-breadcrumb">
         <h2>Blog</h2>
@@ -20,7 +20,7 @@
 
 <!-- Blog section start -->
 <section class="Blog-details pt-120 pb-120">
-    <div class="container"> 
+    <div class="container">
       @if(!empty($blog))
         <div class="section-header blog-header">
             <h2 class="pb-3">{{ $blog->blog_name}}</h2>
@@ -28,7 +28,7 @@
                 <li class="list-inline-item">
                     <img src="{{ asset('assets/img/home/b1.png') }}" /> {{ $blog->owner_name }}
                 </li>
-                <li class="list-inline-item"> 
+                <li class="list-inline-item">
                     <img src="{{  asset('assets/img/home/b2.png')}}" /> {{ date('F d, Y', strtotime($blog->created_at)) }}
                 </li>
                 <li class="list-inline-item">
@@ -43,7 +43,7 @@
                         @if (file_exists(public_path("assets/img/blog/". $blog->blog_img)))
                           <img src="{{ asset("assets/img/blog/". $blog->blog_img) }}" class="rounded-4" >
                         @else
-                          <img src="#" alt="" class="rounded-4"/>
+                          <img src="#" alt="{{config('app.name') }}" class="rounded-4"/>
                         @endif
                       </div>
                       <div class="blog-text">
@@ -57,27 +57,27 @@
                          <input type="text" placeholder="Search" name="search" id="searchTerm" class="form-control" />
                          <button type="submit" value="" class="btn search-btn"><i class="fa-regular fa-magnifying-glass"></i></button>
                     </form>
-                </div>  
+                </div>
                 <div class="Blog-details-card-sec">
                     <div class="sec-title">
                         <h4>Recent Post</h4>
                     </div>
-                    <div class="Recent-post"> 
+                    <div class="Recent-post">
                         @if($recent_blogs->count() > 0)
                         @foreach($recent_blogs as  $recent_blog)
-                            
+
                         <div class="row mb-3">
                             <div class="col-lg-5 col-md-6">
                                 <a href="{{ route('blogDetail',['id'=>$recent_blog->id]) }}">
                                     @if (file_exists(public_path("assets/img/blog/". $recent_blog->blog_img)))
                                     <img src="{{ asset("assets/img/blog/". $recent_blog->blog_img) }}" />
                                     @else
-                                    <a href="#"><img src="#" alt="" /></a>
+                                    <a href="#"><img src="#" alt="{{config('app.name') }}" /></a>
                                     @endif
                                 </a>
                             </div>
                             <div class="col-lg-7 col-md-6">
-                            <h4>  
+                            <h4>
                               <a href="{{ route('blogDetail',['id'=>$recent_blog->id]) }}" class="text-dark">
                                {{$recent_blog->blog_name}}
                               </a>
@@ -93,7 +93,7 @@
                               </a>
                           </div>
                           <div class="col-lg-7 col-md-6">
-                          <h4>  
+                          <h4>
                             <a href="#" class="text-dark">
                               Nam venenatis tortor quis risus consectetur.
                             </a>
@@ -122,27 +122,27 @@
                         <input type="text" placeholder="Search" name="search" id="searchTerm" class="form-control" />
                         <button type="submit" value="" class="btn search-btn"><i class="fa-regular fa-magnifying-glass"></i></button>
                     </form>
-                </div>  
+                </div>
                 <div class="Blog-details-card-sec">
                     <div class="sec-title">
                         <h4>Recent Post</h4>
                     </div>
-                    <div class="Recent-post"> 
+                    <div class="Recent-post">
                         @if($recent_blogs->count() > 0)
                         @foreach($recent_blogs as  $recent_blog)
-                            
+
                         <div class="row mb-3">
                             <div class="col-lg-5 col-md-6">
                                 <a href="{{ route('blogDetail',['id'=>$recent_blog->id]) }}">
                                     @if (file_exists(public_path("assets/img/blog/". $recent_blog->blog_img)))
                                     <img src="{{ asset("assets/img/blog/". $recent_blog->blog_img) }}" />
                                     @else
-                                    <a href="#"><img src="#" alt="" /></a>
+                                    <a href="#"><img src="#" alt="{{config('app.name') }}" /></a>
                                     @endif
                                 </a>
                             </div>
                             <div class="col-lg-7 col-md-6">
-                            <h4>  
+                            <h4>
                               <a href="{{ route('blogDetail',['id'=>$recent_blog->id]) }}" class="text-dark">
                               {{$recent_blog->blog_name}}
                               </a>

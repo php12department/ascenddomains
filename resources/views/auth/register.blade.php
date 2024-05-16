@@ -3,7 +3,7 @@
 @section('content')
 <section class="Page-header">
     <div class="hero-image">
-        <img src="{{ asset('assets/img/home/signup-header.png')}}" alt="" />   
+        <img src="{{ asset('assets/img/home/signup-header.png')}}" alt="{{config('app.name') }}" />
     </div>
     <div class="ps-breadcrumb">
         <h2>Create an Account</h2>

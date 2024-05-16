@@ -59,7 +59,7 @@
                                         <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                                             class="p-0 btn">
                                             <img width="42" class="rounded-circle"
-                                                src="{{ asset('assets/img/admin/adminprofile.jpg') }}" alt="">
+                                                src="{{ asset('assets/img/admin/adminprofile.jpg') }}" alt="{{config('app.name') }}">
                                         </a>
                                         <div tabindex="-1" role="menu" aria-hidden="true"
                                             class="dropdown-menu dropdown-menu-right">
@@ -125,7 +125,7 @@
         </div>
     </div>
     @include('layouts.adminjs')
-    
+
 </body>
 
 </html>

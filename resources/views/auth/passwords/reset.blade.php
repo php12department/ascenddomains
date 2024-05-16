@@ -65,7 +65,7 @@
 
 <section class="Page-header">
     <div class="hero-image">
-        <img src="{{ asset('assets/img/home/login-header.png')}}" alt="" />
+        <img src="{{ asset('assets/img/home/login-header.png')}}" alt="{{config('app.name') }}" />
     </div>
     <div class="ps-breadcrumb">
         <h2>Reset Password</h2>
@@ -88,7 +88,7 @@
                        </div>
                       <form class="login-form"  method="POST"  action="{{ route('password.update') }}">
                       @csrf
-                            <input type="hidden" name="token" value="{{ $token }}">    
+                            <input type="hidden" name="token" value="{{ $token }}">
                                                    <div class="form-group mb-4">
                                <label class="form-label" for="email" >{{ __('Email Address') }}</label>
                                <input type="email" placeholder="Please enter email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus/>
@@ -119,7 +119,7 @@
                               <path d="M19.0097 1C18.8433 3.66667 20.8072 9 26 9C20.8072 9 18.8433 14.3333 19.0097 17" stroke="white" stroke-width="1.5" stroke-linecap="round"></path>
                               </svg></button>
                           </div>
-                         
+
                       </form>
                   </div>
              </div>

@@ -3,7 +3,7 @@
 @section('content')
 <section class="Page-header">
     <div class="hero-image">
-        <img src="{{ asset('assets/img/home/account-header.png') }}" alt="" />
+        <img src="{{ asset('assets/img/home/account-header.png') }}" alt="{{config('app.name') }}" />
     </div>
     <div class="ps-breadcrumb">
         <h2>My Account</h2>
@@ -19,7 +19,7 @@
     <div class="container">
         <div class="profile-user">
             <div class="user-image">
-                <img src="{{ asset('assets/img/home/user.png') }}" alt="" />
+                <img src="{{ asset('assets/img/home/user.png') }}" alt="{{config('app.name') }}" />
             </div>
             <div class="user-text">
                 <h2>{{ Auth::check() ? Auth::user()->name : '' }}</h2>
@@ -41,7 +41,6 @@
                         <input type="text" placeholder="LoremIpsim@gmail.com" class="form-control" name="email" value="{{ Auth::check() ? Auth::user()->email : '' }}"/>
                     </div>
                   </div>
-            
             </div>
 
             <h2 class="sec-title">Billing Information</h2>

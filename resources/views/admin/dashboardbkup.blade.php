@@ -88,7 +88,8 @@
                                         <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                                             class="p-0 btn">
                                             <img width="42" class="rounded-circle" src="assets/images/avatars/1.jpg"
-                                                alt="">
+                                                alt="
+{{config('app.name') }}">
                                             <i class="fa fa-angle-down ml-2 opacity-8"></i>
                                         </a>
                                         <div tabindex="-1" role="menu" aria-hidden="true"
@@ -888,7 +889,8 @@
                                                                     <div class="widget-content-left mr-3">
                                                                         <img width="42" class="rounded-circle"
                                                                             src="assets/images/avatars/9.jpg"
-                                                                            alt="">
+                                                                            alt="
+{{config('app.name') }}">
                                                                     </div>
                                                                     <div class="widget-content-left">
                                                                         <div class="widget-heading">Ella-Rose Henry
@@ -914,7 +916,8 @@
                                                                     <div class="widget-content-left mr-3">
                                                                         <img width="42" class="rounded-circle"
                                                                             src="assets/images/avatars/5.jpg"
-                                                                            alt="">
+                                                                            alt="
+{{config('app.name') }}">
                                                                     </div>
                                                                     <div class="widget-content-left">
                                                                         <div class="widget-heading">Ruben Tillman</div>
@@ -939,7 +942,8 @@
                                                                     <div class="widget-content-left mr-3">
                                                                         <img width="42" class="rounded-circle"
                                                                             src="assets/images/avatars/4.jpg"
-                                                                            alt="">
+                                                                            alt="
+{{config('app.name') }}">
                                                                     </div>
                                                                     <div class="widget-content-left">
                                                                         <div class="widget-heading">Vinnie Wagstaff
@@ -965,7 +969,8 @@
                                                                     <div class="widget-content-left mr-3">
                                                                         <img width="42" class="rounded-circle"
                                                                             src="assets/images/avatars/3.jpg"
-                                                                            alt="">
+                                                                            alt="
+{{config('app.name') }}">
                                                                     </div>
                                                                     <div class="widget-content-left">
                                                                         <div class="widget-heading">Ella-Rose Henry
@@ -991,7 +996,8 @@
                                                                     <div class="widget-content-left mr-3">
                                                                         <img width="42" class="rounded-circle"
                                                                             src="assets/images/avatars/2.jpg"
-                                                                            alt="">
+                                                                            alt="
+{{config('app.name') }}">
                                                                     </div>
                                                                     <div class="widget-content-left">
                                                                         <div class="widget-heading">Ruben Tillman</div>
@@ -1264,7 +1270,8 @@
                                                                 <div class="widget-content-left">
                                                                     <img width="40" class="rounded-circle"
                                                                         src="assets/images/avatars/4.jpg"
-                                                                        alt="">
+                                                                        alt="
+{{config('app.name') }}">
                                                                 </div>
                                                             </div>
                                                             <div class="widget-content-left flex2">
@@ -1293,7 +1300,8 @@
                                                                 <div class="widget-content-left">
                                                                     <img width="40" class="rounded-circle"
                                                                         src="assets/images/avatars/3.jpg"
-                                                                        alt="">
+                                                                        alt="
+{{config('app.name') }}">
                                                                 </div>
                                                             </div>
                                                             <div class="widget-content-left flex2">
@@ -1322,7 +1330,8 @@
                                                                 <div class="widget-content-left">
                                                                     <img width="40" class="rounded-circle"
                                                                         src="assets/images/avatars/2.jpg"
-                                                                        alt="">
+                                                                        alt="
+{{config('app.name') }}">
                                                                 </div>
                                                             </div>
                                                             <div class="widget-content-left flex2">
@@ -1351,7 +1360,8 @@
                                                                 <div class="widget-content-left">
                                                                     <img width="40" class="rounded-circle"
                                                                         src="assets/images/avatars/1.jpg"
-                                                                        alt="">
+                                                                        alt="
+{{config('app.name') }}">
                                                                 </div>
                                                             </div>
                                                             <div class="widget-content-left flex2">
