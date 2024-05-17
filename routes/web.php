@@ -93,6 +93,9 @@ Route::get('/blog-detail/{id}', [App\Http\Controllers\FrontController::class, 'b
 Route::get('/search-blog', [App\Http\Controllers\FrontController::class, 'blogSearch'])->name('blog.search');
 Route::get('/contactus', [App\Http\Controllers\FrontController::class, 'contactus'])->name('contactus');
 Route::post('/submitContactForm', [App\Http\Controllers\FrontController::class, 'submitContactForm'])->name('submitContactForm');
+Route::get('privacypolicy', [App\Http\Controllers\FrontController::class , 'privacypolicy'])->name('privacypolicy');
+Route::get('terms', [App\Http\Controllers\FrontController::class , 'terms'])->name('terms');
+
 
 
 

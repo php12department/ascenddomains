@@ -199,7 +199,7 @@
         </div>
         <div class="copyright">
             <p>Copyright © {{ date('Y') }} All rights reserved | Designed and Crafted by<a class="ms-1"
-                    href="{{ route('index') }}">{{ config('app.name') }}</a> <a href="#">Privacy Policy</a> <a href="#">
+                    href="{{ route('index') }}">{{ config('app.name') }}</a> <a href="{{ route('privacypolicy') }}">Privacy Policy</a> <a href="{{ route('terms') }}">
                     Terms</a></p>
         </div>
     </div>

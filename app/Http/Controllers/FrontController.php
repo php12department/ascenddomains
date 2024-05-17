@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Blog;
 use App\Models\Contact;
 use App\Models\BlogDetail;
+use App\Models\StaticPage;
 use Illuminate\Http\Request;
 
 class FrontController extends Controller
@@ -46,5 +47,16 @@ class FrontController extends Controller
         ]);
         $contact = Contact::create($validatedData);
         return redirect()->back()->with('success', 'Your message has been submitted successfully!');
+    }
+
+    public function privacypolicy()
+    {
+        $static_pages = StaticPage::where('id', 1)->first();
+        return view('privacy', ['static_pages' => $static_pages]);
+    }
+    public function terms()
+    {
+        $static_pages = StaticPage::where('id', 2)->first();
+        return view('terms', ['terms' => $static_pages]);
     }
 }
