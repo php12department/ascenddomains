@@ -451,7 +451,7 @@
                             <h4>DOMAIN AUCTION</h4>
                             <p>We are giving you the opportunity to get the exact value of your domain at this wonderful
                                 platform with the idea of domain auction.</p>
-                            <a href="#" class="btn">Read More</a>
+                            <a href="{{ route('domainauctions') }}" class="btn">Read More</a>
                         </div>
                     </div>
                 </div>
@@ -557,96 +557,16 @@
                 <h2>Domains By Categories</h2>
             </div>
             <div class="row">
+                @php  $categories = App\Models\DomainCategory::where('is_delete',0)->latest()->get();  @endphp
+                @if($categories->count() > 0)
+                @foreach($categories as $category)
                 <div class="col-lg-4 col-md-6">
                     <div class="list-categories">
-                        <a href="#"><img src="{{ asset('assets/img/home/color-arrow.svg') }}"> ART</a>
+                        <a href="#"><img src="{{ asset('assets/img/home/color-arrow.svg') }}">{{  $category->name }}</a>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="list-categories">
-                        <a href="#"><img src="{{ asset('assets/img/home/color-arrow.svg') }}"> ASSOCIATIONS &
-                            NONPROFIT</a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="list-categories">
-                        <a href="#"><img src="{{ asset('assets/img/home/color-arrow.svg') }}"> AUDIO & VIDEO</a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="list-categories">
-                        <a href="#"><img src="{{ asset('assets/img/home/color-arrow.svg') }}"> BUSINESS</a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="list-categories">
-                        <a href="#"><img src="{{ asset('assets/img/home/color-arrow.svg') }}"> LEGAL</a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="list-categories">
-                        <a href="#"><img src="{{ asset('assets/img/home/color-arrow.svg') }}"> AUTOMOTIVE</a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="list-categories">
-                        <a href="#"><img src="{{ asset('assets/img/home/color-arrow.svg') }}"> COMPUTERS &
-                            TECHNOLOGY</a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="list-categories">
-                        <a href="#"><img src="{{ asset('assets/img/home/color-arrow.svg') }}"> EDUCATION</a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="list-categories">
-                        <a href="#"><img src="{{ asset('assets/img/home/color-arrow.svg') }}"> ENTERTAINMENT</a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="list-categories">
-                        <a href="#"><img src="{{ asset('assets/img/home/color-arrow.svg') }}"> FASHIONS &
-                            APPAREL</a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="list-categories">
-                        <a href="#"><img src="{{ asset('assets/img/home/color-arrow.svg') }}"> FOOD &
-                            RESTAURANTS</a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="list-categories">
-                        <a href="#"><img src="{{ asset('assets/img/home/color-arrow.svg') }}"> FUN & HUMOR</a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="list-categories">
-                        <a href="#"><img src="{{ asset('assets/img/home/color-arrow.svg') }}"> HOBBIES</a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="list-categories">
-                        <a href="#"><img src="{{ asset('assets/img/home/color-arrow.svg') }}"> IMPORT & EXPORT</a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="list-categories">
-                        <a href="#"><img src="{{ asset('assets/img/home/color-arrow.svg') }}"> OTHERS</a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="list-categories">
-                        <a href="#"><img src="{{ asset('assets/img/home/color-arrow.svg') }}"> BABIES & TEENS</a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="list-categories">
-                        <a href="#"><img src="{{ asset('assets/img/home/color-arrow.svg') }}"> SPORTS</a>
-                    </div>
-                </div>
-
+                @endforeach
+                @endif
             </div>
         </div>
     </section>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Blog;
+use App\Models\Domain;
 use App\Models\Contact;
 use App\Models\BlogDetail;
 use App\Models\StaticPage;
@@ -58,5 +59,15 @@ class FrontController extends Controller
     {
         $static_pages = StaticPage::where('id', 2)->first();
         return view('terms', ['terms' => $static_pages]);
+    }
+    public function domainauctions()
+    {
+       // $domains = Domain::with('type')->get();
+        $domains = Domain::take(20)->get();
+       // $domains = Domain::with('type')->get();
+
+
+        return view('domain_auctions', ['domains' => $domains]);
+
     }
 }

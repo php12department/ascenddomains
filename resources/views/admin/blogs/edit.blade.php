@@ -59,7 +59,7 @@
                     </div>
                     <div class="form-group">
                         <label for="content">Content:</label>
-                        <textarea class="form-control @error('content') is-invalid @enderror" id="content" name="content">{{ old('content', $blogDetail->content) }}</textarea>
+                        <textarea class="form-control @error('content') is-invalid @enderror" id="editor" name="content">{{ old('content', $blogDetail->content) }}</textarea>
                         @error('content')
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
@@ -77,17 +77,11 @@
 @endsection
 
 @section('scripts')
-    <script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script>
+    <script src="https://cdn.ckeditor.com/4.16.2/standard/ckeditor.js"></script>
     <script>
-        ClassicEditor
-            .create(document.querySelector('#content'))
-            .then(editor => {
-                editor.model.document.on('change:data', () => {
-                    document.getElementById('content').value = editor.getData();
-                });
-            })
-            .catch(error => {
-                console.error(error);
-            });
+        CKEDITOR.replace('editor', {
+            filebrowserUploadUrl: "{{ route('ckeditor.blogupload', ['_token' => csrf_token()]) }}",
+            filebrowserUploadMethod: 'form'
+        });
     </script>
 @endsection

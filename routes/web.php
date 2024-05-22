@@ -12,6 +12,8 @@ use App\Http\Controllers\Admin\StaticPageController;
 use App\Http\Controllers\Admin\DomainCategoryController;
 use App\Http\Controllers\Admin\FaqController as AdminFaqController;
 use App\Http\Controllers\Admin\NewsletterController as AdminNewsletterController;
+use App\Http\Controllers\ImageUploadController;
+
 
 
 
@@ -95,6 +97,10 @@ Route::get('/contactus', [App\Http\Controllers\FrontController::class, 'contactu
 Route::post('/submitContactForm', [App\Http\Controllers\FrontController::class, 'submitContactForm'])->name('submitContactForm');
 Route::get('privacypolicy', [App\Http\Controllers\FrontController::class , 'privacypolicy'])->name('privacypolicy');
 Route::get('terms', [App\Http\Controllers\FrontController::class , 'terms'])->name('terms');
+Route::post('ckeditor/staticpageupload', [ImageUploadController::class, 'StaticPageupload'])->name('ckeditor.staticpageupload');
+Route::post('ckeditor/blogupload', [ImageUploadController::class, 'blogupload'])->name('ckeditor.blogupload');
+Route::get('domainauctions', [App\Http\Controllers\FrontController::class , 'domainauctions'])->name('domainauctions');
+
 
 
 

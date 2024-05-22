@@ -27,8 +27,7 @@
         </div>
         <div class="form-group">
             <label for="content">Content:</label>
-            <div id="editor"></div>
-            <input type="hidden" id="content" name="content" value="{{ $staticPage->content }}">
+            <textarea name="content" id="editor">{{ $staticPage->content }}</textarea>
         </div>
         <button type="submit" class="btn btn-primary">Update</button>
     </form>
@@ -36,18 +35,11 @@
 @endsection
 
 @section('scripts')
-<script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script>
+<script src="https://cdn.ckeditor.com/4.16.2/standard/ckeditor.js"></script>
 <script>
-    ClassicEditor
-        .create(document.querySelector('#editor'))
-        .then(editor => {
-            editor.setData(`{!! $staticPage->content !!}`);
-            editor.model.document.on('change:data', () => {
-                document.getElementById('content').value = editor.getData();
-            });
-        })
-        .catch(error => {
-            console.error(error);
-        });
+    CKEDITOR.replace('editor', {
+        filebrowserUploadUrl: "{{ route('ckeditor.staticpageupload', ['_token' => csrf_token()]) }}",
+        filebrowserUploadMethod: 'form'
+    });
 </script>
 @endsection
