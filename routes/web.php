@@ -5,14 +5,16 @@ use App\Http\Controllers\FaqController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\DomainController;
 use App\Http\Controllers\Admin\BlogController;
+use App\Http\Controllers\Admin\NewsController;
 use App\Http\Controllers\NewsletterController;
+use App\Http\Controllers\ImageUploadController;
 use App\Http\Controllers\Admin\AccountController;
 use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Admin\StaticPageController;
 use App\Http\Controllers\Admin\DomainCategoryController;
 use App\Http\Controllers\Admin\FaqController as AdminFaqController;
 use App\Http\Controllers\Admin\NewsletterController as AdminNewsletterController;
-use App\Http\Controllers\ImageUploadController;
+
 
 
 
@@ -78,6 +80,13 @@ Route::prefix('admin')->group(function () {
         Route::put('my-account/update/{id}', [AccountController::class, 'update'])->name('admin.my-account.update');
 
         Route::get('/contact', [ContactController::class, 'index'])->name('admin.contacts.index');
+        Route::get('/news', [NewsController::class, 'index'])->name('admin.news.index');
+        Route::get('/news/create', [NewsController::class, 'create'])->name('admin.news.create');
+        Route::post('/news', [NewsController::class, 'store'])->name('admin.news.store');
+        Route::get('/news/{id}/edit', [NewsController::class, 'edit'])->name('admin.news.edit');
+        Route::put('/news/{id}', [NewsController::class, 'update'])->name('admin.news.update');
+        Route::delete('/news/{id}', [NewsController::class, 'destroy'])->name('admin.news.destroy');
+
 
 
     });
@@ -95,14 +104,14 @@ Route::get('/blog-detail/{id}', [App\Http\Controllers\FrontController::class, 'b
 Route::get('/search-blog', [App\Http\Controllers\FrontController::class, 'blogSearch'])->name('blog.search');
 Route::get('/contactus', [App\Http\Controllers\FrontController::class, 'contactus'])->name('contactus');
 Route::post('/submitContactForm', [App\Http\Controllers\FrontController::class, 'submitContactForm'])->name('submitContactForm');
-Route::get('privacypolicy', [App\Http\Controllers\FrontController::class , 'privacypolicy'])->name('privacypolicy');
-Route::get('terms', [App\Http\Controllers\FrontController::class , 'terms'])->name('terms');
+Route::get('privacypolicy', [App\Http\Controllers\FrontController::class, 'privacypolicy'])->name('privacypolicy');
+Route::get('terms', [App\Http\Controllers\FrontController::class, 'terms'])->name('terms');
 Route::post('ckeditor/staticpageupload', [ImageUploadController::class, 'StaticPageupload'])->name('ckeditor.staticpageupload');
 Route::post('ckeditor/blogupload', [ImageUploadController::class, 'blogupload'])->name('ckeditor.blogupload');
-Route::get('domainauctions', [App\Http\Controllers\FrontController::class , 'domainauctions'])->name('domainauctions');
-Route::get('buydomain', [App\Http\Controllers\FrontController::class , 'buydomain'])->name('buydomain');
-Route::get('selldomain', [App\Http\Controllers\FrontController::class , 'selldomain'])->name('selldomain');
-
+Route::get('domainauctions', [App\Http\Controllers\FrontController::class, 'domainauctions'])->name('domainauctions');
+Route::get('buydomain', [App\Http\Controllers\FrontController::class, 'buydomain'])->name('buydomain');
+Route::get('selldomain', [App\Http\Controllers\FrontController::class, 'selldomain'])->name('selldomain');
+Route::post('ckeditor/newsupload', [ImageUploadController::class, 'newsupload'])->name('ckeditor.newsupload');
 
 
 
