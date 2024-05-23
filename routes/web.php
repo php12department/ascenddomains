@@ -100,6 +100,8 @@ Route::get('terms', [App\Http\Controllers\FrontController::class , 'terms'])->na
 Route::post('ckeditor/staticpageupload', [ImageUploadController::class, 'StaticPageupload'])->name('ckeditor.staticpageupload');
 Route::post('ckeditor/blogupload', [ImageUploadController::class, 'blogupload'])->name('ckeditor.blogupload');
 Route::get('domainauctions', [App\Http\Controllers\FrontController::class , 'domainauctions'])->name('domainauctions');
+Route::get('buydomain', [App\Http\Controllers\FrontController::class , 'buydomain'])->name('buydomain');
+Route::get('selldomain', [App\Http\Controllers\FrontController::class , 'selldomain'])->name('selldomain');
 
 
 

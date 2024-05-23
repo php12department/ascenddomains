@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Faq;
+use App\Models\Blog;
+use App\Models\User;
+
+use App\Models\Domain;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
-
-use App\Models\Domain;
-use App\Models\User;
 
 class AdminController extends Controller
 {
@@ -41,11 +43,14 @@ class AdminController extends Controller
     {
         $domainCount = Domain::count();
         $userCount = User::count();
-
+        $faqCount = Faq::count();
+        $blogCount = Blog::count();
         //return view('admin.dashboard');
         return view('admin.dashboard', [
             'domainCount' => $domainCount,
             'userCount' => $userCount,
+            'faqCount' => $faqCount,
+            'blogCount' => $blogCount,
         ]);
     }
 

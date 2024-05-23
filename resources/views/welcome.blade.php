@@ -464,7 +464,7 @@
                             <h4>SELL DOMAINS</h4>
                             <p>We are offering you the place to sell your domain with the best pricing you ever thought off
                                 at your doorstep.</p>
-                            <a href="#" class="btn">Read More</a>
+                            <a href="{{ route('selldomain') }}" class="btn">Read More</a>
                         </div>
                     </div>
                 </div>
@@ -477,7 +477,7 @@
                             <h4>BUY DOMAINS</h4>
                             <p>Buy Domain is always the best part to have it but you should know what to buy, where to buy
                                 and what is cost, so we help you.</p>
-                            <a href="#" class="btn">Read More</a>
+                            <a href="{{ route('buydomain') }}" class="btn">Read More</a>
                         </div>
                     </div>
                 </div>

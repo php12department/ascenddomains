@@ -1,5 +1,17 @@
 @extends('layouts.adminapp')
 @section('content')
+<style>
+    .bg-custom {
+            background-color: #333; /* Dark Gray Background */
+            color: #fff; /* White Text */
+        }
+        .widget-heading {
+            color: #ccc; /* Light Gray Heading Text */
+        }
+        .widget-numbers {
+            color: #fff; /* White Numbers Text */
+        }
+</style>
     <div class="app-main__inner">
         <div class="app-page-title">
             <div class="page-title-wrapper">
@@ -13,29 +25,55 @@
         </div>
         <div class="row">
             <div class="col-md-6 col-xl-4">
-                <div class="card mb-3 widget-content bg-midnight-bloom">
-                    <div class="widget-content-wrapper text-white">
+                <div class="card mb-3 widget-content bg-custom">
+                    <div class="widget-content-wrapper">
                         <div class="widget-content-left">
                             <div class="widget-heading">Total Domain</div>
                         </div>
                         <div class="widget-content-right">
-                            <div class="widget-numbers text-white"><span>{{ $domainCount }}</span></div>
+                            <div class="widget-numbers"><span>{{ $domainCount }}</span></div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-md-6 col-xl-4">
-                <div class="card mb-3 widget-content bg-arielle-smile">
-                    <div class="widget-content-wrapper text-white">
+                <div class="card mb-3 widget-content bg-custom">
+                    <div class="widget-content-wrapper">
                         <div class="widget-content-left">
                             <div class="widget-heading">Total Clients</div>
                         </div>
                         <div class="widget-content-right">
-                            <div class="widget-numbers text-white"><span>{{ $userCount }}</span></div>
+                            <div class="widget-numbers"><span>{{ $userCount }}</span></div>
                         </div>
                     </div>
                 </div>
             </div>
+            <div class="col-md-6 col-xl-4">
+                <div class="card mb-3 widget-content bg-custom">
+                    <div class="widget-content-wrapper">
+                        <div class="widget-content-left">
+                            <div class="widget-heading">Total FAQ</div>
+                        </div>
+                        <div class="widget-content-right">
+                            <div class="widget-numbers"><span>{{ $faqCount }}</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-xl-4">
+                <div class="card mb-3 widget-content bg-custom">
+                    <div class="widget-content-wrapper">
+                        <div class="widget-content-left">
+                            <div class="widget-heading">Total Blog</div>
+                        </div>
+                        <div class="widget-content-right">
+                            <div class="widget-numbers"><span>{{ $blogCount }}</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
             <div class="d-xl-none d-lg-block col-md-6 col-xl-4">
                 <div class="card mb-3 widget-content bg-premium-dark">
                     <div class="widget-content-wrapper text-white">

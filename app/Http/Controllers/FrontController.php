@@ -29,7 +29,6 @@ class FrontController extends Controller
         $blog = Blog::where('blog_name', 'LIKE', '%' . $request->search . '%')->first();
         $recent_blogs = Blog::where('is_hide', 0)->where('is_delete', 0)->latest()->take(2)->get();
         return view('blog_detail', compact('blog', 'recent_blogs'));
-
     }
 
     public function contactus()
@@ -62,12 +61,17 @@ class FrontController extends Controller
     }
     public function domainauctions()
     {
-       // $domains = Domain::with('type')->get();
-        $domains = Domain::take(20)->get();
-       // $domains = Domain::with('type')->get();
-
-
+       $domains = Domain::with('type')->get();
+      //  $domains = Domain::take(20)->get();
         return view('domain_auctions', ['domains' => $domains]);
+    }
 
+    public function buydomain()
+    {
+        return view('buy_domain');
+    }
+    public function selldomain()
+    {
+        return view('sell_domains');
     }
 }
