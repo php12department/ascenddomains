@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Blog;
+use App\Models\News;
 use App\Models\Domain;
 use App\Models\Contact;
 use App\Models\BlogDetail;
@@ -73,5 +74,15 @@ class FrontController extends Controller
     public function selldomain()
     {
         return view('sell_domains');
+    }
+
+    public function overview() //buying-guide
+    {
+        return view('overview');
+    }
+    public function recentnews(Request $request, $id) //recent news
+    {
+        $data['news'] = News::where('id', $id)->where('is_delete', 0)->first();
+        return view('recentnews')->with($data);
     }
 }

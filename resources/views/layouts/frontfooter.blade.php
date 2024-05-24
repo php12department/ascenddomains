@@ -45,21 +45,25 @@
                 <div class="useful-link">
                     <h4>BUY DOMAINS</h4>
                     <ul class="list-inline">
-                        <li><a href="#">BUY DOMAINS</a></li>
-                        <li><a href="#">OVERVIEW</a></li>
+                        <li><a href="{{ route('buydomain') }}">BUY DOMAINS</a></li>
+                        <li><a href="{{ route('overview') }}">OVERVIEW</a></li>
                         <li><a href="#">DOMAIN SEARCH</a></li>
-                        <li><a href="#">DOMAIN AUCTIONS</a></li>
+                        <li><a href="{{ route('domainauctions') }}">DOMAIN AUCTIONS</a></li>
                     </ul>
                 </div>
             </div>
+            @php $recentnews = App\Models\News::where('is_delete',0)->latest()->take(5)->get(); @endphp
             <div class="col-lg-3 col-md-6">
                 <div class="useful-link">
                     <h4>RECENT NEWS</h4>
                     <ul class="list-inline">
-                        <li><a href="#">CELEBRATION OF ORG DOMAINS</a></li>
-                        <li><a href="#">REGISTERED DOMAIN NAMES</a></li>
-                        <li><a href="#">PREMIUM .BEER WEB DOMAINS</a></li>
-                        <li><a href="#">PREMIUM DOMAINS FOR SALE</a></li>
+                        @if ($recentnews->count() > 0)
+                            @foreach ($recentnews as $recentnewsitem)
+                                <li><a href="{{ route('recentnews', $recentnewsitem->id) }}">{{ $recentnewsitem->title }}</a></li>
+                            @endforeach
+                        @else
+                        <li><a href="#">NO RECENT NEWS FOUND</a></li>
+                        @endif
                     </ul>
                 </div>
             </div>
@@ -69,7 +73,7 @@
                     <ul class="list-inline">
                         <li><a href="{{ route('blog') }}">BLOG</a></li>
                         <li><a href="{{ route('contactus') }}">Contact Us</a></li>
-                        <li><a href="#">Site Map</a></li>
+                        {{-- <li><a href="#">Site Map</a></li> --}}
                         <li><a href="{{ route('faqs.index') }}">Faq</a></li>
                     </ul>
                 </div>
