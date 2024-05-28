@@ -47,7 +47,7 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-    <a class="nav-link" aria-expanded="false" href="#">Premium Domain Names</a>
+    <a class="nav-link" aria-expanded="false" href="{{ route('premiumdomains') }}">Premium Domain Names</a>
     </li>
     <li class="nav-item">
         <a class="nav-link" aria-expanded="false" href="{{ route('selldomain') }}">Sell Domains</a>

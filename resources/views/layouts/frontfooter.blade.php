@@ -73,7 +73,7 @@
                     <ul class="list-inline">
                         <li><a href="{{ route('blog') }}">BLOG</a></li>
                         <li><a href="{{ route('contactus') }}">Contact Us</a></li>
-                        {{-- <li><a href="#">Site Map</a></li> --}}
+                        <li><a href="{{ route('aboutus') }}">About Us</a></li>
                         <li><a href="{{ route('faqs.index') }}">Faq</a></li>
                     </ul>
                 </div>

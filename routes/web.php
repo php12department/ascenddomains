@@ -114,6 +114,10 @@ Route::get('selldomain', [App\Http\Controllers\FrontController::class, 'selldoma
 Route::post('ckeditor/newsupload', [ImageUploadController::class, 'newsupload'])->name('ckeditor.newsupload');
 Route::get('overview', [App\Http\Controllers\FrontController::class, 'overview'])->name('overview');
 Route::get('recentnews/{id}/', [App\Http\Controllers\FrontController::class, 'recentnews'])->name('recentnews');
+Route::get('premiumdomains', [App\Http\Controllers\FrontController::class, 'premiumdomains'])->name('premiumdomains');
+
+Route::get('aboutus', [App\Http\Controllers\FrontController::class, 'aboutus'])->name('aboutus');
+
 
 
 

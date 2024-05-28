@@ -85,4 +85,13 @@ class FrontController extends Controller
         $data['news'] = News::where('id', $id)->where('is_delete', 0)->first();
         return view('recentnews')->with($data);
     }
+    public function premiumdomains()
+    {
+        return view('premium_domains_name');
+    }
+
+    public function aboutus() 
+    {
+        return view('aboutus');
+    }
 }
