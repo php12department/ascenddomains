@@ -11,6 +11,7 @@ use App\Http\Controllers\ImageUploadController;
 use App\Http\Controllers\Admin\AccountController;
 use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Admin\StaticPageController;
+use App\Http\Controllers\Admin\DomainMediaController;
 use App\Http\Controllers\Admin\DomainCategoryController;
 use App\Http\Controllers\Admin\FaqController as AdminFaqController;
 use App\Http\Controllers\Admin\NewsletterController as AdminNewsletterController;
@@ -86,8 +87,13 @@ Route::prefix('admin')->group(function () {
         Route::get('/news/{id}/edit', [NewsController::class, 'edit'])->name('admin.news.edit');
         Route::put('/news/{id}', [NewsController::class, 'update'])->name('admin.news.update');
         Route::delete('/news/{id}', [NewsController::class, 'destroy'])->name('admin.news.destroy');
-
-
+        Route::get('/domain-media', [DomainMediaController::class, 'index'])->name('admin.domainmedia');
+        Route::get('/domain-media/create', [DomainMediaController::class, 'create'])->name('admin.domainmedia.create');
+        Route::post('/domain-media', [DomainMediaController::class, 'store'])->name('admin.domainmedia.store');
+        Route::get('/domain-media/{id}/edit', [DomainMediaController::class, 'edit'])->name('admin.domainmedia.edit');
+        Route::put('/domain-media/{id}', [DomainMediaController::class, 'update'])->name('admin.domainmedia.update');
+        Route::delete('/domain-media/{id}', [DomainMediaController::class, 'destroy'])->name('admin.domainmedia.destroy');
+        Route::get('/admin/domainmedia/{id}', [DomainMediaController::class, 'show'])->name('admin.domainmedia.show');
 
     });
 });

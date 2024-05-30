@@ -28,4 +28,8 @@ class Domain extends Model
     {
         return $this->belongsTo(DomainType::class, 'type_id');
     }
+    public function domainMedia()
+    {
+        return $this->hasMany(DomainMedia::class);
+    }
 }

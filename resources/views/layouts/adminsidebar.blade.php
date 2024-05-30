@@ -25,6 +25,11 @@
                         </a>
                     </li>
                     <li>
+                        <a href="{{ route('admin.domainmedia') }}" class="mm-active">
+                            Domains Media
+                        </a>
+                    </li>
+                    <li>
                         <a href="{{ route('admin.domain-types.index') }}" class="mm-active">
                             Domain Types
                         </a>
