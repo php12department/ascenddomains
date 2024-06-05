@@ -33,9 +33,11 @@ use App\Http\Controllers\Admin\NewsletterController as AdminNewsletterController
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('index');
+// Route::get('/', function () {
+//     return view('welcome');
+// })->name('index');
+Route::get('/', [App\Http\Controllers\FrontController::class, 'index'])->name('index');
+
 
 Route::get('login-form', [AdminController::class, 'login_form'])->name('login.form')->middleware('redirect.admin.auth');
 Route::post('login-functionality', [AdminController::class, 'login_functionality'])->name('login.functionality');
@@ -121,8 +123,10 @@ Route::post('ckeditor/newsupload', [ImageUploadController::class, 'newsupload'])
 Route::get('overview', [App\Http\Controllers\FrontController::class, 'overview'])->name('overview');
 Route::get('recentnews/{id}/', [App\Http\Controllers\FrontController::class, 'recentnews'])->name('recentnews');
 Route::get('premiumdomains', [App\Http\Controllers\FrontController::class, 'premiumdomains'])->name('premiumdomains');
-
 Route::get('aboutus', [App\Http\Controllers\FrontController::class, 'aboutus'])->name('aboutus');
+Route::get('domain-detail/{id}', [App\Http\Controllers\FrontController::class, 'singledomain'])->name('singledomain');
+Route::get('domain-listing-type-wise/{type_id}', [App\Http\Controllers\FrontController::class, 'domainlist'])->name('domainlist');
+Route::get('domain-listing-category-wise/{category_id}', [App\Http\Controllers\FrontController::class, 'domainlistcateory'])->name('domainlistcateory');
 
 
 

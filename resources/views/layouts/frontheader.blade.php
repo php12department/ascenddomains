@@ -15,6 +15,8 @@
      <link rel="stylesheet" href="https://cdn.datatables.net/2.0.2/css/dataTables.bootstrap5.css">
      <!-- Custom Styles -->
      <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/style.css') }}" />
+     <!-- Include Select2 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
     <!-- Styles -->
@@ -38,11 +40,11 @@
                             aria-expanded="false">
                             Categories
                         </a>
-                        @php  $categories = App\Models\DomainCategory::where('is_delete',0)->latest()->get();  @endphp
+                        @php  $categories = App\Models\DomainCategory::where('is_delete',0)->whereHas('domains')->latest()->get();  @endphp
                         <ul class="dropdown-menu">
                             @if ($categories->count() > 0)
                                 @foreach ($categories as $category)
-                                    <li><a class="dropdown-item" href="#">{{ $category->name }}</a></li> @endforeach
+                                    <li><a class="dropdown-item" href="{{ route('domainlistcateory', $category->id) }}">{{ $category->name }}</a></li> @endforeach
                             @endif
                         </ul>
                     </li>

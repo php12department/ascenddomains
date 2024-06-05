@@ -8,6 +8,7 @@ use App\Models\Domain;
 use App\Models\Contact;
 use App\Models\BlogDetail;
 use App\Models\StaticPage;
+use App\Models\DomainMedia;
 use Illuminate\Http\Request;
 
 class FrontController extends Controller
@@ -62,8 +63,8 @@ class FrontController extends Controller
     }
     public function domainauctions()
     {
-       $domains = Domain::with('type')->get();
-      //  $domains = Domain::take(20)->get();
+        $domains = Domain::with('type')->get();
+        //  $domains = Domain::take(20)->get();
         return view('domain_auctions', ['domains' => $domains]);
     }
 
@@ -90,8 +91,78 @@ class FrontController extends Controller
         return view('premium_domains_name');
     }
 
-    public function aboutus() 
+    public function aboutus()
     {
         return view('aboutus');
+    }
+    public function index()
+    {
+        $premiumDomains = Domain::where('type_id', 4)
+            ->leftJoin('domain_media', 'domains.id', '=', 'domain_media.domain_id')
+            ->orderByRaw('domain_media.id IS NULL')
+            ->select('domains.*', 'domain_media.media_img as media_image')
+            ->take(10)
+            ->get();
+
+        $featuredDomains = Domain::where('type_id', 1)
+            ->leftJoin('domain_media', 'domains.id', '=', 'domain_media.domain_id')
+            ->orderByRaw('domain_media.id IS NULL')
+            ->select('domains.*', 'domain_media.media_img as media_image')
+            ->take(10)
+            ->get();
+
+        $topDomains = Domain::where('type_id', 3)
+            ->leftJoin('domain_media', 'domains.id', '=', 'domain_media.domain_id')
+            ->orderByRaw('domain_media.id IS NULL')
+            ->select('domains.*', 'domain_media.media_img as media_image')
+            ->take(10)
+            ->get();
+        $brandDomainslist = Domain::where('type_id', 2)
+            ->leftJoin('domain_media', 'domains.id', '=', 'domain_media.domain_id')
+            ->orderByRaw('domain_media.id IS NULL')
+            ->select('domains.*', 'domain_media.media_img as media_image')
+            ->take(5)
+            ->get();
+        $topDomainslist = Domain::where('type_id', 3)
+            ->leftJoin('domain_media', 'domains.id', '=', 'domain_media.domain_id')
+            ->orderByRaw('domain_media.id IS NULL')
+            ->select('domains.*', 'domain_media.media_img as media_image')
+            ->take(5)
+            ->get();
+        $featuredDomainslist = Domain::where('type_id', 1)
+            ->leftJoin('domain_media', 'domains.id', '=', 'domain_media.domain_id')
+            ->orderByRaw('domain_media.id IS NULL')
+            ->select('domains.*', 'domain_media.media_img as media_image')
+            ->take(5)
+            ->get();
+        $domainlist = Domain::all();
+
+        return view('welcome', compact('domainlist','premiumDomains', 'featuredDomains', 'topDomains','brandDomainslist','featuredDomainslist','topDomainslist'));
+    }
+
+    public function singledomain($id)
+    {
+        $domaindetails = Domain::with('category')->where('id', $id)->first();
+        return view('singledomain', compact('domaindetails'));
+    }
+    public function domainlist($type_id) //type wise
+    {
+        $Domains = Domain::where('type_id', $type_id)
+            ->leftJoin('domain_media', 'domains.id', '=', 'domain_media.domain_id')
+            ->orderByRaw('domain_media.id IS NULL')
+            ->select('domains.*', 'domain_media.media_img as media_image')
+            ->get();
+
+        return view('domainlistaspertype', compact('Domains'));
+    }
+    public function domainlistcateory($category_id)
+    {
+        $Domains = Domain::where('category_id', $category_id)
+            ->leftJoin('domain_media', 'domains.id', '=', 'domain_media.domain_id')
+            ->orderByRaw('domain_media.id IS NULL')
+            ->select('domains.*', 'domain_media.media_img as media_image')
+            ->get();
+
+        return view('domainlistaspercategory', compact('Domains'));
     }
 }

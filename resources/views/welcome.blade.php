@@ -1,18 +1,47 @@
 @extends('layouts.app')
 
 @section('content')
+    <style>
+        .select2-container--default .select2-selection--single {
+            height: 50px;
+            border-radius: 50px;
+            border: 1px solid #ced4da;
+        }
+
+        .select2-container--default .select2-selection--single .select2-selection__rendered {
+            line-height: 50px;
+        }
+
+        .select2-container--default .select2-selection--single .select2-selection__arrow {
+            height: 38px;
+        }
+
+        .select2-dropdown {
+            border-radius: 8px;
+        }
+
+        .select2-results__option {
+            border-radius: 8px;
+        }
+    </style>
     <section class="Banner-section">
         <div class="hero-image">
             <img src="{{ asset('assets/img/home/hero_img.png') }}" alt="{{ config('app.name') }}" />
         </div>
         <div class="banner-caption">
-            <form class="" accept="">
+            {{-- <form class="" accept=""> --}}
                 <h2>Choose best domains for<br> your business</h2>
                 <div class="form-group position-relative">
-                    <input type="text" placeholder="Search Domain" class="form-control" />
-                    <button type="button" class="btn btn-primary">Search</button>
+                    <select class="form-control select2" id="searchdomain" name="searchdomain">
+                        <option value="">Search Domain</option>
+                        @foreach ($domainlist as $d)
+                            <option value="{{ $d->id }}">{{ $d->name }}</option>
+                        @endforeach
+                    </select>
+                    {{-- <input type="text" placeholder="Search Domain" class="form-control" /> --}}
+                    <button type="button" class="btn btn-primary" id="searchbutton">Search</button>
                 </div>
-            </form>
+            {{-- </form> --}}
         </div>
         <div class="Scrolldown">
             <a href="#DomainsId">
@@ -43,387 +72,80 @@
                 <div class="tab-pane fade show active" id="premium-tab-pane" role="tabpanel" aria-labelledby="premium-tab"
                     tabindex="0">
                     <div class="row">
-                        <div class="col-lg-3 col-md-4 col-sm-6 col-6">
-                            <div class="domain-card">
-                                <div class="domain-image">
-                                    <img src="{{ asset('assets/img/domain/1.png') }}" alt="{{ config('app.name') }}" />
-                                    <p>t49.org</p>
-                                </div>
-                                <div class="buy-btn mt-3">
-                                    <a href="#" class="btn btn-primary">
-                                        Buy Now
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-sm-6 col-6">
-                            <div class="domain-card">
-                                <div class="domain-image">
-                                    <img src="{{ asset('assets/img/domain/2.png') }}" alt="{{ config('app.name') }}" />
-                                    <p>t49.org</p>
-                                </div>
-                                <div class="buy-btn mt-3">
-                                    <a href="#" class="btn btn-primary">
-                                        howtotec.com
-                                    </a>
+                        @foreach ($premiumDomains as $domain)
+                            <div class="col-lg-3 col-md-4 col-sm-6 col-6">
+                                <div class="domain-card">
+                                    <div class="domain-image">
+                                        @if ($domain->media_image)
+                                            <img src="{{ asset('assets/img/domains/' . $domain->media_image) }}"
+                                                alt="{{ config('app.name') }}" />
+                                        @else
+                                            <img src="{{ asset('assets/img/domain/defaultdomain.png') }}"
+                                                alt="{{ config('app.name') }}" />
+                                        @endif
+                                        <p>{{ $domain->name }}</p>
+                                    </div>
+                                    <div class="buy-btn mt-3">
+                                        <a href="{{ route('singledomain', $domain->id) }}" class="btn btn-primary">Buy
+                                            Now</a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-sm-6 col-6">
-                            <div class="domain-card">
-                                <div class="domain-image">
-                                    <img src="{{ asset('assets/img/domain/3.png') }}" alt="{{ config('app.name') }}" />
-                                    <p>znd.in</p>
-                                </div>
-                                <div class="buy-btn mt-3">
-                                    <a href="#" class="btn btn-primary">
-                                        Buy Now
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-sm-6 col-6">
-                            <div class="domain-card">
-                                <div class="domain-image">
-                                    <img src="{{ asset('assets/img/domain/4.png') }}" alt="{{ config('app.name') }}" />
-                                    <p>prepaidwireless.in</p>
-                                </div>
-                                <div class="buy-btn mt-3">
-                                    <a href="#" class="btn btn-primary">
-                                        Buy Now
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-sm-6 col-6">
-                            <div class="domain-card">
-                                <div class="domain-image">
-                                    <img src="{{ asset('assets/img/domain/5.png') }}" alt="{{ config('app.name') }}" />
-                                    <p>satphones.in</p>
-                                </div>
-                                <div class="buy-btn mt-3">
-                                    <a href="#" class="btn btn-primary">
-                                        Buy Now
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-sm-6 col-6">
-                            <div class="domain-card">
-                                <div class="domain-image">
-                                    <img src="{{ asset('assets/img/domain/6.png') }}" alt="{{ config('app.name') }}" />
-                                    <p>mqc.in</p>
-                                </div>
-                                <div class="buy-btn mt-3">
-                                    <a href="#" class="btn btn-primary">
-                                        Buy Now
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-sm-6 col-6">
-                            <div class="domain-card">
-                                <div class="domain-image">
-                                    <img src="{{ asset('assets/img/domain/7.png') }}" alt="{{ config('app.name') }}" />
-                                    <p>beth.in</p>
-                                </div>
-                                <div class="buy-btn mt-3">
-                                    <a href="#" class="btn btn-primary">
-                                        Buy Now
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-sm-6 col-6">
-                            <div class="domain-card">
-                                <div class="domain-image">
-                                    <img src="{{ asset('assets/img/domain/8.png') }}" alt="{{ config('app.name') }}" />
-                                    <p>pdf.in</p>
-                                </div>
-                                <div class="buy-btn mt-3">
-                                    <a href="#" class="btn btn-primary">
-                                        Buy Now
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-sm-6 col-6">
-                            <div class="domain-card">
-                                <div class="domain-image">
-                                    <img src="{{ asset('assets/img/domain/9.png') }}" alt="{{ config('app.name') }}" />
-                                    <p>mpa.co.in</p>
-                                </div>
-                                <div class="buy-btn mt-3">
-                                    <a href="#" class="btn btn-primary">
-                                        Buy Now
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-sm-6 col-6">
-                            <div class="domain-card">
-                                <div class="domain-image">
-                                    <img src="{{ asset('assets/img/domain/10.png') }}" alt="{{ config('app.name') }}" />
-                                    <p>options.co.in</p>
-                                </div>
-                                <div class="buy-btn mt-3">
-                                    <a href="#" class="btn btn-primary">
-                                        Buy Now
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-sm-6 col-6">
-                            <div class="domain-card">
-                                <div class="domain-image">
-                                    <img src="{{ asset('assets/img/domain/11.png') }}" alt="{{ config('app.name') }}" />
-                                    <p>visioncare.in</p>
-                                </div>
-                                <div class="buy-btn mt-3">
-                                    <a href="#" class="btn btn-primary">
-                                        Buy Now
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-sm-6 col-6">
-                            <div class="domain-card">
-                                <div class="domain-image">
-                                    <img src="{{ asset('assets/img/domain/12.png') }}" alt="{{ config('app.name') }}" />
-                                    <p>g626.com</p>
-                                </div>
-                                <div class="buy-btn mt-3">
-                                    <a href="#" class="btn btn-primary">
-                                        Buy Now
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-sm-6 col-6">
-                            <div class="domain-card">
-                                <div class="domain-image">
-                                    <img src="{{ asset('assets/img/domain/13.png') }}" alt="{{ config('app.name') }}" />
-                                    <p>nom.in</p>
-                                </div>
-                                <div class="buy-btn mt-3">
-                                    <a href="#" class="btn btn-primary">
-                                        Buy Now
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-sm-6 col-6">
-                            <div class="domain-card">
-                                <div class="domain-image">
-                                    <img src="{{ asset('assets/img/domain/14.png') }}" alt="{{ config('app.name') }}" />
-                                    <p>Pter.com</p>
-                                </div>
-                                <div class="buy-btn mt-3">
-                                    <a href="#" class="btn btn-primary">
-                                        Buy Now
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-sm-6 col-6">
-                            <div class="domain-card">
-                                <div class="domain-image">
-                                    <img src="{{ asset('assets/img/domain/10.png') }}" alt="{{ config('app.name') }}" />
-                                    <p>options.co.in</p>
-                                </div>
-                                <div class="buy-btn mt-3">
-                                    <a href="#" class="btn btn-primary">
-                                        Buy Now
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
+                        @endforeach
                     </div>
                 </div>
+
                 <div class="tab-pane fade" id="featured-tab-pane" role="tabpanel" aria-labelledby="featured-tab"
                     tabindex="0">
                     <div class="row">
-                        <div class="col-lg-3 col-md-4 col-sm-6 col-6">
-                            <div class="domain-card">
-                                <div class="domain-image">
-                                    <img src="{{ asset('assets/img/domain/6.png') }}" alt="{{ config('app.name') }}" />
-                                    <p>mqc.in</p>
-                                </div>
-                                <div class="buy-btn mt-3">
-                                    <a href="#" class="btn btn-primary">
-                                        Buy Now
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-sm-6 col-6">
-                            <div class="domain-card">
-                                <div class="domain-image">
-                                    <img src="{{ asset('assets/img/domain/7.png') }}" alt="{{ config('app.name') }}" />
-                                    <p>beth.in</p>
-                                </div>
-                                <div class="buy-btn mt-3">
-                                    <a href="#" class="btn btn-primary">
-                                        Buy Now
-                                    </a>
+                        @foreach ($featuredDomains as $domain)
+                            <div class="col-lg-3 col-md-4 col-sm-6 col-6">
+                                <div class="domain-card">
+                                    <div class="domain-image">
+                                        @if ($domain->media_image)
+                                            <img src="{{ asset('assets/img/domains/' . $domain->media_image) }}"
+                                                alt="{{ config('app.name') }}" />
+                                        @else
+                                            <img src="{{ asset('assets/img/domain/defaultdomain.png') }}"
+                                                alt="{{ config('app.name') }}" />
+                                        @endif
+                                        <p>{{ $domain->name }}</p>
+                                    </div>
+                                    <div class="buy-btn mt-3">
+                                        <a href="#" class="btn btn-primary">Buy Now</a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-sm-6 col-6">
-                            <div class="domain-card">
-                                <div class="domain-image">
-                                    <img src="{{ asset('assets/img/domain/8.png') }}" alt="{{ config('app.name') }}" />
-                                    <p>pdf.in</p>
-                                </div>
-                                <div class="buy-btn mt-3">
-                                    <a href="#" class="btn btn-primary">
-                                        Buy Now
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-sm-6 col-6">
-                            <div class="domain-card">
-                                <div class="domain-image">
-                                    <img src="{{ asset('assets/img/domain/9.png') }}" alt="{{ config('app.name') }}" />
-                                    <p>mpa.co.in</p>
-                                </div>
-                                <div class="buy-btn mt-3">
-                                    <a href="#" class="btn btn-primary">
-                                        Buy Now
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-sm-6 col-6">
-                            <div class="domain-card">
-                                <div class="domain-image">
-                                    <img src="{{ asset('assets/img/domain/10.png') }}" alt="{{ config('app.name') }}" />
-                                    <p>options.co.in</p>
-                                </div>
-                                <div class="buy-btn mt-3">
-                                    <a href="#" class="btn btn-primary">
-                                        Buy Now
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-sm-6 col-6">
-                            <div class="domain-card">
-                                <div class="domain-image">
-                                    <img src="{{ asset('assets/img/domain/3.png') }}" alt="{{ config('app.name') }}" />
-                                    <p>znd.in</p>
-                                </div>
-                                <div class="buy-btn mt-3">
-                                    <a href="#" class="btn btn-primary">
-                                        Buy Now
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-sm-6 col-6">
-                            <div class="domain-card">
-                                <div class="domain-image">
-                                    <img src="{{ asset('assets/img/domain/4.png') }}" alt="{{ config('app.name') }}" />
-                                    <p>prepaidwireless.in</p>
-                                </div>
-                                <div class="buy-btn mt-3">
-                                    <a href="#" class="btn btn-primary">
-                                        Buy Now
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-sm-6 col-6">
-                            <div class="domain-card">
-                                <div class="domain-image">
-                                    <img src="{{ asset('assets/img/domain/5.png') }}" alt="{{ config('app.name') }}" />
-                                    <p>satphones.in</p>
-                                </div>
-                                <div class="buy-btn mt-3">
-                                    <a href="#" class="btn btn-primary">
-                                        Buy Now
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
+
                 <div class="tab-pane fade" id="top-tab-pane" role="tabpanel" aria-labelledby="top-tab" tabindex="0">
                     <div class="row">
-                        <div class="col-lg-3 col-md-4 col-sm-6 col-6">
-                            <div class="domain-card">
-                                <div class="domain-image">
-                                    <img src="{{ asset('assets/img/domain/10.png') }}" alt="{{ config('app.name') }}" />
-                                    <p>options.co.in</p>
-                                </div>
-                                <div class="buy-btn mt-3">
-                                    <a href="#" class="btn btn-primary">
-                                        Buy Now
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-sm-6 col-6">
-                            <div class="domain-card">
-                                <div class="domain-image">
-                                    <img src="{{ asset('assets/img/domain/11.png') }}" alt="{{ config('app.name') }}" />
-                                    <p>visioncare.in</p>
-                                </div>
-                                <div class="buy-btn mt-3">
-                                    <a href="#" class="btn btn-primary">
-                                        Buy Now
-                                    </a>
+                        @foreach ($topDomains as $domain)
+                            <div class="col-lg-3 col-md-4 col-sm-6 col-6">
+                                <div class="domain-card">
+                                    <div class="domain-image">
+                                        @if ($domain->media_image)
+                                            <img src="{{ asset('assets/img/domains/' . $domain->media_image) }}"
+                                                alt="{{ config('app.name') }}" />
+                                        @else
+                                            <img src="{{ asset('assets/img/domain/defaultdomain.png') }}"
+                                                alt="{{ config('app.name') }}" />
+                                        @endif
+                                        <p>{{ $domain->name }}</p>
+                                    </div>
+                                    <div class="buy-btn mt-3">
+                                        <a href="#" class="btn btn-primary">Buy Now</a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-sm-6 col-6">
-                            <div class="domain-card">
-                                <div class="domain-image">
-                                    <img src="{{ asset('assets/img/domain/12.png') }}" alt="{{ config('app.name') }}" />
-                                    <p>g626.com</p>
-                                </div>
-                                <div class="buy-btn mt-3">
-                                    <a href="#" class="btn btn-primary">
-                                        Buy Now
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-4 col-sm-6 col-6">
-                            <div class="domain-card">
-                                <div class="domain-image">
-                                    <img src="{{ asset('assets/img/domain/14.png') }}" alt="{{ config('app.name') }}" />
-                                    <p>Pter.com</p>
-                                </div>
-                                <div class="buy-btn mt-3">
-                                    <a href="#" class="btn btn-primary">
-                                        Buy Now
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-sm-6 col-6">
-                            <div class="domain-card">
-                                <div class="domain-image">
-                                    <img src="{{ asset('assets/img/domain/10.png') }}" alt="{{ config('app.name') }}" />
-                                    <p>options.co.in</p>
-                                </div>
-                                <div class="buy-btn mt-3">
-                                    <a href="#" class="btn btn-primary">
-                                        Buy Now
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
+                        @endforeach
                     </div>
                 </div>
             </div>
             <div class="view-more text-center mt-lg-4 mt-3">
-                <a href="#" class="btn">
+                <a href="#" id="viewMoreBtn" class="btn">
                     view more <svg class="ms-2" width="27" height="18" viewBox="0 0 27 18" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
                         <circle opacity="0.5" cx="7" cy="9" r="7" fill="white" />
@@ -505,15 +227,14 @@
             <div class="row">
                 <div class="col-lg-4 col-md-6">
                     <div class="Buydomain-box">
-                        <h4>TOP DOMAINS</h4>
+                        <h4>BRAND DOMAINS</h4>
                         <ul class="list-inline">
-                            <li><img src="{{ asset('assets/img/home/check.svg') }}" /><span>EFQX.COM </span></li>
-                            <li><img src="{{ asset('assets/img/home/check.svg') }}" /><span>AJHI.COM </span></li>
-                            <li><img src="{{ asset('assets/img/home/check.svg') }}" /><span>GVKW.COM </span></li>
-                            <li><img src="{{ asset('assets/img/home/check.svg') }}" /><span>ACJQ.COM </span></li>
-                            <li><img src="{{ asset('assets/img/home/check.svg') }}" /><span>016.IN </span></li>
+                            @foreach ($brandDomainslist as $brandDomainslistitem)
+                                <li><img src="{{ asset('assets/img/home/check.svg') }}" /><span>{{ $brandDomainslistitem->name }}
+                                    </span></li>
+                            @endforeach
                             <div class="more-btn text-center">
-                                <a href="#" class="btn btn-primary">More</a>
+                                <a href="{{ route('domainlist', '3') }}" class="btn btn-primary">More</a>
                             </div>
                         </ul>
                     </div>
@@ -522,28 +243,26 @@
                     <div class="Buydomain-box">
                         <h4>TOP DOMAINS</h4>
                         <ul class="list-inline">
-                            <li><img src="{{ asset('assets/img/home/check.svg') }}" /><span>ALLINSURANCE.IN </span></li>
-                            <li><img src="{{ asset('assets/img/home/check.svg') }}" /><span>007879.COM </span></li>
-                            <li><img src="{{ asset('assets/img/home/check.svg') }}" /><span>014.IN </span></li>
-                            <li><img src="{{ asset('assets/img/home/check.svg') }}" /><span>015.IN </span></li>
-                            <li><img src="{{ asset('assets/img/home/check.svg') }}" /><span>016.IN </span></li>
+                            @foreach ($topDomainslist as $topDomainslistitem)
+                                <li><img src="{{ asset('assets/img/home/check.svg') }}" /><span>{{ $topDomainslistitem->name }}
+                                    </span></li>
+                            @endforeach
                             <div class="more-btn text-center">
-                                <a href="#" class="btn btn-primary">More</a>
+                                <a href="{{ route('domainlist', '4') }}" class="btn btn-primary">More</a>
                             </div>
                         </ul>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="Buydomain-box">
-                        <h4>TOP DOMAINS</h4>
+                        <h4>FETURED DOMAINS</h4>
                         <ul class="list-inline">
-                            <li><img src="{{ asset('assets/img/home/check.svg') }}" /><span>COMING SOON! </span></li>
-                            <li><img src="{{ asset('assets/img/home/check.svg') }}" /><span>COMING SOON! </span></li>
-                            <li><img src="{{ asset('assets/img/home/check.svg') }}" /><span>COMING SOON! </span></li>
-                            <li><img src="{{ asset('assets/img/home/check.svg') }}" /><span>COMING SOON! </span></li>
-                            <li><img src="{{ asset('assets/img/home/check.svg') }}" /><span>COMING SOON! </span></li>
+                            @foreach ($featuredDomainslist as $featuredDomainslistitem)
+                                <li><img src="{{ asset('assets/img/home/check.svg') }}" /><span>{{ $featuredDomainslistitem->name }}
+                                    </span></li>
+                            @endforeach
                             <div class="more-btn text-center">
-                                <a href="#" class="btn btn-primary">More</a>
+                                <a href="{{ route('domainlist', '2') }}" class="btn btn-primary">More</a>
                             </div>
                         </ul>
                     </div>
@@ -557,15 +276,16 @@
                 <h2>Domains By Categories</h2>
             </div>
             <div class="row">
-                @php  $categories = App\Models\DomainCategory::where('is_delete',0)->latest()->get();  @endphp
-                @if($categories->count() > 0)
-                @foreach($categories as $category)
-                <div class="col-lg-4 col-md-6">
-                    <div class="list-categories">
-                        <a href="#"><img src="{{ asset('assets/img/home/color-arrow.svg') }}">{{  $category->name }}</a>
-                    </div>
-                </div>
-                @endforeach
+                @php  $categories = App\Models\DomainCategory::where('is_delete',0)->whereHas('domains')->latest()->get();  @endphp
+                @if ($categories->count() > 0)
+                    @foreach ($categories as $category)
+                        <div class="col-lg-4 col-md-6">
+                            <div class="list-categories">
+                                <a href="{{ route('domainlistcateory', $category->id) }}"><img
+                                        src="{{ asset('assets/img/home/color-arrow.svg') }}">{{ $category->name }}</a>
+                            </div>
+                        </div>
+                    @endforeach
                 @endif
             </div>
         </div>
@@ -585,7 +305,6 @@
                                     <p>1</p>
                                 </div>
                             </div>
-
                             <div class="card-content">
                                 <h4>Step 1</h4>
                                 <p>Choose or search domain</p>
@@ -638,4 +357,91 @@
             </div>
         </div>
     </section>
+@endsection
+@section('scripts')
+    <script>
+        document.getElementById('viewMoreBtn').addEventListener('click', function(event) {
+            event.preventDefault();
+            let activeTab = document.querySelector('.nav-link.active');
+            if (activeTab) {
+                let activeTabId = activeTab.id;
+                let typeId = '';
+
+                if (activeTabId === 'premium-tab') {
+                    typeId = '1';
+                } else if (activeTabId === 'featured-tab') {
+                    typeId = '2';
+                } else if (activeTabId === 'top-tab') {
+                    typeId = '4';
+                }
+                if (typeId) {
+                    const url = `{{ url('domain-listing-type-wise') }}/${typeId}`;
+                    window.location.href = url;
+                }
+            }
+        });
+        // $(document).ready(function() {
+        //     // Apply custom styles to the select element
+        //     $('#styled-select').each(function() {
+        //         var $this = $(this),
+        //             numberOfOptions = $(this).children('option').length;
+
+        //         $this.addClass('select-hidden');
+        //         $this.wrap('<div class="select"></div>');
+        //         $this.after('<div class="styled-select"></div>');
+
+        //         var $styledSelect = $this.next('div.styled-select');
+        //         $styledSelect.text($this.children('option').eq(0).text());
+
+        //         var $list = $('<ul />', {
+        //             'class': 'options'
+        //         }).insertAfter($styledSelect);
+
+        //         for (var i = 0; i < numberOfOptions; i++) {
+        //             $('<li />', {
+        //                 text: $this.children('option').eq(i).text(),
+        //                 rel: $this.children('option').eq(i).val()
+        //             }).appendTo($list);
+        //         }
+
+        //         var $listItems = $list.children('li');
+
+        //         $styledSelect.click(function(e) {
+        //             e.stopPropagation();
+        //             $('div.styled-select.active').each(function() {
+        //                 $(this).removeClass('active').next('ul.options').hide();
+        //             });
+        //             $(this).toggleClass('active').next('ul.options').toggle();
+        //         });
+
+        //         $listItems.click(function(e) {
+        //             e.stopPropagation();
+        //             $styledSelect.text($(this).text()).removeClass('active');
+        //             $this.val($(this).attr('rel'));
+        //             $list.hide();
+        //         });
+
+        //         $(document).click(function() {
+        //             $styledSelect.removeClass('active');
+        //             $list.hide();
+        //         });
+
+        //     });
+        // });
+        // $(document).ready(function() {
+        $('#searchdomain').select2();
+        $('#searchButton').click(function() {
+            console.log("s");
+            var selectedDomainId = $('#searchdomain').val();
+            if (selectedDomainId) {
+                console.log("if");
+                // Redirect to the single domain page with the selected domain ID
+                window.location.href = `{{ url('/domain') }}/${selectedDomainId}`;
+            } else {
+                console.log("els");
+                alert('Please select a domain.');
+            }
+        });
+    // });
+    </script>
 @endsection

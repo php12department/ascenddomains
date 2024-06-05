@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\DomainCategory;
 use Illuminate\Http\Request;
 use App\Models\Domain;
 use App\Models\DomainType;
@@ -26,9 +27,11 @@ class DomainController extends Controller
     {
         $domain = Domain::findOrFail($id);
         $domainTypes = DomainType::where('is_deleted', 0)->get();
-        return view('admin.domains.edit', [
+        $domainCategory = DomainCategory::where('is_delete', 0)->get();
+            return view('admin.domains.edit', [
             'domain' => $domain,
             'domainTypes' => $domainTypes,
+            'domainCategory' => $domainCategory,
         ]);
     }
 
@@ -36,6 +39,7 @@ class DomainController extends Controller
     {
         $domain = Domain::findOrFail($id);
         $domain->type_id = $request->input('domain_type');
+        $domain->category_id = $request->input('category_id');
         $domain->save();
         return redirect()->route('admin.domains', $domain->id)->with('status', 'Domain updated successfully!');
     }

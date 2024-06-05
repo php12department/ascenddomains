@@ -31,7 +31,17 @@
                                 <label class="form-check-label" for="{{ $type->name }}">{{ $type->name }}</label>
                             </div>
                         @endforeach
-                    </div>                    
+                    </div>
+                    <div class="form-group">
+                        <label for="domain_type">Domain Category:</label><br>
+                        @foreach ($domainCategory as $Category)
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="category_id" id="{{ $Category->name }}"
+                                    value="{{ $Category->id }}" {{ $domain->category_id === $Category->id ? 'checked' : '' }}>
+                                <label class="form-check-label" for="{{ $Category->name }}">{{ $Category->name }}</label>
+                            </div>
+                        @endforeach
+                    </div>
                     <button type="submit" class="btn btn-primary">Update</button>
                 </form>
             </div>

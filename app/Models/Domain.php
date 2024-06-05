@@ -32,4 +32,8 @@ class Domain extends Model
     {
         return $this->hasMany(DomainMedia::class);
     }
+    public function category()
+    {
+        return $this->belongsTo(DomainCategory::class, 'category_id');
+    }
 }
