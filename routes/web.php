@@ -127,6 +127,7 @@ Route::get('aboutus', [App\Http\Controllers\FrontController::class, 'aboutus'])-
 Route::get('domain-detail/{id}', [App\Http\Controllers\FrontController::class, 'singledomain'])->name('singledomain');
 Route::get('domain-listing-type-wise/{type_id}', [App\Http\Controllers\FrontController::class, 'domainlist'])->name('domainlist');
 Route::get('domain-listing-category-wise/{category_id}', [App\Http\Controllers\FrontController::class, 'domainlistcateory'])->name('domainlistcateory');
+Route::get('/domains/search', [App\Http\Controllers\FrontController::class, 'search'])->name('domains.search');
 
 
 

@@ -29,19 +29,13 @@
             <img src="{{ asset('assets/img/home/hero_img.png') }}" alt="{{ config('app.name') }}" />
         </div>
         <div class="banner-caption">
-            {{-- <form class="" accept=""> --}}
-                <h2>Choose best domains for<br> your business</h2>
-                <div class="form-group position-relative">
-                    <select class="form-control select2" id="searchdomain" name="searchdomain">
-                        <option value="">Search Domain</option>
-                        @foreach ($domainlist as $d)
-                            <option value="{{ $d->id }}">{{ $d->name }}</option>
-                        @endforeach
-                    </select>
-                    {{-- <input type="text" placeholder="Search Domain" class="form-control" /> --}}
-                    <button type="button" class="btn btn-primary" id="searchbutton">Search</button>
-                </div>
-            {{-- </form> --}}
+            <h2>Choose best domains for<br> your business</h2>
+            <div class="form-group position-relative">
+                <select class="form-control select2" id="searchdomain" name="searchdomain">
+                    <option value="">Search Domain</option>
+                </select>
+                <button type="button" class="btn btn-primary" id="searchbutton">Search</button>
+            </div>
         </div>
         <div class="Scrolldown">
             <a href="#DomainsId">
@@ -112,7 +106,7 @@
                                         <p>{{ $domain->name }}</p>
                                     </div>
                                     <div class="buy-btn mt-3">
-                                        <a href="#" class="btn btn-primary">Buy Now</a>
+                                        <a href="{{ route('singledomain', $domain->id) }}" class="btn btn-primary">Buy Now</a>
                                     </div>
                                 </div>
                             </div>
@@ -136,7 +130,7 @@
                                         <p>{{ $domain->name }}</p>
                                     </div>
                                     <div class="buy-btn mt-3">
-                                        <a href="#" class="btn btn-primary">Buy Now</a>
+                                        <a href="{{ route('singledomain', $domain->id) }}" class="btn btn-primary">Buy Now</a>
                                     </div>
                                 </div>
                             </div>
@@ -380,68 +374,39 @@
                 }
             }
         });
-        // $(document).ready(function() {
-        //     // Apply custom styles to the select element
-        //     $('#styled-select').each(function() {
-        //         var $this = $(this),
-        //             numberOfOptions = $(this).children('option').length;
 
-        //         $this.addClass('select-hidden');
-        //         $this.wrap('<div class="select"></div>');
-        //         $this.after('<div class="styled-select"></div>');
-
-        //         var $styledSelect = $this.next('div.styled-select');
-        //         $styledSelect.text($this.children('option').eq(0).text());
-
-        //         var $list = $('<ul />', {
-        //             'class': 'options'
-        //         }).insertAfter($styledSelect);
-
-        //         for (var i = 0; i < numberOfOptions; i++) {
-        //             $('<li />', {
-        //                 text: $this.children('option').eq(i).text(),
-        //                 rel: $this.children('option').eq(i).val()
-        //             }).appendTo($list);
-        //         }
-
-        //         var $listItems = $list.children('li');
-
-        //         $styledSelect.click(function(e) {
-        //             e.stopPropagation();
-        //             $('div.styled-select.active').each(function() {
-        //                 $(this).removeClass('active').next('ul.options').hide();
-        //             });
-        //             $(this).toggleClass('active').next('ul.options').toggle();
-        //         });
-
-        //         $listItems.click(function(e) {
-        //             e.stopPropagation();
-        //             $styledSelect.text($(this).text()).removeClass('active');
-        //             $this.val($(this).attr('rel'));
-        //             $list.hide();
-        //         });
-
-        //         $(document).click(function() {
-        //             $styledSelect.removeClass('active');
-        //             $list.hide();
-        //         });
-
-        //     });
-        // });
-        // $(document).ready(function() {
-        $('#searchdomain').select2();
-        $('#searchButton').click(function() {
-            console.log("s");
-            var selectedDomainId = $('#searchdomain').val();
-            if (selectedDomainId) {
-                console.log("if");
-                // Redirect to the single domain page with the selected domain ID
-                window.location.href = `{{ url('/domain') }}/${selectedDomainId}`;
-            } else {
-                console.log("els");
-                alert('Please select a domain.');
+        $('#searchdomain').select2({
+            placeholder: 'Search Domain',
+            minimumInputLength: 1,
+            ajax: {
+                url: '{{ route('domains.search') }}',
+                dataType: 'json',
+                delay: 250,
+                data: function(params) {
+                    return {
+                        q: params.term // search term
+                    };
+                },
+                processResults: function(data) {
+                    return {
+                        results: $.map(data, function(domain) {
+                            return {
+                                id: domain.id,
+                                text: domain.name
+                            };
+                        })
+                    };
+                },
+                cache: true
             }
         });
-    // });
+
+        // Handle the search button click
+        $('#searchbutton').on('click', function() {
+            var domainId = $('#searchdomain').val();
+            if (domainId) {
+                window.location.href = `domain-detail/${domainId}`;
+            }
+        });
     </script>
 @endsection

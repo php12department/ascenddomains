@@ -119,18 +119,21 @@ class FrontController extends Controller
             ->get();
         $brandDomainslist = Domain::where('type_id', 2)
             ->leftJoin('domain_media', 'domains.id', '=', 'domain_media.domain_id')
+            ->whereRaw('LENGTH(domains.name) <= 8')
             ->orderByRaw('domain_media.id IS NULL')
             ->select('domains.*', 'domain_media.media_img as media_image')
             ->take(5)
             ->get();
         $topDomainslist = Domain::where('type_id', 3)
             ->leftJoin('domain_media', 'domains.id', '=', 'domain_media.domain_id')
+            ->whereRaw('LENGTH(domains.name) <= 8')
             ->orderByRaw('domain_media.id IS NULL')
             ->select('domains.*', 'domain_media.media_img as media_image')
             ->take(5)
             ->get();
         $featuredDomainslist = Domain::where('type_id', 1)
             ->leftJoin('domain_media', 'domains.id', '=', 'domain_media.domain_id')
+            ->whereRaw('LENGTH(domains.name) <= 8')
             ->orderByRaw('domain_media.id IS NULL')
             ->select('domains.*', 'domain_media.media_img as media_image')
             ->take(5)
@@ -142,7 +145,7 @@ class FrontController extends Controller
 
     public function singledomain($id)
     {
-        $domaindetails = Domain::with('category')->where('id', $id)->first();
+        $domaindetails = Domain::with('category', 'domainMedia')->where('id', $id)->first();
         return view('singledomain', compact('domaindetails'));
     }
     public function domainlist($type_id) //type wise
@@ -164,5 +167,15 @@ class FrontController extends Controller
             ->get();
 
         return view('domainlistaspercategory', compact('Domains'));
+    }
+
+
+    public function search(Request $request)
+    {
+        $query = $request->get('q', '');
+        $domains = Domain::where('name', 'LIKE', "%{$query}%")
+            ->get(['id', 'name']);
+
+        return response()->json($domains);
     }
 }

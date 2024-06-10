@@ -100,7 +100,7 @@ title {
 }
 .pt-120 {
     padding-top: 120px;
-} 
+}
 .pb-120 {
     padding-bottom: 120px;
 }
@@ -121,7 +121,7 @@ title {
     padding-bottom: 10px;
     color: #000000;
 }
-.section-header p { 
+.section-header p {
     color: #787878;
     font-size: 18px;
     line-height: 28px;
@@ -219,7 +219,7 @@ title {
     background-size: 100% 100%;
 }
 
-.Domains-section .nav-tabs .nav-item.show .nav-link, 
+.Domains-section .nav-tabs .nav-item.show .nav-link,
 .Domains-section .nav-tabs .nav-link.active {
     color: #ffffff;
     background-color: #000000;
@@ -695,7 +695,7 @@ title {
     /* border-bottom-right-radius: 10px; */
     border-top-right-radius: 10px;
 }
-table.dataTable thead > tr > th.dt-orderable-asc:hover, table.dataTable thead > tr > th.dt-orderable-desc:hover, 
+table.dataTable thead > tr > th.dt-orderable-asc:hover, table.dataTable thead > tr > th.dt-orderable-desc:hover,
 table.dataTable thead > tr > td.dt-orderable-asc:hover, table.dataTable thead > tr > td.dt-orderable-desc:hover {
     outline: none;
     outline-offset: -2px;
@@ -739,7 +739,7 @@ table.table.dataTable > :not(caption) > * > * {
     background-color: #EC681B;
     border-color: #EC681B;
 }
-table.dataTable th.dt-type-numeric, table.dataTable th.dt-type-date, 
+table.dataTable th.dt-type-numeric, table.dataTable th.dt-type-date,
 table.dataTable td.dt-type-numeric, table.dataTable td.dt-type-date {
     text-align: center;
 }
@@ -834,7 +834,7 @@ div.dt-container div.dt-info {
     background: rgba(236, 104, 27, 0.1);
     font-weight: 600;
   }
- 
+
   .Domains-search input[type="number"]::-webkit-outer-spin-button,
   .Domains-search input[type="number"]::-webkit-inner-spin-button {
     -webkit-appearance: none;
@@ -1076,7 +1076,7 @@ div.dt-container div.dt-info {
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
-.Faq-section .accordion-button:focus { 
+.Faq-section .accordion-button:focus {
     box-shadow: none;
 }
 .accordion-item .accordion-button {
@@ -1097,13 +1097,13 @@ div.dt-container div.dt-info {
 }
 .Pricing-section .card-1 {
   margin-right: -40px;
-} 
+}
 .Pricing-section .card-3 {
     margin-left: -40px;
-  } 
+  }
   .Pricing-section .card-2 {
     background-color: #ffffff;
-  } 
+  }
   .Pricing-section .card-2 {
     background-color: #ffffff;
     -webkit-box-shadow: 17px 0px 50px 0px rgba(0,0,0,0.1);
@@ -1162,7 +1162,7 @@ div.dt-container div.dt-info {
     border: none;
     width: 100%;
 }
-.Pricing-section .pricing-card.card-2 .buy-btn .btn { 
+.Pricing-section .pricing-card.card-2 .buy-btn .btn {
     background: #EC681B;
 }
 .Premium-domain .sidebar .list-item {
@@ -1436,14 +1436,14 @@ div.dt-container div.dt-info {
     padding: 25px;
     border-radius: 20px;
 }
-.Vivamus-elementum .Ourwork-sec h4 { 
+.Vivamus-elementum .Ourwork-sec h4 {
     color: #000000;
     font-size: 24px;
     line-height: 36px;
     padding-bottom: 10px;
     font-weight: 600;
 }
-.Vivamus-elementum .Ourwork-sec p { 
+.Vivamus-elementum .Ourwork-sec p {
     color: #868686;
     font-size: 16px;
     line-height: 24px;
@@ -1575,6 +1575,7 @@ div.dt-container div.dt-info {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    margin-top : 25px;
 }
 .Single-domain .domain-leftinfo .action-btn .btn {
     width: calc(50% - 15px);
@@ -1685,7 +1686,7 @@ div.dt-container div.dt-info {
     }
     .pt-120 {
         padding-top: 80px;
-    } 
+    }
     .pb-120 {
         padding-bottom: 80px;
     }
@@ -1723,7 +1724,7 @@ div.dt-container div.dt-info {
     }
 }
 @media screen and (min-width: 1280px) {
-   
+
     .Domains-section .tab-content .col-lg-3 {
         flex: 0 0 auto;
         width: 20%;
@@ -1751,7 +1752,7 @@ div.dt-container div.dt-info {
     }
     .pt-120 {
         padding-top: 80px;
-    } 
+    }
     .pb-120 {
         padding-bottom: 80px;
     }
@@ -1800,8 +1801,8 @@ div.dt-container div.dt-info {
     }
 }
 @media screen and (max-width: 1024px) {
-    .Howitwork-section .cardbody .card-image.step3::after, 
-    .Howitwork-section .cardbody .card-image.step2::after, 
+    .Howitwork-section .cardbody .card-image.step3::after,
+    .Howitwork-section .cardbody .card-image.step2::after,
     .Howitwork-section .cardbody .card-image.step1::after {
         width: 100px;
         right: -120px;
@@ -1814,7 +1815,7 @@ div.dt-container div.dt-info {
         width: 30px;
         line-height: 30px;
     }
-    .Howitwork-section .cardbody .card-image img { 
+    .Howitwork-section .cardbody .card-image img {
         width: 40px;
         height: 40px;
     }
@@ -1915,12 +1916,12 @@ div.dt-container div.dt-info {
     }
     .pt-120 {
         padding-top: 40px;
-    } 
+    }
     .pb-120 {
         padding-bottom: 40px;
     }
-    .Howitwork-section .cardbody .card-image.step3::after, 
-    .Howitwork-section .cardbody .card-image.step2::after, 
+    .Howitwork-section .cardbody .card-image.step3::after,
+    .Howitwork-section .cardbody .card-image.step2::after,
     .Howitwork-section .cardbody .card-image.step1::after {
         display: none;
     }
@@ -2033,7 +2034,7 @@ div.dt-container div.dt-info {
         height: 80px;
     }
     .Account-section .account-form .sec-title,
-    .Terms-section .terms-content h4, 
+    .Terms-section .terms-content h4,
     .Terms-section .Suspendisse-potenti h4 {
         font-size: 20px;
         line-height: 24px;
@@ -2116,7 +2117,7 @@ div.dt-container div.dt-info {
         padding: 0.5rem 1rem;
         font-size: 14px;
     }
-   
+
 }
 
 @media screen and (max-width: 400px) {
@@ -2133,8 +2134,8 @@ div.dt-container div.dt-info {
         font-size: 20px;
         line-height: 30px;
     }
-    .Howitwork-section .cardbody .card-content h4, 
-    .Buydomain-section .Buydomain-box h4, 
+    .Howitwork-section .cardbody .card-content h4,
+    .Buydomain-section .Buydomain-box h4,
     .Services-section .services-card .services-text h4 {
         font-size: 16px;
         line-height: 24px;
