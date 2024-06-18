@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\AdminController;
@@ -128,6 +129,7 @@ Route::get('domain-detail/{id}', [App\Http\Controllers\FrontController::class, '
 Route::get('domain-listing-type-wise/{type_id}', [App\Http\Controllers\FrontController::class, 'domainlist'])->name('domainlist');
 Route::get('domain-listing-category-wise/{category_id}', [App\Http\Controllers\FrontController::class, 'domainlistcateory'])->name('domainlistcateory');
 Route::get('/domains/search', [App\Http\Controllers\FrontController::class, 'search'])->name('domains.search');
+Route::post('/domain/search', [App\Http\Controllers\FrontController::class, 'premiumdomainsearch'])->name('premiumdomain.search');
 
 
 

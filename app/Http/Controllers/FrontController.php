@@ -10,6 +10,7 @@ use App\Models\BlogDetail;
 use App\Models\StaticPage;
 use App\Models\DomainMedia;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class FrontController extends Controller
 {
@@ -88,7 +89,10 @@ class FrontController extends Controller
     }
     public function premiumdomains()
     {
-        return view('premium_domains_name');
+        $extensions = DB::table('domains')->distinct()->pluck('extension');
+        $length = DB::table('domains')->distinct()->pluck('length');
+
+        return view('premium_domains_name', ['extensions' => $extensions,'length' => $length ]);
     }
 
     public function aboutus()
@@ -168,8 +172,6 @@ class FrontController extends Controller
 
         return view('domainlistaspercategory', compact('Domains'));
     }
-
-
     public function search(Request $request)
     {
         $query = $request->get('q', '');
@@ -178,4 +180,41 @@ class FrontController extends Controller
 
         return response()->json($domains);
     }
+
+    public function premiumdomainsearch(Request $request)
+    {
+        $query = DB::table('domains');
+        if ($request->filled('query')) {
+            $query->where('name', 'like', '%' . $request->input('query') . '%');
+        }
+
+        if ($request->filled('min_price') && $request->filled('max_price')) {
+            $query->whereBetween((DB::raw('CAST(min_offer AS DECIMAL(10, 2))')),[
+                $request->input('min_price'),
+                    $request->input('max_price')
+            ]);
+        }
+        if ($request->filled('extensions')) {
+            $query->whereIn('extension', $request->input('extensions'));
+        }
+        if ($request->filled('lengths')) {
+            $query->whereIn('length', $request->input('lengths'));
+        }
+        $totalDomains = $query->count();
+
+       // $domains = $query->get();
+       $domains = $query->limit(20)->get();
+        $extensions = DB::table('domains')->distinct()->pluck('extension');
+        $length = DB::table('domains')->distinct()->pluck('length');
+
+     //   return view('premium_domains_name', ['extensions' => $extensions,'length' => $length ,'domains' => $domains]);
+     return view('premium_domains_name', [
+        'extensions' => $extensions,
+        'length' => $length,
+        'domains' => $domains,
+        'totalDomains' => $totalDomains // pass total count to the view
+    ]);
+    }
+
+
 }
