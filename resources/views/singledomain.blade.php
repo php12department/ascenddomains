@@ -35,7 +35,7 @@
                             @endif
                             <div class="action-btn">
                                 <a href="#" class="btn add-btn">
-                                    Add To Cart
+                                    Buy Now
                                     <svg class="ms-2" width="27" height="18" viewBox="0 0 27 18" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <circle opacity="0.5" cx="7" cy="9" r="7" fill="white"></circle>
@@ -58,6 +58,24 @@
                                             stroke="white" stroke-width="1.5" stroke-linecap="round"></path>
                                     </svg>
                                 </a>
+                                {{-- <form id="get-price-form" action="submit_offer.php" method="GET">
+                                    <div class="mb-3 w-100">
+                                        <label for="offer" class="form-label">Your Offer Price</label>
+                                        <input type="text" id="offer" name="offer" class="form-control" required>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary w-100">Submit Offer</button>
+                                </form> --}}
+                                <form id="get-price-form" action="{{ route('submit_offer') }}" method="GET">
+                                    @csrf
+                                    <div class="mb-3 w-100">
+                                        <label for="offer" class="form-label">Your Offer Price</label>
+                                        <input type="text" id="offer" name="offer" class="form-control" required>
+                                    </div>
+                                    <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
+                                    <input type="hidden" name="domain_id" value="{{ $domaindetails->id }}">
+                                    <button type="submit" class="btn btn-primary w-100">Submit Offer</button>
+                                </form>
+
                             </div>
                     </div>
                 </div>
@@ -87,7 +105,7 @@
                             <table class="table">
                                 <tbody>
                                     <tr>
-                                        <td style="width: 40%;">Price</td>
+                                        <td style="width: 40%;">Price(BIN)</td>
                                         <td>: {{ $domaindetails->bin }}</td>
                                     </tr>
                                     <tr>
@@ -114,9 +132,10 @@
                                         <td>Age</td>
                                         <td>: Yrs</td>
                                     </tr>
+
                                     <tr>
                                         <td>Payments</td>
-                                        <td>: <img src="img/home/paypal-icon.png" /></td>
+                                        <td>: <img src="{{ asset('assets/img/home/paypal-icon.png') }}" /></td>
                                     </tr>
                                 </tbody>
                             </table>

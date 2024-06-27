@@ -2,8 +2,10 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ApiController;
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\OfferController;
 use App\Http\Controllers\DomainController;
 use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\NewsController;
@@ -130,7 +132,5 @@ Route::get('domain-listing-type-wise/{type_id}', [App\Http\Controllers\FrontCont
 Route::get('domain-listing-category-wise/{category_id}', [App\Http\Controllers\FrontController::class, 'domainlistcateory'])->name('domainlistcateory');
 Route::get('/domains/search', [App\Http\Controllers\FrontController::class, 'search'])->name('domains.search');
 Route::post('/domain/search', [App\Http\Controllers\FrontController::class, 'premiumdomainsearch'])->name('premiumdomain.search');
-
-
-
-
+Route::get('/api-data', [ApiController::class, 'getToken']);
+Route::get('/submit_offer', [OfferController::class, 'submitOffer'])->name('submit_offer')->middleware('auth');
