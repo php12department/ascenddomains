@@ -58,7 +58,7 @@
             {{-- <li class="app-sidebar__heading">NEWSLETTER SUBSCRIBE</li> --}}
             <li>
                 <a href="{{ route('admin.offers.index') }}" class="mm-active">
-                    <i class="fa fa-bell" aria-hidden="true"></i>OFFER
+                    <i class="fa fa-gg-circle" aria-hidden="true"></i>OFFER
                 </a>
             </li>
         </ul>
@@ -79,7 +79,7 @@
             {{-- <li class="app-sidebar__heading">Static Page</li> --}}
             <li>
                 <a href="{{ route('admin.StaticPage.index') }}" class="mm-active">
-                    <i class="fas fa-question-circle"></i>
+                    <i class="fas fa-square"></i>
                     Static Page
                 </a>
             </li>
@@ -90,7 +90,7 @@
             {{-- <li class="app-sidebar__heading">Blogs</li> --}}
             <li>
                 <a href="{{ route('admin.blogs.index') }}" class="mm-active">
-                    <i class="fas fa-question-circle"></i>
+                    <i class="fa fa-sticky-note"></i>
                     Blog
                 </a>
             </li>

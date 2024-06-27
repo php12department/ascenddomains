@@ -61,7 +61,6 @@
                                     <button type="submit" class="btn btn-danger">Decline</button>
                                 </form>
                             @endif
-
                         </td>
                     </tr>
                 @endforeach
