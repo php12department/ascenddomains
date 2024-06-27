@@ -10,7 +10,7 @@
             <h2>Premium Domains Names</h2>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb justify-content-center">
-                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item"><a href="{{ route('index') }}">Home</a></li>
                     <li class="breadcrumb-item active" aria-current="page">Premium Domains Names</li>
                 </ol>
             </nav>
@@ -27,12 +27,12 @@
             <form class="Domains-search" id="domainSearchForm" action="{{ route('premiumdomain.search') }}" method="POST">
                 @csrf
                 <div class="row">
-                    <div class="col-lg-6">
+                    {{-- <div class="col-lg-6">
                         <div class="form-group search position-relative mb-4">
                             <input type="text" name="query" placeholder="Advance Search" class="form-control" />
                             <button type="submit" class="btn btn-search">Search</button>
                         </div>
-                    </div>
+                    </div> --}}
                     <div class="col-lg-12">
                         <div class="form-group price mb-4">
                             <label class="form-label">Price</label>
@@ -123,17 +123,13 @@
                                     <td>{{ $domain->name }}</td>
                                     <td>{{ $domain->min_offer }}</td>
                                     <td>
-                                        <a href="{{ route('singledomain', $domain->id) }}" class="btn btn-primary">Buy Now</a>
+                                        <a href="{{ route('singledomain', $domain->id) }}" class="btn btn-primary">Buy
+                                            Now</a>
                                     </td>
                                 </tr>
                             @endforeach
                         </tbody>
                     </table>
-                    {{-- @if ($totalDomains > 20)
-                        <div class="text-center">
-                            <button class="btn btn-primary" id="load-more">More</button>
-                        </div>
-                    @endif --}}
                 @else
                     <p>No domains found matching your criteria.</p>
                 @endif

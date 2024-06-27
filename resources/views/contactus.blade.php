@@ -4,13 +4,13 @@
     <!-- Page header section start -->
     <section class="Page-header">
         <div class="hero-image">
-            <img src="{{ asset('assets/img/home/contact-header.png') }}" alt="{{config('app.name') }}" />
+            <img src="{{ asset('assets/img/home/contact-header.png') }}" alt="{{ config('app.name') }}" />
         </div>
         <div class="ps-breadcrumb">
             <h2>Contact Us</h2>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb justify-content-center">
-                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item"><a href="{{ route('index') }}">Home</a></li>
                     <li class="breadcrumb-item active" aria-current="page">Contact Us</li>
                 </ol>
             </nav>
@@ -37,15 +37,18 @@
                     @csrf
                     <div class="form-group mb-4">
                         <label class="form-label" for="name">Name</label>
-                        <input type="text" id="name" name="name" placeholder="Enter your name" class="form-control" />
+                        <input type="text" id="name" name="name" placeholder="Enter your name"
+                            class="form-control" />
                     </div>
                     <div class="form-group mb-4">
                         <label class="form-label" for="email">Email</label>
-                        <input type="email" id="email" name="email" placeholder="Enter your email" class="form-control" />
+                        <input type="email" id="email" name="email" placeholder="Enter your email"
+                            class="form-control" />
                     </div>
                     <div class="form-group mb-4">
                         <label class="form-label" for="phone_number">Phone Number</label>
-                        <input type="tel" id="phone_number" name="phone_number" placeholder="Enter your phone number" class="form-control" />
+                        <input type="tel" id="phone_number" name="phone_number" placeholder="Enter your phone number"
+                            class="form-control" />
                     </div>
                     <div class="form-group mb-4">
                         <label class="form-label" for="message">Message</label>

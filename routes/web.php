@@ -13,6 +13,7 @@ use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\ImageUploadController;
 use App\Http\Controllers\Admin\AccountController;
 use App\Http\Controllers\Admin\ContactController;
+use App\Http\Controllers\Admin\AdminOfferController;
 use App\Http\Controllers\Admin\StaticPageController;
 use App\Http\Controllers\Admin\DomainMediaController;
 use App\Http\Controllers\Admin\DomainCategoryController;
@@ -100,6 +101,11 @@ Route::prefix('admin')->group(function () {
         Route::delete('/domain-media/{id}', [DomainMediaController::class, 'destroy'])->name('admin.domainmedia.destroy');
         Route::get('/admin/domainmedia/{id}', [DomainMediaController::class, 'show'])->name('admin.domainmedia.show');
 
+        // Offfer
+        Route::get('/offers', [AdminOfferController::class, 'index'])->name('admin.offers.index');
+        Route::put('/offers/{offer}/accept', [AdminOfferController::class, 'accept'])->name('admin.offers.accept');
+        Route::put('/offers/{offer}/decline', [AdminOfferController::class, 'decline'])->name('admin.offers.decline');
+        Route::get('/admin/offers/{offer}', [AdminOfferController::class, 'show'])->name('admin.offers.show');
     });
 });
 Auth::routes();
@@ -127,7 +133,7 @@ Route::get('overview', [App\Http\Controllers\FrontController::class, 'overview']
 Route::get('recentnews/{id}/', [App\Http\Controllers\FrontController::class, 'recentnews'])->name('recentnews');
 Route::get('premiumdomains', [App\Http\Controllers\FrontController::class, 'premiumdomains'])->name('premiumdomains');
 Route::get('aboutus', [App\Http\Controllers\FrontController::class, 'aboutus'])->name('aboutus');
-Route::get('domain-detail/{id}', [App\Http\Controllers\FrontController::class, 'singledomain'])->name('singledomain');
+Route::get('domain-detail/{id}', [App\Http\Controllers\FrontController::class, 'singledomain'])->name('singledomain')->middleware('auth');;
 Route::get('domain-listing-type-wise/{type_id}', [App\Http\Controllers\FrontController::class, 'domainlist'])->name('domainlist');
 Route::get('domain-listing-category-wise/{category_id}', [App\Http\Controllers\FrontController::class, 'domainlistcateory'])->name('domainlistcateory');
 Route::get('/domains/search', [App\Http\Controllers\FrontController::class, 'search'])->name('domains.search');

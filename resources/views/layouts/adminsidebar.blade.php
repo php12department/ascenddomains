@@ -55,6 +55,16 @@
     </div>
     <div class="app-sidebar__inner">
         <ul class="vertical-nav-menu">
+            {{-- <li class="app-sidebar__heading">NEWSLETTER SUBSCRIBE</li> --}}
+            <li>
+                <a href="{{ route('admin.offers.index') }}" class="mm-active">
+                    <i class="fa fa-bell" aria-hidden="true"></i>OFFER
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="app-sidebar__inner">
+        <ul class="vertical-nav-menu">
             {{-- <li class="app-sidebar__heading">Faq</li> --}}
             <li>
                 <a href="{{ route('admin.faq.index') }}" class="mm-active">

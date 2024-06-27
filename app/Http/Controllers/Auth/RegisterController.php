@@ -95,4 +95,9 @@ class RegisterController extends Controller
 
         return $user;
     }
+
+    protected function redirectTo()
+    {
+        return session()->get('url.intended', $this->redirectTo);
+    }
 }

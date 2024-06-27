@@ -11,6 +11,7 @@ use App\Models\StaticPage;
 use App\Models\DomainMedia;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class FrontController extends Controller
 {
@@ -149,6 +150,10 @@ class FrontController extends Controller
 
     public function singledomain($id)
     {
+        if (!Auth::check()) {
+            return redirect()->route('login');
+        }
+
         $domaindetails = Domain::with('category', 'domainMedia')->where('id', $id)->first();
         return view('singledomain', compact('domaindetails'));
     }

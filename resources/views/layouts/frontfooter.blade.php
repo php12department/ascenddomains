@@ -28,7 +28,7 @@
                         <img src="{{ asset('assets/img/logo/logo.png') }}" alt="{{ config('app.name') }}" />
                     </a>
                 </div>
-                <ul class="social-list list-inline">
+                {{-- <ul class="social-list list-inline">
                     <li class="list-inline-item"><a href="#" title="Vimeo" aria-label="Vimeo"><i
                                 class="fa-brands fa-vimeo-v"></i></a></li>
                     <li class="list-inline-item"><a href="#" title="Facebook" aria-label="Facebook"><i
@@ -39,7 +39,7 @@
                                 class="fa-brands fa-flickr"></i></a></li>
                     <li class="list-inline-item"><a href="#" title="Dribbble" aria-label="Dribbble"><i
                                 class="fa-brands fa-dribbble"></i></a></li>
-                </ul>
+                </ul> --}}
             </div>
             <div class="col-lg-3 col-md-6">
                 <div class="useful-link">

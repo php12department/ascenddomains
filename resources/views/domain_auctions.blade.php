@@ -10,7 +10,7 @@
             <h2>Auctions</h2>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb justify-content-center">
-                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item"><a href="{{ route('index') }}">Home</a></li>
                     <li class="breadcrumb-item active" aria-current="page">Auctions</li>
                 </ol>
             </nav>
@@ -113,27 +113,26 @@
         </div>
     </section>
     <!-- Premium Domain section end -->
-
 @endsection
 @section('scripts')
     <script>
         // Domain listing in admin panel
         //$(document).ready(function() {
-            $('#domain_auctions').DataTable({
-                paging: true,
-                searching: true,
-                lengthChange: false,
-                info: true,
-                scrollX: true,
-                order: [],
-                language: {
-                    paginate: {
-                        next: '&raquo;',
-                        previous: '&laquo;'
-                    },
-                    search: '<i class="fa fa-search"></i>'
-                }
-            });
-      //  });
+        $('#domain_auctions').DataTable({
+            paging: true,
+            searching: true,
+            lengthChange: false,
+            info: true,
+            scrollX: true,
+            order: [],
+            language: {
+                paginate: {
+                    next: '&raquo;',
+                    previous: '&laquo;'
+                },
+                search: '<i class="fa fa-search"></i>'
+            }
+        });
+        //  });
     </script>
 @endsection
