@@ -51,6 +51,7 @@ Route::prefix('admin')->group(function () {
         Route::get('dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
         // Domains
         Route::get('/domains', [DomainController::class, 'index'])->name('admin.domains');
+        Route::get('/solddomains', [DomainController::class, 'solddoamin'])->name('admin.domainsold.index');
         Route::get('/admin/domains/{id}', [DomainController::class, 'show'])->name('admin.domains.show');
         Route::get('/admin/domains/{id}/edit', [DomainController::class, 'edit'])->name('admin.domains.edit');
         Route::put('/admin/domains/{id}', [DomainController::class, 'update'])->name('admin.domains.update');

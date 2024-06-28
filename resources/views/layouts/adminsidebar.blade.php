@@ -39,6 +39,11 @@
                             Domain categories
                         </a>
                     </li>
+                    <li>
+                        <a href="{{ route('admin.domainsold.index') }}" class="mm-active">
+                            Sold Domains
+                        </a>
+                    </li>
                 </ul>
             </li>
         </ul>

@@ -158,7 +158,7 @@
                 <h2>Services</h2>
             </div>
             <div class="row">
-                <div class="col-lg-3 col-md-6">
+                {{-- <div class="col-lg-3 col-md-6">
                     <div class="services-card">
                         <div class="icon-svg mb-3">
                             <img src="{{ asset('assets/img/home/auction.svg') }}" />
@@ -170,8 +170,8 @@
                             <a href="{{ route('domainauctions') }}" class="btn">Read More</a>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
+                </div> --}}
+                <div class="col-lg-4 col-md-6">
                     <div class="services-card">
                         <div class="icon-svg mb-3">
                             <img src="{{ asset('assets/img/home/sell.svg') }}" />
@@ -184,7 +184,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6">
+                <div class="col-lg-4 col-md-6">
                     <div class="services-card">
                         <div class="icon-svg mb-3">
                             <img src="{{ asset('assets/img/home/buy.svg') }}" />
@@ -197,7 +197,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6">
+                <div class="col-lg-4 col-md-6">
                     <div class="services-card">
                         <div class="icon-svg mb-3">
                             <img src="{{ asset('assets/img/home/offer.svg') }}" />
@@ -228,7 +228,7 @@
                                     </span></li>
                             @endforeach
                             <div class="more-btn text-center">
-                                <a href="{{ route('domainlist', '3') }}" class="btn btn-primary">More</a>
+                                <a href="{{ route('domainlist', '2') }}" class="btn btn-primary">More</a>
                             </div>
                         </ul>
                     </div>
@@ -242,7 +242,7 @@
                                     </span></li>
                             @endforeach
                             <div class="more-btn text-center">
-                                <a href="{{ route('domainlist', '4') }}" class="btn btn-primary">More</a>
+                                <a href="{{ route('domainlist', '3') }}" class="btn btn-primary">More</a>
                             </div>
                         </ul>
                     </div>
@@ -256,7 +256,7 @@
                                     </span></li>
                             @endforeach
                             <div class="more-btn text-center">
-                                <a href="{{ route('domainlist', '2') }}" class="btn btn-primary">More</a>
+                                <a href="{{ route('domainlist', '1') }}" class="btn btn-primary">More</a>
                             </div>
                         </ul>
                     </div>
@@ -362,11 +362,11 @@
                 let typeId = '';
 
                 if (activeTabId === 'premium-tab') {
-                    typeId = '1';
-                } else if (activeTabId === 'featured-tab') {
-                    typeId = '2';
-                } else if (activeTabId === 'top-tab') {
                     typeId = '4';
+                } else if (activeTabId === 'featured-tab') {
+                    typeId = '1';
+                } else if (activeTabId === 'top-tab') {
+                    typeId = '3';
                 }
                 if (typeId) {
                     const url = `{{ url('domain-listing-type-wise') }}/${typeId}`;

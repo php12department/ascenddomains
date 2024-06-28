@@ -103,6 +103,7 @@ class FrontController extends Controller
     public function index()
     {
         $premiumDomains = Domain::where('type_id', 4)
+            ->where('is_sold', 0)
             ->leftJoin('domain_media', 'domains.id', '=', 'domain_media.domain_id')
             ->orderByRaw('domain_media.id IS NULL')
             ->select('domains.*', 'domain_media.media_img as media_image')
@@ -110,6 +111,7 @@ class FrontController extends Controller
             ->get();
 
         $featuredDomains = Domain::where('type_id', 1)
+            ->where('is_sold', 0)
             ->leftJoin('domain_media', 'domains.id', '=', 'domain_media.domain_id')
             ->orderByRaw('domain_media.id IS NULL')
             ->select('domains.*', 'domain_media.media_img as media_image')
@@ -117,33 +119,42 @@ class FrontController extends Controller
             ->get();
 
         $topDomains = Domain::where('type_id', 3)
+            ->where('is_sold', 0)
             ->leftJoin('domain_media', 'domains.id', '=', 'domain_media.domain_id')
             ->orderByRaw('domain_media.id IS NULL')
             ->select('domains.*', 'domain_media.media_img as media_image')
             ->take(10)
             ->get();
+
         $brandDomainslist = Domain::where('type_id', 2)
+            ->where('is_sold', 0)
             ->leftJoin('domain_media', 'domains.id', '=', 'domain_media.domain_id')
             ->whereRaw('LENGTH(domains.name) <= 8')
             ->orderByRaw('domain_media.id IS NULL')
             ->select('domains.*', 'domain_media.media_img as media_image')
             ->take(5)
             ->get();
+
         $topDomainslist = Domain::where('type_id', 3)
+            ->where('is_sold', 0)
             ->leftJoin('domain_media', 'domains.id', '=', 'domain_media.domain_id')
             ->whereRaw('LENGTH(domains.name) <= 8')
             ->orderByRaw('domain_media.id IS NULL')
             ->select('domains.*', 'domain_media.media_img as media_image')
             ->take(5)
             ->get();
+
         $featuredDomainslist = Domain::where('type_id', 1)
+            ->where('is_sold', 0)
             ->leftJoin('domain_media', 'domains.id', '=', 'domain_media.domain_id')
             ->whereRaw('LENGTH(domains.name) <= 8')
             ->orderByRaw('domain_media.id IS NULL')
             ->select('domains.*', 'domain_media.media_img as media_image')
             ->take(5)
             ->get();
-        $domainlist = Domain::all();
+
+        $domainlist = Domain::where('is_sold', 0)->get();
+
 
         return view('welcome', compact('domainlist','premiumDomains', 'featuredDomains', 'topDomains','brandDomainslist','featuredDomainslist','topDomainslist'));
     }
@@ -160,6 +171,7 @@ class FrontController extends Controller
     public function domainlist($type_id) //type wise
     {
         $Domains = Domain::where('type_id', $type_id)
+            ->where('is_sold', 0)
             ->leftJoin('domain_media', 'domains.id', '=', 'domain_media.domain_id')
             ->orderByRaw('domain_media.id IS NULL')
             ->select('domains.*', 'domain_media.media_img as media_image')
@@ -167,9 +179,11 @@ class FrontController extends Controller
 
         return view('domainlistaspertype', compact('Domains'));
     }
+
     public function domainlistcateory($category_id)
     {
         $Domains = Domain::where('category_id', $category_id)
+            ->where('is_sold', 0)
             ->leftJoin('domain_media', 'domains.id', '=', 'domain_media.domain_id')
             ->orderByRaw('domain_media.id IS NULL')
             ->select('domains.*', 'domain_media.media_img as media_image')
@@ -177,10 +191,12 @@ class FrontController extends Controller
 
         return view('domainlistaspercategory', compact('Domains'));
     }
+
     public function search(Request $request)
     {
         $query = $request->get('q', '');
         $domains = Domain::where('name', 'LIKE', "%{$query}%")
+            ->where('is_sold', 0)
             ->get(['id', 'name']);
 
         return response()->json($domains);
@@ -188,7 +204,7 @@ class FrontController extends Controller
 
     public function premiumdomainsearch(Request $request)
     {
-        $query = DB::table('domains');
+        $query = DB::table('domains')->where('is_sold', 0);
         if ($request->filled('query')) {
             $query->where('name', 'like', '%' . $request->input('query') . '%');
         }

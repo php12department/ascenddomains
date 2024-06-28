@@ -21,7 +21,6 @@
     <!-- Sell Domains section start -->
     <section class="Sell-domains pt-120 pb-120">
         <div class="container">
-
             <div class="section-header">
                 <h4>Sell Your Domains at the Best Price!</h4>
                 <p>Ascend Domains is the largest domain marketplace with its wide range of audience for domains buyers and
@@ -66,7 +65,7 @@
                         <li>Fixed Price</li>
                     </ol>
                 </div>
-                <div class="auction-box">
+                {{-- <div class="auction-box">
                     <h4>Auction</h4>
                     <p>A domain name auction encourages the buying and selling of currently registered domain names,
                         enabling individuals to purchase a previously registered domain that suits their needs from an owner
@@ -137,10 +136,10 @@
                         premium domain from auction or fixed price from our platform so we will charge a 15% of total amount
                         from your domain cost. So what are you waiting for, just come to us and grab this life time
                         opportunity.</p>
-                </div>
+                </div> --}}
             </div>
 
-            <div class="domains-auction pt-lg-4">
+            {{-- <div class="domains-auction pt-lg-4">
                 <div class="section-header">
                     <h4>List your domains for Sale</h4>
                     <p>Adding domains into your account takes only a few moments.</p>
@@ -171,12 +170,12 @@
                         Learn more
                     </a>
                 </div>
-            </div>
+            </div> --}}
         </div>
     </section>
     <!-- Premium Domain section end -->
     <!-- Domains section start -->
-    <section class="Domains-section pt-120 pb-120">
+    {{-- <section class="Domains-section pt-120 pb-120">
         <div class="container">
             <div class="section-header text-center">
                 <h2>Other Domains You Might Like</h2>
@@ -249,11 +248,11 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
     <!-- Domains section end -->
 
     <!-- Pricing section start -->
-    <section class="Pricing-section pb-120">
+    {{-- <section class="Pricing-section pb-120">
         <div class="container">
             <div class="section-header text-center mb-lg-5 mb-2">
                 <h2 class="pb-2">Lorem ipsum dolor sit amet.</h2>
@@ -365,6 +364,6 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
     <!-- Pricing section end -->
 @endsection

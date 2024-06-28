@@ -13,11 +13,18 @@ class DomainController extends Controller
     public function index()
     {
         // $domains = Domain::all();
-        $domains = Domain::with('type')->get();
+        $domains = Domain::with('type')->where('is_sold', 0)->get();
         //$domains = Domain::take(20)->get();
         return view('admin.domains.index', ['domains' => $domains]);
         //return view('admin.dashboardbkup', ['domains' => $domains]);
     }
+
+    public function solddoamin()
+    {
+        $domains = Domain::with('type')->where('is_sold', 1)->get();
+        return view('admin.solddomains.index', ['domains' => $domains]);
+    }
+
     public function show($id)
     {
         $domain = Domain::findOrFail($id);
