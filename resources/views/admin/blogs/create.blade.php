@@ -68,13 +68,22 @@
 @endsection
 
 @section('scripts')
+    <script>
+        console.warn = function() {};
+        console.error = function() {};
+    </script>
     <script src="https://cdn.ckeditor.com/4.16.2/standard/ckeditor.js"></script>
-
     <script>
         CKEDITOR.replace('editor', {
             filebrowserUploadUrl: "{{ route('ckeditor.blogupload', ['_token' => csrf_token()]) }}",
-            filebrowserUploadMethod: 'form'
+            filebrowserUploadMethod: 'form',
+            on: {
+                instanceReady: function(evt) {
+                    this.on('notificationShow', function(ev) {
+                        ev.cancel(); // Prevents all notifications
+                    });
+                }
+            }
         });
-    </script>
     </script>
 @endsection

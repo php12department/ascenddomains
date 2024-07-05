@@ -16713,7 +16713,8 @@ Copyright (c) 2015 Daniel Eden*/
             display: flex;
             flex: 1;
             position: relative;
-            align-items: center
+            align-items: center;
+            width : 100%;
         }
 
         .widget-content .widget-content-left .widget-heading {

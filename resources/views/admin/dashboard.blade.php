@@ -1,17 +1,23 @@
 @extends('layouts.adminapp')
 @section('content')
-<style>
-    .bg-custom {
-            background-color: #333; /* Dark Gray Background */
-            color: #fff; /* White Text */
+    <style>
+        .bg-custom {
+            background-color: #333;
+            /* Dark Gray Background */
+            color: #fff;
+            /* White Text */
         }
+
         .widget-heading {
-            color: #ccc; /* Light Gray Heading Text */
+            color: #ccc;
+            /* Light Gray Heading Text */
         }
+
         .widget-numbers {
-            color: #fff; /* White Numbers Text */
+            color: #fff;
+            /* White Numbers Text */
         }
-</style>
+    </style>
     <div class="app-main__inner">
         <div class="app-page-title">
             <div class="page-title-wrapper">
@@ -68,21 +74,6 @@
                         </div>
                         <div class="widget-content-right">
                             <div class="widget-numbers"><span>{{ $blogCount }}</span></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="d-xl-none d-lg-block col-md-6 col-xl-4">
-                <div class="card mb-3 widget-content bg-premium-dark">
-                    <div class="widget-content-wrapper text-white">
-                        <div class="widget-content-left">
-                            <div class="widget-heading">Products Sold</div>
-                            <div class="widget-subheading">Revenue streams</div>
-                        </div>
-                        <div class="widget-content-right">
-                            <div class="widget-numbers text-warning"><span>$14M</span></div>
                         </div>
                     </div>
                 </div>

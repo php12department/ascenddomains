@@ -40,8 +40,15 @@
                             aria-expanded="false">
                             Categories
                         </a>
-                        @php  $categories = App\Models\DomainCategory::where('is_delete',0)->whereHas('domains')->latest()->get();  @endphp
-                        <ul class="dropdown-menu">
+                        @php
+                        $categories = App\Models\DomainCategory::where('is_delete', 0)
+                            ->whereHas('domains', function($query) {
+                                $query->where('is_sold', 0);
+                            })
+                            ->latest()
+                            ->get();
+                        @endphp
+                             <ul class="dropdown-menu">
                             @if ($categories->count() > 0)
                                 @foreach ($categories as $category)
                                     <li><a class="dropdown-item" href="{{ route('domainlistcateory', $category->id) }}">{{ $category->name }}</a></li> @endforeach

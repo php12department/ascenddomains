@@ -123,8 +123,7 @@
                                     <td>{{ $domain->name }}</td>
                                     <td>{{ $domain->min_offer }}</td>
                                     <td>
-                                        <a href="{{ route('singledomain', $domain->id) }}" class="btn btn-primary">Buy
-                                            Now</a>
+                                        <a href="{{ route('singledomain', $domain->id) }}" class="btn btn-primary">View</a>
                                     </td>
                                 </tr>
                             @endforeach

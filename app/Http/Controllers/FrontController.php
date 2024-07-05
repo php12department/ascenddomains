@@ -102,6 +102,13 @@ class FrontController extends Controller
     }
     public function index()
     {
+        $allDomains = Domain::where('is_sold', 0)
+            ->leftJoin('domain_media', 'domains.id', '=', 'domain_media.domain_id')
+            ->orderByRaw('domain_media.id IS NULL')
+            ->select('domains.*', 'domain_media.media_img as media_image')
+            ->take(10)
+            ->get();
+
         $premiumDomains = Domain::where('type_id', 4)
             ->where('is_sold', 0)
             ->leftJoin('domain_media', 'domains.id', '=', 'domain_media.domain_id')
@@ -156,7 +163,7 @@ class FrontController extends Controller
         $domainlist = Domain::where('is_sold', 0)->get();
 
 
-        return view('welcome', compact('domainlist','premiumDomains', 'featuredDomains', 'topDomains','brandDomainslist','featuredDomainslist','topDomainslist'));
+        return view('welcome', compact('allDomains','domainlist','premiumDomains', 'featuredDomains', 'topDomains','brandDomainslist','featuredDomainslist','topDomainslist'));
     }
 
     public function singledomain($id)
@@ -178,6 +185,18 @@ class FrontController extends Controller
             ->get();
 
         return view('domainlistaspertype', compact('Domains'));
+    }
+
+    public function domainlistall()
+    {
+
+        $Domains = Domain::where('is_sold', 0)
+        ->leftJoin('domain_media', 'domains.id', '=', 'domain_media.domain_id')
+        ->orderByRaw('domain_media.id IS NULL')
+        ->select('domains.*', 'domain_media.media_img as media_image')
+        ->get();
+
+        return view('domainlist', compact('Domains'));
     }
 
     public function domainlistcateory($category_id)

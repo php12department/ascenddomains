@@ -36,7 +36,7 @@
                     <tr>
                         <td>{{ $domain->id }}</td>
                         <td>{{ $domain->name }}</td>
-                        <td>{{ optional($domain->type)->name ?? '' }}</td>
+                        <td>{{ optional($domain->type)->name ?? '-' }}</td>
                     </tr>
                 @endforeach
             </tbody>

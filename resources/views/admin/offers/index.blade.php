@@ -48,8 +48,9 @@
                         <td>
                             <a href="{{ route('admin.offers.show', $offer->id) }}" class="btn btn-primary">View</a>
                             @if ($offer->status == 'pending')
-                                <form action="{{ route('admin.offers.accept', $offer->id) }}" method="POST"
-                                    style="display: inline-block;">
+                                <form
+                                    action="{{ route('admin.offers.accept', ['offerId' => $offer->id, 'userId' => $offer->user->id, 'domainId' => $offer->domain_id]) }}"
+                                    method="POST" style="display: inline-block;">
                                     @csrf
                                     @method('PUT')
                                     <button type="submit" class="btn btn-success">Accept</button>

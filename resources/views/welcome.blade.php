@@ -47,7 +47,12 @@
         <div class="container">
             <ul class="nav nav-tabs border-0" id="myTab" role="tablist">
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link active" id="premium-tab" data-bs-toggle="tab" data-bs-target="#premium-tab-pane"
+                    <button class="nav-link active" id="all-tab" data-bs-toggle="tab" data-bs-target="#all-tab-pane"
+                        type="button" role="tab" aria-controls="all-tab-pane" aria-selected="true">All
+                        Domains</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="premium-tab" data-bs-toggle="tab" data-bs-target="#premium-tab-pane"
                         type="button" role="tab" aria-controls="premium-tab-pane" aria-selected="true">Premium
                         Domains</button>
                 </li>
@@ -63,7 +68,32 @@
                 </li>
             </ul>
             <div class="tab-content mt-lg-5 mt-3" id="myTabContent">
-                <div class="tab-pane fade show active" id="premium-tab-pane" role="tabpanel" aria-labelledby="premium-tab"
+                <div class="tab-pane fade show active" id="all-tab-pane" role="tabpanel" aria-labelledby="all-tab"
+                    tabindex="0">
+                    <div class="row">
+                        @foreach ($allDomains as $alldomain)
+                            <div class="col-lg-3 col-md-4 col-sm-6 col-6">
+                                <div class="domain-card">
+                                    <div class="domain-image">
+                                        @if ($alldomain->media_image)
+                                            <img src="{{ asset('assets/img/domains/' . $alldomain->media_image) }}"
+                                                alt="{{ config('app.name') }}" />
+                                        @else
+                                            <img src="{{ asset('assets/img/domain/defaultdomain.png') }}"
+                                                alt="{{ config('app.name') }}" />
+                                        @endif
+                                        <p>{{ $alldomain->name }}</p>
+                                    </div>
+                                    <div class="buy-btn mt-3">
+                                        <a href="{{ route('singledomain', $alldomain->id) }}" class="btn btn-primary">View</a>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+
+                <div class="tab-pane fade" id="premium-tab-pane" role="tabpanel" aria-labelledby="premium-tab"
                     tabindex="0">
                     <div class="row">
                         @foreach ($premiumDomains as $domain)
@@ -80,8 +110,7 @@
                                         <p>{{ $domain->name }}</p>
                                     </div>
                                     <div class="buy-btn mt-3">
-                                        <a href="{{ route('singledomain', $domain->id) }}" class="btn btn-primary">Buy
-                                            Now</a>
+                                        <a href="{{ route('singledomain', $domain->id) }}" class="btn btn-primary">View</a>
                                     </div>
                                 </div>
                             </div>
@@ -106,7 +135,7 @@
                                         <p>{{ $domain->name }}</p>
                                     </div>
                                     <div class="buy-btn mt-3">
-                                        <a href="{{ route('singledomain', $domain->id) }}" class="btn btn-primary">Buy Now</a>
+                                        <a href="{{ route('singledomain', $domain->id) }}" class="btn btn-primary">View</a>
                                     </div>
                                 </div>
                             </div>
@@ -130,7 +159,7 @@
                                         <p>{{ $domain->name }}</p>
                                     </div>
                                     <div class="buy-btn mt-3">
-                                        <a href="{{ route('singledomain', $domain->id) }}" class="btn btn-primary">Buy Now</a>
+                                        <a href="{{ route('singledomain', $domain->id) }}" class="btn btn-primary">View</a>
                                     </div>
                                 </div>
                             </div>
@@ -363,12 +392,19 @@
 
                 if (activeTabId === 'premium-tab') {
                     typeId = '4';
+                }
+                if (activeTabId === 'all-tab') {
+                    typeId = '0';
                 } else if (activeTabId === 'featured-tab') {
                     typeId = '1';
                 } else if (activeTabId === 'top-tab') {
                     typeId = '3';
                 }
-                if (typeId) {
+                if (typeId == 0) {
+                    const url = `{{ url('domain-listing') }}`;
+                    window.location.href = url;
+                }
+                else {
                     const url = `{{ url('domain-listing-type-wise') }}/${typeId}`;
                     window.location.href = url;
                 }

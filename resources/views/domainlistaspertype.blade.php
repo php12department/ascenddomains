@@ -33,8 +33,7 @@
                                 <p>{{ $domain->name }}</p>
                             </div>
                             <div class="buy-btn mt-3">
-                                <a href="{{ route('singledomain', $domain->id) }}" class="btn btn-primary">Buy
-                                    Now</a>
+                                <a href="{{ route('singledomain', $domain->id) }}" class="btn btn-primary">View</a>
                             </div>
                         </div>
                     </div>

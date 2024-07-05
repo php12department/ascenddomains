@@ -17,14 +17,16 @@
                 <div class="card">
                     <div class="card-header">{{ isset($newsItem) ? 'Edit News' : 'Add New News' }}</div>
                     <div class="card-body">
-                        <form method="POST" action="{{ isset($newsItem) ? route('admin.news.update', $newsItem->id) : route('admin.news.store') }}">
+                        <form method="POST"
+                            action="{{ isset($newsItem) ? route('admin.news.update', $newsItem->id) : route('admin.news.store') }}">
                             @csrf
                             @isset($newsItem)
                                 @method('PUT')
                             @endisset
                             <div class="form-group">
                                 <label for="title">Title</label>
-                                <input type="text" class="form-control" id="title" name="title" value="{{ isset($newsItem) ? $newsItem->title : old('title') }}">
+                                <input type="text" class="form-control" id="title" name="title"
+                                    value="{{ isset($newsItem) ? $newsItem->title : old('title') }}">
                                 @error('title')
                                     <span class="text-danger">{{ $message }}</span>
                                 @enderror
@@ -37,7 +39,8 @@
                                     <span class="text-danger">{{ $message }}</span>
                                 @enderror
                             </div>
-                            <button type="submit" class="btn btn-primary">{{ isset($newsItem) ? 'Update' : 'Add' }} News</button>
+                            <button type="submit" class="btn btn-primary">{{ isset($newsItem) ? 'Update' : 'Add' }}
+                                News</button>
                         </form>
                     </div>
                 </div>
@@ -47,11 +50,22 @@
 @endsection
 
 @section('scripts')
+    <script>
+        console.warn = function() {};
+        console.error = function() {};
+    </script>
     <script src="https://cdn.ckeditor.com/4.16.2/standard/ckeditor.js"></script>
     <script>
         CKEDITOR.replace('body', {
             filebrowserUploadUrl: "{{ route('ckeditor.newsupload', ['_token' => csrf_token()]) }}",
-            filebrowserUploadMethod: 'form'
+            filebrowserUploadMethod: 'form',
+            on: {
+                instanceReady: function(evt) {
+                    this.on('notificationShow', function(ev) {
+                        ev.cancel(); // Prevents all notifications
+                    });
+                }
+            }
         });
     </script>
 @endsection

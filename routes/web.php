@@ -104,9 +104,9 @@ Route::prefix('admin')->group(function () {
 
         // Offfer
         Route::get('/offers', [AdminOfferController::class, 'index'])->name('admin.offers.index');
-        Route::put('/offers/{offer}/accept', [AdminOfferController::class, 'accept'])->name('admin.offers.accept');
+        Route::put('/offers/{offerId}/{userId}/{domainId}/accept', [AdminOfferController::class, 'accept'])->name('admin.offers.accept');
         Route::put('/offers/{offer}/decline', [AdminOfferController::class, 'decline'])->name('admin.offers.decline');
-        Route::get('/admin/offers/{offer}', [AdminOfferController::class, 'show'])->name('admin.offers.show');
+        Route::get('/admin/offers/{offer}/', [AdminOfferController::class, 'show'])->name('admin.offers.show');
     });
 });
 Auth::routes();
@@ -136,8 +136,9 @@ Route::get('premiumdomains', [App\Http\Controllers\FrontController::class, 'prem
 Route::get('aboutus', [App\Http\Controllers\FrontController::class, 'aboutus'])->name('aboutus');
 Route::get('domain-detail/{id}', [App\Http\Controllers\FrontController::class, 'singledomain'])->name('singledomain')->middleware('auth');;
 Route::get('domain-listing-type-wise/{type_id}', [App\Http\Controllers\FrontController::class, 'domainlist'])->name('domainlist');
+Route::get('domain-listing', [App\Http\Controllers\FrontController::class, 'domainlistall'])->name('domainlistall');
 Route::get('domain-listing-category-wise/{category_id}', [App\Http\Controllers\FrontController::class, 'domainlistcateory'])->name('domainlistcateory');
 Route::get('/domains/search', [App\Http\Controllers\FrontController::class, 'search'])->name('domains.search');
 Route::post('/domain/search', [App\Http\Controllers\FrontController::class, 'premiumdomainsearch'])->name('premiumdomain.search');
-Route::get('/api-data', [ApiController::class, 'getToken']);
+Route::get('/api-data/{id}', [ApiController::class, 'createsingledaazsecure'])->name('api-data');
 Route::get('/submit_offer', [OfferController::class, 'submitOffer'])->name('submit_offer')->middleware('auth');

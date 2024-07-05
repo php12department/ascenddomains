@@ -25,6 +25,15 @@
                     <h2>{{ Auth::check() ? Auth::user()->name : '' }}</h2>
                 </div>
             </div>
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
             <form class="account-form" method="POST" action="{{ route('update-account-info') }}">
                 @csrf
                 <h2 class="sec-title">Account Information</h2>
@@ -71,18 +80,13 @@
                     <div class="col-md-12">
                         <div class="form-group mb-4">
                             <label class="form-label">Address1</label>
-                            <textarea class="form-control" rows="5" name="address1"
-                                placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque pharetra congue ante">
-                        {{ Auth::check() ? Auth::user()->billingInformation->address1 : '' }}
-                      </textarea>
+                            <textarea class="form-control" rows="5" name="address1">{{ Auth::check() ? Auth::user()->billingInformation->address1 ?? '' : '' }}</textarea>
                         </div>
                     </div>
                     <div class="col-md-12">
                         <div class="form-group mb-4">
                             <label class="form-label">Address2(optional)</label>
-                            <textarea class="form-control" name="address1" rows="5" placeholder="">
-                            {{ trim(Auth::check() ? Auth::user()->billingInformation->address2 : '') }}
-                        </textarea>
+                            <textarea class="form-control" name="address2" rows="5">{{ trim(Auth::check() ? Auth::user()->billingInformation->address2 ?? '' : '' ) }}</textarea>
                         </div>
                     </div>
                     <div class="col-md-12">

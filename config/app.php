@@ -57,6 +57,10 @@ return [
 
     'url' => env('APP_URL', 'http://localhost'),
 
+    'dazzemail' => env('DAZZ_EMAIL', 'deanc@ascenddomains.com'),
+
+    'dazzpass' => env('DAZZ_PASS', 'mfSSC99!'),
+
     'asset_url' => env('ASSET_URL'),
 
     /*

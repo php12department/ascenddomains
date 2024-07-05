@@ -36,7 +36,6 @@ class HomeController extends Controller
 
     public function updateaccountinfo(Request $request)
     {
-
         $request->validate([
             'user_name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users,email,' . Auth::id(),
@@ -49,8 +48,22 @@ class HomeController extends Controller
             'city' => 'required|string|max:255',
             'state' => 'required|string|max:255',
             'phone_number' => 'required|string|max:20',
-        ]);
-
+        ],
+        [
+            'user_name.required' => 'Username is required.',
+            'email.required' => 'Email is required.',
+            'email.email' => 'Please enter a valid email address.',
+            'email.unique' => 'This email address is already taken.',
+            'billing_first_name.required' => 'First name is required.',
+            'billing_last_name.required' => 'Last name is required.',
+            'country.required' => 'Country is required.',
+            'address1.required' => 'Address is required.',
+            'zip_code.required' => 'Zip code is required.',
+            'city.required' => 'City is required.',
+            'state.required' => 'State is required.',
+            'phone_number.required' => 'Phone number is required.',
+        ]
+    );
         $user = Auth::user();
 
         $user->name = $request->user_name;

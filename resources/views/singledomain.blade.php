@@ -33,7 +33,7 @@
                             <img src="{{ asset('assets/img/domain/defaultdomain.png') }}" alt="{{ config('app.name') }}" />
                         @endif
                         <div class="action-btn">
-                            <a href="" class="btn add-btn">
+                            <a href="{{ route('api-data', $domaindetails->id) }}"  class="btn add-btn">
                                 Buy Now
                                 <svg class="ms-2" width="27" height="18" viewBox="0 0 27 18" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -85,34 +85,34 @@
                                         <td style="width: 40%;">Price(BIN)</td>
                                         <td>: {{ $domaindetails->bin }}</td>
                                     </tr>
-                                    <tr>
+                                    {{-- <tr>
                                         <td>Page Rank</td>
                                         <td>: 0</td>
-                                    </tr>
+                                    </tr> --}}
                                     <tr>
                                         <td>Category</td>
                                         <td>: {{ $domaindetails->category->name ?? 'No Category' }}</td>
                                     </tr>
-                                    <tr>
+                                    {{-- <tr>
                                         <td>Alexa Rank</td>
                                         <td>: 0</td>
-                                    </tr>
-                                    <tr>
+                                    </tr> --}}
+                                    {{-- <tr>
                                         <td>Total Bids</td>
                                         <td>: 2</td>
                                     </tr>
                                     <tr>
                                         <td>Max Bid</td>
                                         <td>: $786</td>
-                                    </tr>
-                                    <tr>
+                                    </tr> --}}
+                                    {{-- <tr>
                                         <td>Age</td>
                                         <td>: Yrs</td>
-                                    </tr>
-                                    <tr>
+                                    </tr> --}}
+                                    {{-- <tr>
                                         <td>Payments</td>
                                         <td>: <img src="{{ asset('assets/img/home/paypal-icon.png') }}" /></td>
-                                    </tr>
+                                    </tr> --}}
                                 </tbody>
                             </table>
                         </div>
