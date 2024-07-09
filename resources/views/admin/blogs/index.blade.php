@@ -15,6 +15,7 @@
                 </div>
             </div>
         </div>
+        <div class="table-responsive">
         <table id="blog-table" class="table table-striped" style="width:100%">
             <thead>
                 <tr>
@@ -44,6 +45,7 @@
                 @endforeach
             </tbody>
         </table>
+        </div>
     </div>
 @endsection
 

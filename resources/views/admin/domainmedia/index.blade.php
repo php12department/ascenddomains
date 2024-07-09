@@ -26,57 +26,59 @@
                 {{ session('status') }}
             </div>
         @endif
-        <table id="domainmedia-table" class="table table-striped" style="width:100%">
-            <thead>
-                <tr>
-                    <th>No</th>
-                    <th>Domain Name</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach ($domainMedia as $index => $domainMediaitem)
+        <div class="table-responsive">
+            <table id="domainmedia-table" class="table table-striped" style="width:100%">
+                <thead>
                     <tr>
-                        <td>{{ $index + 1 }}</td>
-                        <td>{{ $domainMediaitem->domain->name }}</td>
-                        <td>
-                            <a href="{{ route('admin.domainmedia.show', $domainMediaitem->id) }}"
-                                class="btn btn-success">Show</a>
-                            <a href="{{ route('admin.domainmedia.edit', $domainMediaitem->id) }}"
-                                class="btn btn-info">Edit</a>
-                            <form action="{{ route('admin.domainmedia.destroy', $domainMediaitem->id) }}" method="POST"
-                                style="display: inline;">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn btn btn-danger"
-                                    onclick="return confirm('Are you sure you want to delete this media?')">Delete</button>
-                            </form>
-                        </td>
+                        <th>No</th>
+                        <th>Domain Name</th>
+                        <th>Action</th>
                     </tr>
-                @endforeach
-            </tbody>
-        </table>
-    </div>
-@endsection
-@section('scripts')
-    <script>
-        // Domain listing in admin panel
-        $(document).ready(function() {
-            $('#domainmedia-table').DataTable({
-                paging: true,
-                searching: true,
-                lengthChange: false,
-                info: true,
-                scrollX: true,
-                order: [],
-                language: {
-                    paginate: {
-                        next: '&raquo;',
-                        previous: '&laquo;'
-                    },
-                    search: '<i class="fa fa-search"></i>'
-                }
-            });
-        });
-    </script>
-@endsection
+                </thead>
+                <tbody>
+                    @foreach ($domainMedia as $index => $domainMediaitem)
+                        <tr>
+                            <td>{{ $index + 1 }}</td>
+                            <td>{{ $domainMediaitem->domain->name }}</td>
+                            <td>
+                                <a href="{{ route('admin.domainmedia.show', $domainMediaitem->id) }}"
+                                    class="btn btn-success">Show</a>
+                                <a href="{{ route('admin.domainmedia.edit', $domainMediaitem->id) }}"
+                                    class="btn btn-info">Edit</a>
+                                <form action="{{ route('admin.domainmedia.destroy', $domainMediaitem->id) }}" method="POST"
+                                    style="display: inline;">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn btn-danger"
+                                        onclick="return confirm('Are you sure you want to delete this media?')">Delete</button>
+                                </form>
+                            </td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
+            <div>
+        </div>
+        @endsection
+        @section('scripts')
+            <script>
+                // Domain listing in admin panel
+                $(document).ready(function() {
+                    $('#domainmedia-table').DataTable({
+                        paging: true,
+                        searching: true,
+                        lengthChange: false,
+                        info: true,
+                        scrollX: true,
+                        order: [],
+                        language: {
+                            paginate: {
+                                next: '&raquo;',
+                                previous: '&laquo;'
+                            },
+                            search: '<i class="fa fa-search"></i>'
+                        }
+                    });
+                });
+            </script>
+        @endsection

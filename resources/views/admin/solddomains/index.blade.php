@@ -23,6 +23,7 @@
                 {{ session('status') }}
             </div>
         @endif
+        <div class="table-responsive">
         <table id="domains-table" class="table table-striped" style="width:100%">
             <thead>
                 <tr>
@@ -41,6 +42,7 @@
                 @endforeach
             </tbody>
         </table>
+        </div>
     </div>
 @endsection
 @section('scripts')

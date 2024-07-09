@@ -18,6 +18,7 @@
                 </div>
             </div>
         </div>
+        <div class="table-responsive">
         <table id="subscriber-table" class="table table-striped" style="width:100%">
             <thead>
                 <tr>
@@ -34,6 +35,7 @@
                 @endforeach
             </tbody>
         </table>
+        </div>
     </div>
     @endsection
     @section('scripts')

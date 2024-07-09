@@ -26,36 +26,37 @@
                 {{ session('status') }}
             </div>
         @endif
-
-        <table id="news-table" class="table table-striped" style="width:100%">
-            <thead>
-                <tr>
-                    <th>No</th>
-                    <th>Title</th>
-                    {{-- <th>Body</th> --}}
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach ($news as $key => $newsItem)
+        <div class="table-responsive">
+            <table id="news-table" class="table table-striped" style="width:100%">
+                <thead>
                     <tr>
-                        <td>{{ $key + 1 }}</td>
-                        <td>{{ $newsItem->title }}</td>
-                        {{-- <td>{{ $newsItem->body }}</td> --}}
-                        <td>
-                            <a href="{{ route('admin.news.edit', $newsItem->id) }}" class="btn btn-sm btn-info">Edit</a>
-                            <form action="{{ route('admin.news.destroy', $newsItem->id) }}" method="POST"
-                                style="display: inline;">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn btn-sm btn-danger"
-                                    onclick="return confirm('Are you sure you want to delete this news item?')">Delete</button>
-                            </form>
-                        </td>
+                        <th>No</th>
+                        <th>Title</th>
+                        {{-- <th>Body</th> --}}
+                        <th>Actions</th>
                     </tr>
-                @endforeach
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                    @foreach ($news as $key => $newsItem)
+                        <tr>
+                            <td>{{ $key + 1 }}</td>
+                            <td>{{ $newsItem->title }}</td>
+                            {{-- <td>{{ $newsItem->body }}</td> --}}
+                            <td>
+                                <a href="{{ route('admin.news.edit', $newsItem->id) }}" class="btn btn-sm btn-info">Edit</a>
+                                <form action="{{ route('admin.news.destroy', $newsItem->id) }}" method="POST"
+                                    style="display: inline;">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-sm btn-danger"
+                                        onclick="return confirm('Are you sure you want to delete this news item?')">Delete</button>
+                                </form>
+                            </td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
     </div>
 @endsection
 

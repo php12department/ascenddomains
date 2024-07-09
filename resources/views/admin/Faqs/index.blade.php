@@ -19,6 +19,7 @@
             </div>
         </div>
         <a href="{{ route('admin.faqs.create') }}" class="btn btn-primary mb-3">Add New FAQ</a>
+        <div class="table-responsive">
         <table id="faq-table" class="table table-striped" style="width:100%">
             <thead>
                 <tr>
@@ -48,6 +49,7 @@
                 @endforeach
             </tbody>
         </table>
+        </div>
     </div>
 @endsection
 @section('scripts')

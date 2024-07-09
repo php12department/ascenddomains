@@ -19,6 +19,7 @@
             </div>
         </div>
         <div class="app-sidebar__inner">
+            <div class="table-responsive">
             <table id="domains-table" class="table table-striped" style="width:100%">
                 <thead>
                     <tr>
@@ -35,6 +36,7 @@
                     @endforeach
                 </tbody>
             </table>
+            </div>
         </div>
     </div>
 @endsection

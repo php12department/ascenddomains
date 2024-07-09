@@ -13,10 +13,13 @@
      <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/bootstrap.min.css') }}" />
      <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/all.css">
      <link rel="stylesheet" href="https://cdn.datatables.net/2.0.2/css/dataTables.bootstrap5.css">
-     <!-- Custom Styles -->
-     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/style.css') }}" />
+
      <!-- Include Select2 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/style.css') }}" />
+
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
     <!-- Styles -->
