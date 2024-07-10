@@ -21,7 +21,7 @@
         {{ session('info') }}
     </div>
 @endif
-@yield('content');
+@yield('content')
 @include('layouts.frontfooter')
 @include('layouts.frontjs')
 
