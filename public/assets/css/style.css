@@ -129,6 +129,11 @@ title {
     padding-bottom: 5px;
     font-weight: 400;
 }
+.btn-primary {
+    --bs-btn-bg: #ec681b;
+    --bs-btn-border-color: #ec681b;
+}
+
 
 /* main css start */
 
@@ -317,7 +322,7 @@ title {
     font-size: 16px;
     line-height: 24px;
     padding-bottom: 30px;
-    min-height: 180px;
+    min-height: 140px;
 }
 .Services-section .services-card .services-text .btn {
     color: #ffffff;
@@ -1651,8 +1656,20 @@ div.dt-container div.dt-info {
     text-align: left !important;
     padding-left: 15px;
 }
-
-
+.table.domain-results tbody td .btn:hover,
+.table.domain-results tbody td .btn-primary {
+    --bs-btn-bg: #ec681b;
+    --bs-btn-border-color: #ec681b;
+}
+.table.domain-results {
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+}
+.table.domain-results>:not(caption)>*>* {
+    background-color: transparent;
+    padding: 0.8rem 1rem;
+    vertical-align: middle;
+}
 
 
 /* === Responsive CSS Start === */
@@ -1858,6 +1875,9 @@ div.dt-container div.dt-info {
     .Header-1 .navbar .navbar-brand {
         width: 140px;
     }
+    .Domains-section .nav-tabs .nav-link {
+        padding: 0.8rem 1rem;
+    }
 }
 
 @media screen and (max-width: 991px) {
@@ -2038,6 +2058,15 @@ div.dt-container div.dt-info {
 
 
 @media screen and (max-width: 576px) {
+    .domain-card .domain-image {
+        height: 180px;
+    }
+    .Domains-section .nav-tabs .nav-link {
+        width: 100%;
+    }
+    .Domains-section .nav-tabs .nav-item {
+        width: calc(50% - 15px);
+    }
     .Account-section .profile-user .user-text h2 {
         font-size: 30px;
         line-height: 42px;
@@ -2121,16 +2150,32 @@ div.dt-container div.dt-info {
         width: 100%;
         height: 400px;
     }
+    .Domains-section .view-more .btn,
     .Domains-search .form-group .btn.btn-rsearch,
     .Domains-search .form-group .btn.btn-apply {
         padding: 0.75rem 1rem;
         font-size: 14px;
     }
+   
     .Domain-datatable div.dt-length select {
         padding: 0.5rem 1rem;
         font-size: 14px;
     }
-
+    .login-inner-box-sec .login-column .sec-title {
+        padding: 10px;
+    }
+    .login-inner-box-sec .login-column .sec-title h2, .Pricing-section .pricing-card .sec-title h2, .domains-auction .features-list h4, .section-header h4 {
+        font-size: 20px;
+        line-height: 36px;
+    }
+    .login-form .form-group .btn,
+    .login-inner-box-sec .login-column .continue-btn .btn {
+        font-size: 16px;
+    }
+    .login-form .form-group h4 {
+        font-size: 18px;
+        line-height: 28px;
+    }
 }
 
 @media screen and (max-width: 400px) {

@@ -47,7 +47,7 @@
                     <ul class="list-inline">
                         <li><a href="{{ route('buydomain') }}">BUY DOMAINS</a></li>
                         <li><a href="{{ route('overview') }}">OVERVIEW</a></li>
-                        <li><a href="#">DOMAIN SEARCH</a></li>
+                        {{-- <li><a href="#">DOMAIN SEARCH</a></li> --}}
                         {{-- <li><a href="{{ route('domainauctions') }}">DOMAIN AUCTIONS</a></li> --}}
                     </ul>
                 </div>

@@ -7,7 +7,7 @@
             <img src="{{ asset('assets/img/home/buy-domain-header.png') }}" alt="{{ config('app.name') }}" />
         </div>
         <div class="ps-breadcrumb">
-            <h2>Domains</h2>
+            <h2>{{ $category->name }} Domains</h2>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb justify-content-center">
                     <li class="breadcrumb-item"><a href="{{ route('index') }}">Home</a></li>

@@ -8,7 +8,7 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.*/
 
         .border-primary {
-            border-color: #3f6ad8
+            border-color: #ec681b
         }
 
         .border-secondary {
@@ -218,7 +218,7 @@
         }
 
         .bg-primary {
-            background-color: #3f6ad8 !important
+            background-color: #ec681b !important
         }
 
         a.bg-primary:hover,
@@ -341,7 +341,7 @@
             --white: #fff;
             --gray: #6c757d;
             --gray-dark: #343a40;
-            --primary: #3f6ad8;
+            --primary: #ec681b;
             --secondary: #6c757d;
             --success: #3ac47d;
             --info: #16aaff;
@@ -490,7 +490,7 @@
         }
 
         a {
-            color: #3f6ad8;
+            color: #ec681b;
             text-decoration: none;
             background-color: transparent
         }
@@ -2904,8 +2904,8 @@
 
         .btn-primary {
             color: #fff;
-            background-color: #3f6ad8;
-            border-color: #3f6ad8
+            background-color: #ec681b;
+            border-color: #ec681b
         }
 
         .btn-primary:hover {
@@ -2922,16 +2922,16 @@
         .btn-primary.disabled,
         .btn-primary:disabled {
             color: #fff;
-            background-color: #3f6ad8;
-            border-color: #3f6ad8
+            background-color: #ec681b;
+            border-color: #ec681b
         }
 
         .btn-primary:not(:disabled):not(.disabled):active,
         .btn-primary:not(:disabled):not(.disabled).active,
         .show>.btn-primary.dropdown-toggle {
             color: #fff;
-            background-color: #2651be;
-            border-color: #244cb3
+            background-color: #ec681b;
+            border-color: #ec681b
         }
 
         .btn-primary:not(:disabled):not(.disabled):active:focus,
@@ -3283,14 +3283,14 @@
         }
 
         .btn-outline-primary {
-            color: #3f6ad8;
-            border-color: #3f6ad8
+            color: #ec681b;
+            border-color: #ec681b
         }
 
         .btn-outline-primary:hover {
             color: #fff;
-            background-color: #3f6ad8;
-            border-color: #3f6ad8
+            background-color: #ec681b;
+            border-color: #ec681b
         }
 
         .btn-outline-primary:focus,
@@ -3300,7 +3300,7 @@
 
         .btn-outline-primary.disabled,
         .btn-outline-primary:disabled {
-            color: #3f6ad8;
+            color: #ec681b;
             background-color: transparent
         }
 
@@ -3308,8 +3308,8 @@
         .btn-outline-primary:not(:disabled):not(.disabled).active,
         .show>.btn-outline-primary.dropdown-toggle {
             color: #fff;
-            background-color: #3f6ad8;
-            border-color: #3f6ad8
+            background-color: #ec681b;
+            border-color: #ec681b
         }
 
         .btn-outline-primary:not(:disabled):not(.disabled):active:focus,
@@ -3644,7 +3644,7 @@
 
         .btn-link {
             font-weight: 400;
-            color: #3f6ad8
+            color: #ec681b
         }
 
         .btn-link:hover {
@@ -3969,7 +3969,7 @@
         .dropdown-item:active {
             color: #fff;
             text-decoration: none;
-            background-color: #3f6ad8
+            background-color: #ec681b
         }
 
         .dropdown-item.disabled,
@@ -4328,7 +4328,7 @@
         .custom-control-input:checked~.custom-control-label::before {
             color: #fff;
             border-color: #007bff;
-            background-color: #3f6ad8
+            background-color: #ec681b
         }
 
         .custom-control-input:focus~.custom-control-label::before {
@@ -4395,7 +4395,7 @@
 
         .custom-checkbox .custom-control-input:indeterminate~.custom-control-label::before {
             border-color: #007bff;
-            background-color: #3f6ad8
+            background-color: #ec681b
         }
 
         .custom-checkbox .custom-control-input:indeterminate~.custom-control-label::after {
@@ -4616,7 +4616,7 @@
             width: 1rem;
             height: 1rem;
             margin-top: -.25rem;
-            background-color: #3f6ad8;
+            background-color: #ec681b;
             border: 0;
             border-radius: 1rem;
             transition: background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
@@ -4646,7 +4646,7 @@
         .custom-range::-moz-range-thumb {
             width: 1rem;
             height: 1rem;
-            background-color: #3f6ad8;
+            background-color: #ec681b;
             border: 0;
             border-radius: 1rem;
             transition: background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
@@ -4679,7 +4679,7 @@
             margin-top: 0;
             margin-right: .2rem;
             margin-left: .2rem;
-            background-color: #3f6ad8;
+            background-color: #ec681b;
             border: 0;
             border-radius: 1rem;
             transition: background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
@@ -4821,7 +4821,7 @@
         .nav-pills .nav-link.active,
         .nav-pills .show>.nav-link {
             color: #fff;
-            background-color: #3f6ad8
+            background-color: #ec681b
         }
 
         .nav-fill .nav-item {
@@ -5602,8 +5602,8 @@
         .pagination .active.page-number .page-link {
             z-index: 1;
             color: #fff;
-            background-color: #3f6ad8;
-            border-color: #007bff
+            background-color: #ec681b;
+            border-color: #ec681b;
         }
 
         .page-item.disabled .page-link,
@@ -5689,7 +5689,7 @@
 
         .badge-primary {
             color: #fff;
-            background-color: #3f6ad8
+            background-color: #ec681b
         }
 
         a.badge-primary:hover,
@@ -6010,7 +6010,7 @@
             color: #fff;
             text-align: center;
             white-space: nowrap;
-            background-color: #3f6ad8;
+            background-color: #ec681b;
             transition: width .6s ease
         }
 
@@ -6099,7 +6099,7 @@
         .list-group-item.active {
             z-index: 2;
             color: #fff;
-            background-color: #3f6ad8;
+            background-color: #ec681b;
             border-color: #007bff
         }
 
@@ -7131,7 +7131,7 @@
         }
 
         .bg-primary {
-            background-color: #3f6ad8 !important
+            background-color: #ec681b !important
         }
 
         a.bg-primary:hover,
@@ -7289,7 +7289,7 @@
         }
 
         .border-primary {
-            border-color: #3f6ad8 !important
+            border-color: #ec681b !important
         }
 
         .border-secondary {
@@ -10851,7 +10851,7 @@
         }
 
         .text-primary {
-            color: #3f6ad8 !important
+            color: #ec681b !important
         }
 
         a.text-primary:hover,
@@ -11313,7 +11313,8 @@
 
         .app-sidebar .scrollbar-sidebar {
             z-index: 15;
-            width: 100%
+            width: 100%;
+            padding-top: 20px;
         }
 
         .app-sidebar .app-sidebar-bg {
@@ -11344,7 +11345,7 @@
             font-size: .8rem;
             margin: .75rem 0;
             font-weight: 700;
-            color: #3f6ad8;
+            color: #ec681b;
             white-space: nowrap;
             position: relative
         }
@@ -11406,13 +11407,14 @@
         .vertical-nav-menu li a {
             display: block;
             line-height: 2.4rem;
-            height: 2.4rem;
-            padding: 0 1.5rem 0 45px;
+            /* height: 2.4rem; */
+            padding: 5px 1.5rem 5px 20px;
             position: relative;
             border-radius: .25rem;
             color: #343a40;
             white-space: nowrap;
             transition: all .2s;
+            text-decoration: none;
             margin: .1rem 0
         }
 
@@ -11439,8 +11441,8 @@
 
         .vertical-nav-menu li a.mm-active {
             color: #343a40;
-            background: #e0f3ff;
-            font-weight: 700
+            background: rgba(236, 104, 27, 0.1);
+            font-weight: 500
         }
 
         .vertical-nav-menu i.metismenu-state-icon,
@@ -11474,7 +11476,7 @@
             height: 100%;
             opacity: 1;
             width: 3px;
-            background: #e0f3ff;
+            background: #fdf0e8;
             position: absolute;
             left: 20px;
             top: 0;
@@ -11489,7 +11491,7 @@
         }
 
         .vertical-nav-menu ul>li>a:hover {
-            color: #3f6ad8
+            color: #ec681b
         }
 
         .vertical-nav-menu ul>li>a .metismenu-icon {
@@ -11497,9 +11499,9 @@
         }
 
         .vertical-nav-menu ul>li>a.mm-active {
-            color: #3f6ad8;
-            background: #e0f3ff;
-            font-weight: 700
+            color: #5e656c;
+            background: #fdf0e8;
+            font-weight: 500;
         }
 
         .app-sidebar.sidebar-text-light {
@@ -11967,8 +11969,9 @@
         }
 
         .app-page-title .page-title-heading {
-            font-size: 1.25rem;
-            font-weight: 400;
+            font-size: 2rem;
+            font-weight: 500;
+            color: #ec681b;
             display: flex;
             align-content: center;
             align-items: center
@@ -12102,7 +12105,7 @@
             left: 9px;
             top: 13px;
             border-radius: 2px;
-            background: #3f6ad8
+            background: #ec681b
         }
 
         .search-wrapper .input-holder .search-icon span::after {
@@ -12111,7 +12114,7 @@
             left: 4px;
             top: 0;
             border-radius: 16px;
-            border: 2px solid #3f6ad8
+            border: 2px solid #ec681b
         }
 
         .search-wrapper .close {
@@ -12133,7 +12136,7 @@
         .search-wrapper .close::after {
             position: absolute;
             content: '';
-            background: #3f6ad8;
+            background: #ec681b;
             border-radius: 2px
         }
 
@@ -15400,14 +15403,14 @@ Copyright (c) 2015 Daniel Eden*/
         }
 
         .btn-outline-primary {
-            color: #3f6ad8;
-            border-color: #3f6ad8
+            color: #ec681b;
+            border-color: #ec681b
         }
 
         .btn-outline-primary:hover {
             color: #fff;
-            background-color: #3f6ad8;
-            border-color: #3f6ad8
+            background-color: #ec681b;
+            border-color: #ec681b
         }
 
         .btn-outline-primary:focus,
@@ -15417,7 +15420,7 @@ Copyright (c) 2015 Daniel Eden*/
 
         .btn-outline-primary.disabled,
         .btn-outline-primary:disabled {
-            color: #3f6ad8;
+            color: #ec681b;
             background-color: transparent
         }
 
@@ -15425,8 +15428,8 @@ Copyright (c) 2015 Daniel Eden*/
         .btn-outline-primary:not(:disabled):not(.disabled).active,
         .show>.btn-outline-primary.dropdown-toggle {
             color: #fff;
-            background-color: #3f6ad8;
-            border-color: #3f6ad8
+            background-color: #ec681b;
+            border-color: #ec681b
         }
 
         .btn-outline-primary:not(:disabled):not(.disabled):active:focus,
@@ -15941,7 +15944,7 @@ Copyright (c) 2015 Daniel Eden*/
         .dropdown-menu .dropdown-header {
             text-transform: uppercase;
             font-size: .73333rem;
-            color: #3f6ad8;
+            color: #ec681b;
             font-weight: 700
         }
 
@@ -15993,7 +15996,7 @@ Copyright (c) 2015 Daniel Eden*/
 
         .badge-primary {
             color: #fff;
-            background-color: #3f6ad8
+            background-color: #ec681b
         }
 
         a.badge-primary:hover,
@@ -16188,7 +16191,7 @@ Copyright (c) 2015 Daniel Eden*/
         }
 
         .actions-icon-btn .btn-icon-only:hover {
-            color: #3f6ad8
+            color: #ec681b
         }
 
         .card-header,
@@ -16258,7 +16261,7 @@ Copyright (c) 2015 Daniel Eden*/
         .card-header>.nav .nav-link::before {
             content: '';
             border-radius: 15px;
-            background: #3f6ad8;
+            background: #ec681b;
             transition: all .2s;
             height: 4px;
             width: 100%;
@@ -16269,11 +16272,11 @@ Copyright (c) 2015 Daniel Eden*/
         }
 
         .card-header>.nav .nav-link:hover {
-            color: #3f6ad8
+            color: #ec681b
         }
 
         .card-header>.nav .nav-link.active {
-            color: #3f6ad8
+            color: #ec681b
         }
 
         .card-header>.nav .nav-link.active::before {
@@ -16350,19 +16353,19 @@ Copyright (c) 2015 Daniel Eden*/
         }
 
         .nav-tabs .nav-link:hover {
-            color: #3f6ad8 !important
+            color: #ec681b !important
         }
 
         .nav-tabs .nav-link.active {
-            color: #3f6ad8
+            color: #ec681b
         }
 
         .nav-pills .nav-link:hover {
-            color: #3f6ad8 !important
+            color: #ec681b !important
         }
 
         .nav-pills .nav-link.active {
-            background: #3f6ad8
+            background: #ec681b
         }
 
         .nav-pills .nav-link.active:hover {
@@ -16386,14 +16389,14 @@ Copyright (c) 2015 Daniel Eden*/
             position: absolute;
             display: block;
             border-radius: .25rem;
-            background: #3f6ad8;
+            background: #ec681b;
             transition: all .2s;
             height: 4px
         }
 
         .tabs-animated .nav-link.active,
         .tabs-animated .nav-link:hover {
-            color: #3f6ad8
+            color: #ec681b
         }
 
         .tabs-animated .nav-link.active::before,
@@ -16542,7 +16545,7 @@ Copyright (c) 2015 Daniel Eden*/
         }
 
         .nav-link .nav-link-icon {
-            color: #3f6ad8;
+            color: #ec681b;
             font-size: 1rem;
             width: 30px;
             text-align: center;
@@ -16556,7 +16559,7 @@ Copyright (c) 2015 Daniel Eden*/
 
         .nav-link:hover .nav-link-icon {
             opacity: .9;
-            color: #3f6ad8
+            color: #ec681b
         }
 
         .nav-link:disabled .nav-link-icon,
@@ -16630,7 +16633,7 @@ Copyright (c) 2015 Daniel Eden*/
         .form-heading {
             font-size: 1.1rem;
             margin: 0;
-            color: #3f6ad8
+            color: #ec681b
         }
 
         .form-heading p {
@@ -16687,7 +16690,7 @@ Copyright (c) 2015 Daniel Eden*/
         .pagination li.active a {
             z-index: 1;
             color: #fff;
-            background-color: #3f6ad8;
+            background-color: #ec681b;
             border-color: #007bff
         }
 
@@ -16719,7 +16722,8 @@ Copyright (c) 2015 Daniel Eden*/
 
         .widget-content .widget-content-left .widget-heading {
             opacity: .8;
-            font-weight: 700
+            font-weight: 700;
+            color: #ffffff !important;
         }
 
         .widget-content .widget-content-left .widget-subheading {
@@ -23507,7 +23511,7 @@ Copyright (c) 2015 Daniel Eden*/
         .hamburger.is-active .hamburger-inner,
         .hamburger.is-active .hamburger-inner::before,
         .hamburger.is-active .hamburger-inner::after {
-            background-color: #3f6ad8
+            background-color: #ec681b;
         }
 
         .hamburger-box {
@@ -23528,7 +23532,7 @@ Copyright (c) 2015 Daniel Eden*/
         .hamburger-inner::after {
             width: 24px;
             height: 2px;
-            background-color: #3f6ad8;
+            background-color: #ec681b;
             border-radius: 10px;
             position: absolute;
             transition-property: transform;
@@ -23837,7 +23841,7 @@ Copyright (c) 2015 Daniel Eden*/
         }
 
         .fc-bgevent {
-            background: #3f6ad8;
+            background: #ec681b;
             opacity: .3
         }
 
@@ -24113,12 +24117,12 @@ Copyright (c) 2015 Daniel Eden*/
             font-size: .85em;
             line-height: 1.3;
             border-radius: 3px;
-            border: 1px solid #3f6ad8
+            border: 1px solid #ec681b
         }
 
         .fc-event,
         .fc-event-dot {
-            background-color: #3f6ad8
+            background-color: #ec681b
         }
 
         .fc-event,
@@ -25286,7 +25290,10 @@ Copyright (c) 2015 Daniel Eden*/
             .app-header .app-header__content.header-mobile-open {
                 visibility: visible;
                 opacity: 1;
-                top: 80px
+                top: 70px;
+                width: auto;
+                left: inherit;
+                right: 15px;
             }
 
             .app-header .app-header__mobile-menu {
@@ -25623,7 +25630,7 @@ Copyright (c) 2015 Daniel Eden*/
         }
 
         .ui-theme-settings .list-group-item h5 {
-            color: #3f6ad8;
+            color: #ec681b;
             font-size: .968rem;
             text-transform: uppercase;
             margin: 0;
@@ -25643,7 +25650,7 @@ Copyright (c) 2015 Daniel Eden*/
 
         .swatch-holder.active {
             border: #fff solid 2px;
-            box-shadow: 0 0 0 5px #3f6ad8;
+            box-shadow: 0 0 0 5px #ec681b;
             opacity: 1
         }
 
@@ -25679,7 +25686,7 @@ Copyright (c) 2015 Daniel Eden*/
 
         .font-icon-wrapper:hover {
             background: #f8f9fa;
-            color: #3f6ad8
+            color: #ec681b
         }
 
         .font-icon-wrapper:hover p {
@@ -25710,3 +25717,62 @@ Copyright (c) 2015 Daniel Eden*/
             background-size: 100%
         }
 
+    /* Custom CSS start */
+            
+    .admin-login .card-header {
+        background-color: #EC681B !important;
+    }
+    .admin-login .btn-primary {
+          padding: 0.6rem 2rem !important;
+    }
+    .btn-primary {
+        --bs-btn-bg: #ec681b !important;
+        --bs-btn-border-color: #ec681b !important;
+        
+    }
+    .admin-login .card-header h2 {
+        font-size: 1.4rem;
+        margin-bottom: 0px;
+    }
+
+    div.dt-container {
+        width: 100% !important;
+        margin: 0 auto;
+    }
+   /* .table-responsive .btn-info {
+        --bs-btn-color: #000;
+        --bs-btn-bg: #fdf0e8;
+        --bs-btn-border-color: #fdf0e8;
+        --bs-btn-hover-color: #fff;
+        --bs-btn-hover-bg: #ec681b;
+        --bs-btn-hover-border-color: #fdf0e8;
+        --bs-btn-focus-shadow-rgb: 11, 172, 204;
+        --bs-btn-active-color: #000;
+        --bs-btn-active-bg: #ec681b;
+        --bs-btn-active-border-color: #ec681b;
+        --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+        --bs-btn-disabled-color: #000;
+        --bs-btn-disabled-bg: #ec681b;
+        --bs-btn-disabled-border-color: #ec681b;
+    } */
+
+    .app-main .app-main__inner .table-responsive {
+        max-width: 1440px;
+        margin: 0 auto;
+    }
+    
+  
+    @media only screen and (max-width: 991px) {
+        .header-user-info {
+            display: block;
+        }
+        .btn,
+        table.dataTable th, table.dataTable td {
+            box-sizing: border-box;
+            font-size: 14px !important;
+            white-space: nowrap;
+        }
+        .header-btn-lg .widget-content .widget-content-left .widget-heading {
+            color: #000 !important;
+        }
+    }

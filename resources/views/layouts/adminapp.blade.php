@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="Content-Language" content="en">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-     <!-- Favicon -->
-     <link rel="shortcut icon" href="{{ asset('assets/img/logo/favicon.png') }}" type="image/x-icon" />
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{{ asset('assets/img/logo/favicon.png') }}" type="image/x-icon" />
     <title>{{ config('app.name') }} | Admin</title>
     <meta name="viewport"
         content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" />
@@ -61,11 +61,13 @@
                                         <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                                             class="p-0 btn">
                                             <img width="42" class="rounded-circle"
-                                                src="{{ asset('assets/img/admin/adminprofile.jpg') }}" alt="{{config('app.name') }}">
+                                                src="{{ asset('assets/img/admin/adminprofile.jpg') }}"
+                                                alt="{{ config('app.name') }}">
                                         </a>
                                         <div tabindex="-1" role="menu" aria-hidden="true"
                                             class="dropdown-menu dropdown-menu-right">
-                                            <a href="{{ route('admin.my-account.show') }}" class="dropdown-item">My Account</a>
+                                            <a href="{{ route('admin.my-account.show') }}" class="dropdown-item">My
+                                                Account</a>
                                             <a href="{{ route('adminlogout') }}" class="dropdown-item">Logout</a>
                                         </div>
                                     </div>

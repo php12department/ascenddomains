@@ -10,6 +10,8 @@ use App\Models\BlogDetail;
 use App\Models\StaticPage;
 use App\Models\DomainMedia;
 use Illuminate\Http\Request;
+use App\Models\DomainCategory;
+use App\Models\DomainType;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 
@@ -184,7 +186,11 @@ class FrontController extends Controller
             ->select('domains.*', 'domain_media.media_img as media_image')
             ->get();
 
-        return view('domainlistaspertype', compact('Domains'));
+        $type = DomainType::find($type_id);
+
+        return view('domainlistaspertype', compact('Domains', 'type'));
+
+        //return view('domainlistaspertype', compact('Domains'));
     }
 
     public function domainlistall()
@@ -208,7 +214,10 @@ class FrontController extends Controller
             ->select('domains.*', 'domain_media.media_img as media_image')
             ->get();
 
-        return view('domainlistaspercategory', compact('Domains'));
+        $category = DomainCategory::find($category_id);
+
+        return view('domainlistaspercategory', compact('Domains', 'category'));
+       // return view('domainlistaspercategory', compact('Domains'));
     }
 
     public function search(Request $request)
