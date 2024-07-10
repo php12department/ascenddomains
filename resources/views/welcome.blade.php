@@ -4,7 +4,7 @@
     <style>
         .select2-container--default .select2-selection--single {
             height: 50px;
-            border-radius: 50px;
+            border-radius: 10px;
             border: 1px solid #ced4da;
         }
 

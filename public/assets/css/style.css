@@ -23,6 +23,7 @@ body {
     background: #ffffff;
     max-width: 1920px;
     margin: 0 auto;
+    overflow-x: hidden;
 }
 
 img  {
@@ -184,7 +185,7 @@ title {
 }
 .Banner-section .banner-caption .form-control {
     padding: 1rem 1.4rem;
-    border-radius: 50px;
+    border-radius: 10px;
 }
 .Banner-section .banner-caption .form-control:focus {
     box-shadow: none;
@@ -194,9 +195,9 @@ title {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    right: 5px;
-    border-radius: 50px;
-    padding: 0.7rem 3rem;
+    right: 3px;
+    border-radius: 6px;
+    padding: 0.6rem 3rem;
     background: #FF621F;
     border-color: #FF621F;
 }
@@ -1640,6 +1641,18 @@ div.dt-container div.dt-info {
 .Single-domain .deal-bestprice .table td {
     color: #787878;
 }
+
+/* 09-07-2024 CSS Start */
+
+.select2-container {
+    width: 100% !important;
+}
+.select2-container--default .select2-selection--single {
+    text-align: left !important;
+    padding-left: 15px;
+}
+
+
 
 
 /* === Responsive CSS Start === */

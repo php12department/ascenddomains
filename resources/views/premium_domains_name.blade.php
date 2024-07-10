@@ -109,6 +109,7 @@
             </form>
             <div style="margin-top: 25px;">
                 @if (isset($domains) && $domains->count())
+                <div class="table-responsive">
                     <table class="table table-striped domain-results">
                         <thead>
                             <tr>
@@ -129,6 +130,7 @@
                             @endforeach
                         </tbody>
                     </table>
+                </div>
                 @else
                     <p>No domains found matching your criteria.</p>
                 @endif
