@@ -170,11 +170,7 @@ class FrontController extends Controller
 
     public function singledomain($id)
     {
-        if (!Auth::check()) {
-            return redirect()->route('login');
-        }
-
-        $domaindetails = Domain::with('category', 'domainMedia')->where('id', $id)->first();
+      $domaindetails = Domain::with('category', 'domainMedia')->where('id', $id)->first();
         return view('singledomain', compact('domaindetails'));
     }
     public function domainlist($type_id) //type wise

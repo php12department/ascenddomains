@@ -69,6 +69,10 @@ class ApiController extends Controller
     }
     public function createsingledaazsecure($id)
     {
+
+        if (!Auth::check()) {
+            return redirect()->route('login');
+        }
         $token = $this->getToken();
         if (!$token) {
             echo "Error: Unable to retrieve SSO token.";

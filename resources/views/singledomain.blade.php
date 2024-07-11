@@ -44,7 +44,7 @@
                                         stroke="white" stroke-width="1.5" stroke-linecap="round"></path>
                                 </svg>
                             </a>
-                            <a href="#" class="btn make-btn" data-bs-toggle="modal" data-bs-target="#makeOfferModal">
+                            {{-- <a href="#" class="btn make-btn" data-bs-toggle="modal" data-bs-target="#makeOfferModal">
                                 Make Offer
                                 <svg class="ms-2" width="27" height="18" viewBox="0 0 27 18" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -54,7 +54,32 @@
                                     <path d="M19.0097 1C18.8433 3.66667 20.8072 9 26 9C20.8072 9 18.8433 14.3333 19.0097 17"
                                         stroke="white" stroke-width="1.5" stroke-linecap="round"></path>
                                 </svg>
-                            </a>
+                            </a> --}}
+                            @if(auth()->check())
+                                <a href="#" class="btn make-btn" data-bs-toggle="modal" data-bs-target="#makeOfferModal">
+                                    Make Offer
+                                    <svg class="ms-2" width="27" height="18" viewBox="0 0 27 18" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <circle opacity="0.5" cx="7" cy="9" r="7" fill="white"></circle>
+                                        <path d="M23 9L7 9" stroke="white" stroke-width="1.5" stroke-linecap="round"
+                                            stroke-linejoin="round"></path>
+                                        <path d="M19.0097 1C18.8433 3.66667 20.8072 9 26 9C20.8072 9 18.8433 14.3333 19.0097 17"
+                                            stroke="white" stroke-width="1.5" stroke-linecap="round"></path>
+                                    </svg>
+                                </a>
+                            @else
+                                <a href="{{ route('login') }}" class="btn make-btn">
+                                    Log in to Make Offer
+                                    <svg class="ms-2" width="27" height="18" viewBox="0 0 27 18" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <circle opacity="0.5" cx="7" cy="9" r="7" fill="white"></circle>
+                                        <path d="M23 9L7 9" stroke="white" stroke-width="1.5" stroke-linecap="round"
+                                            stroke-linejoin="round"></path>
+                                        <path d="M19.0097 1C18.8433 3.66667 20.8072 9 26 9C20.8072 9 18.8433 14.3333 19.0097 17"
+                                            stroke="white" stroke-width="1.5" stroke-linecap="round"></path>
+                                    </svg>
+                                </a>
+                            @endif
                         </div>
                     </div>
                 </div>
@@ -124,6 +149,7 @@
     <!-- Single Domain section end -->
 
     <!-- Make Offer Modal -->
+    @if(auth()->check())
     <div class="modal fade" id="makeOfferModal" tabindex="-1" aria-labelledby="makeOfferModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -138,7 +164,7 @@
                             <label for="offer" class="form-label">Your Offer Price</label>
                             <input type="text" id="offer" name="offer" class="form-control" required>
                         </div>
-                        <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
+                        <input type="hidden" name="user_id" value="{{ auth()->check() ? auth()->user()->id : null }}">
                         <input type="hidden" name="domain_id" value="{{ $domaindetails->id }}">
                         <button type="submit" class="btn btn-primary w-100">Submit Offer</button>
                     </form>
@@ -146,6 +172,7 @@
             </div>
         </div>
     </div>
+    @endif
 @endsection
 
 @section('scripts')
