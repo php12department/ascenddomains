@@ -2,18 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Faq;
-
+use App\Models\FaqCategory;
 
 class FaqController extends Controller
 {
     public function index()
     {
-        $faqs = Faq::where('is_deleted', false)->get();
-        return view('faq', ['faqs' => $faqs]);
+        $categories = FaqCategory::where('is_delete', 0)->with('faqs')->get();
+        return view('faq', ['categories' => $categories]);
     }
-
     public function show($id)
     {
         $faq = Faq::findOrFail($id);

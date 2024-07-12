@@ -10,7 +10,6 @@ use Illuminate\Support\Facades\Auth;
 
 class AccountController extends Controller
 {
-    //
     public function show()
     {
         $admin = Admin::all();
@@ -18,18 +17,14 @@ class AccountController extends Controller
     }
     public function update(Request $request,Admin $id)
     {
-       //dd($id);
         $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255'
         ]);
-        // Update admin details
         $id->update([
             'name' => $request->name,
             'email' => $request->email,
         ]);
-
-        // Redirect back with success message
         return redirect()->back()->with('success', 'Account updated successfully.');
     }
 }

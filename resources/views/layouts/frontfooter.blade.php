@@ -8,16 +8,13 @@
                 <input type="email" name="email" placeholder="Email Address" class="form-control" required />
                 <button type="submit" class="btn btn-primary">Subscribe</button>
             </div>
-            <!-- Display validation errors -->
             @error('email')
                 <span class="text-danger">{{ $message }}</span>
             @enderror
         </form>
     </div>
 </section>
-
 <!-- Newsletter section end -->
-
 <!-- footer section start -->
 <footer class="footer-section">
     <div class="container">
@@ -28,18 +25,18 @@
                         <img src="{{ asset('assets/img/logo/logo.png') }}" alt="{{ config('app.name') }}" />
                     </a>
                 </div>
-                {{-- <ul class="social-list list-inline">
-                    <li class="list-inline-item"><a href="#" title="Vimeo" aria-label="Vimeo"><i
+                <ul class="social-list list-inline">
+                    {{-- <li class="list-inline-item"><a href="#" title="Vimeo" aria-label="Vimeo"><i
                                 class="fa-brands fa-vimeo-v"></i></a></li>
                     <li class="list-inline-item"><a href="#" title="Facebook" aria-label="Facebook"><i
-                                class="fa-brands fa-facebook-f"></i></a></li>
+                                class="fa-brands fa-facebook-f"></i></a></li> --}}
                     <li class="list-inline-item"><a href="#" title="Twitter" aria-label="Twitter"><i
-                                class="fa-brands fa-twitter"></i></a></li>
-                    <li class="list-inline-item"><a href="#" title="Flickr" aria-label="Flickr"><i
+                                class="fa-brands fa-x-twitter"></i></a></li>
+                    {{-- <li class="list-inline-item"><a href="#" title="Flickr" aria-label="Flickr"><i
                                 class="fa-brands fa-flickr"></i></a></li>
                     <li class="list-inline-item"><a href="#" title="Dribbble" aria-label="Dribbble"><i
-                                class="fa-brands fa-dribbble"></i></a></li>
-                </ul> --}}
+                                class="fa-brands fa-dribbble"></i></a></li> --}}
+                </ul>
             </div>
             <div class="col-lg-3 col-md-6">
                 <div class="useful-link">
@@ -47,8 +44,6 @@
                     <ul class="list-inline">
                         <li><a href="{{ route('buydomain') }}">BUY DOMAINS</a></li>
                         <li><a href="{{ route('overview') }}">OVERVIEW</a></li>
-                        {{-- <li><a href="#">DOMAIN SEARCH</a></li> --}}
-                        {{-- <li><a href="{{ route('domainauctions') }}">DOMAIN AUCTIONS</a></li> --}}
                     </ul>
                 </div>
             </div>
@@ -59,10 +54,12 @@
                     <ul class="list-inline">
                         @if ($recentnews->count() > 0)
                             @foreach ($recentnews as $recentnewsitem)
-                                <li><a href="{{ route('recentnews', $recentnewsitem->id) }}">{{ $recentnewsitem->title }}</a></li>
+                                <li><a
+                                        href="{{ route('recentnews', $recentnewsitem->id) }}">{{ $recentnewsitem->title }}</a>
+                                </li>
                             @endforeach
                         @else
-                        <li><a href="#">NO RECENT NEWS FOUND</a></li>
+                            <li><a href="#">NO RECENT NEWS FOUND</a></li>
                         @endif
                     </ul>
                 </div>
