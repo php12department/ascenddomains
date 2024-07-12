@@ -30,7 +30,7 @@
                                 class="fa-brands fa-vimeo-v"></i></a></li>
                     <li class="list-inline-item"><a href="#" title="Facebook" aria-label="Facebook"><i
                                 class="fa-brands fa-facebook-f"></i></a></li> --}}
-                    <li class="list-inline-item"><a href="#" title="Twitter" aria-label="Twitter"><i
+                    <li class="list-inline-item"><a href="https://x.com/ascend_domains" title="Twitter" aria-label="Twitter"><i
                                 class="fa-brands fa-x-twitter"></i></a></li>
                     {{-- <li class="list-inline-item"><a href="#" title="Flickr" aria-label="Flickr"><i
                                 class="fa-brands fa-flickr"></i></a></li>
