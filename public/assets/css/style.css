@@ -168,7 +168,7 @@ title {
 }
 .Banner-section .hero-image img {
     width: 100%;
-    height: 800px;
+    height: 420px;
     object-fit: cover;
     object-position: center;
 }
@@ -182,8 +182,8 @@ title {
     max-width: 840px;
 }
 .Banner-section .banner-caption h2 {
-    font-size: 72px;
-    line-height: 78px;
+    font-size: 60px;
+    line-height: 72px;
     color: #ffffff;
     font-weight: bold;
     padding-bottom: 40px;
@@ -211,6 +211,7 @@ title {
     left: 50%;
     transform: translateX(-50%);
     bottom: 40px;
+    display: none;
 }
 .Banner-section .Scrolldown::before {
     content: '';
@@ -1712,7 +1713,7 @@ div.dt-container div.dt-info {
     }
     .Banner-section .hero-image img {
         width: 100%;
-        height: 720px;
+        height: 380px;
     }
     .pt-120 {
         padding-top: 80px;
@@ -1776,10 +1777,7 @@ div.dt-container div.dt-info {
         width: 100%;
         height: 320px;
     }
-    .Banner-section .hero-image img {
-        width: 100%;
-        height: 640px;
-    }
+    
     .pt-120 {
         padding-top: 80px;
     }
@@ -2039,7 +2037,7 @@ div.dt-container div.dt-info {
     }
     .Banner-section .hero-image img {
         width: 100%;
-        height: 540px;
+        height: 300px;
     }
     .Banner-section .banner-caption h2 {
         font-size: 36px;
@@ -2058,11 +2056,16 @@ div.dt-container div.dt-info {
 
 
 @media screen and (max-width: 576px) {
+    .Domains-section .nav-tabs {
+        display: flex;
+        justify-content: space-around;
+    }
     .domain-card .domain-image {
         height: 180px;
     }
     .Domains-section .nav-tabs .nav-link {
         width: 100%;
+        font-size: 14px;
     }
     .Domains-section .nav-tabs .nav-item {
         width: calc(50% - 15px);
@@ -2113,7 +2116,7 @@ div.dt-container div.dt-info {
         height: 280px;
     }
     .Domains-section .nav-tabs .nav-item:not(:last-child) {
-        margin-right: 10px;
+        margin-right: 0px;
     }
     .domain-card .domain-image img {
         width: 100%;
@@ -2146,10 +2149,7 @@ div.dt-container div.dt-info {
     .footer-section .logo-sec.mb-5 {
         margin-bottom: 2rem !important;
     }
-    .Banner-section .hero-image img {
-        width: 100%;
-        height: 400px;
-    }
+    
     .Domains-section .view-more .btn,
     .Domains-search .form-group .btn.btn-rsearch,
     .Domains-search .form-group .btn.btn-apply {

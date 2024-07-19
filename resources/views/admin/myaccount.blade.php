@@ -12,6 +12,16 @@
             </div>
         </div>
         <!-- Form to display admin info -->
+        @if (session('success'))
+            <div class="alert alert-success">
+                {{ session('success') }}
+            </div>
+        @endif
+        @if (session('error'))
+            <div class="alert alert-danger">
+                {{ session('error') }}
+            </div>
+        @endif
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
@@ -23,11 +33,13 @@
                                 @method('PUT')
                                 <div class="form-group">
                                     <label for="admin_name">Name</label>
-                                    <input type="text" class="form-control" id="admin_name" name="name" value="{{ $admin->name }}">
+                                    <input type="text" class="form-control" id="admin_name" name="name"
+                                        value="{{ $admin->name }}">
                                 </div>
                                 <div class="form-group">
                                     <label for="admin_email">Email</label>
-                                    <input type="email" class="form-control" id="admin_email" name="email" value="{{ $admin->email }}">
+                                    <input type="email" class="form-control" id="admin_email" name="email"
+                                        value="{{ $admin->email }}">
                                 </div>
                                 <button type="submit" class="btn btn-primary">Update</button>
                             </form>

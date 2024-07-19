@@ -13,7 +13,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-8 offset-md-2">
+            <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">{{ isset($faq) ? 'Edit FAQ' : 'Add New FAQ' }}</div>
                     <div class="card-body">

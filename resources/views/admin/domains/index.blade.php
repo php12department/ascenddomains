@@ -34,9 +34,9 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($domains as $domain)
+                    @foreach ($domains as  $key => $domain)
                         <tr>
-                            <td>{{ $domain->id }}</td>
+                            <td>{{ $key + 1 }}</td>
                             <td>{{ $domain->name }}</td>
                             <td>{{ optional($domain->type)->name ?? '' }}</td>
                             <td>

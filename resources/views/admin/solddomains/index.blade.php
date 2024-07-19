@@ -24,24 +24,24 @@
             </div>
         @endif
         <div class="table-responsive">
-        <table id="domains-table" class="table table-striped" style="width:100%">
-            <thead>
-                <tr>
-                    <th>No</th>
-                    <th>Name</th>
-                    <th>Type</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach ($domains as $domain)
+            <table id="domains-table" class="table table-striped" style="width:100%">
+                <thead>
                     <tr>
-                        <td>{{ $domain->id }}</td>
-                        <td>{{ $domain->name }}</td>
-                        <td>{{ optional($domain->type)->name ?? '-' }}</td>
+                        <th>No</th>
+                        <th>Name</th>
+                        <th>Type</th>
                     </tr>
-                @endforeach
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                    @foreach ($domains as $key => $domain)
+                        <tr>
+                            <td>{{ $key + 1 }}</td>
+                            <td>{{ $domain->name }}</td>
+                            <td>{{ optional($domain->type)->name ?? '-' }}</td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
         </div>
     </div>
 @endsection

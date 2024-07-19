@@ -33,7 +33,7 @@
             <div class="form-group">
                 <label for="media_img">Media Image:</label>
                 <input type="file" class="form-control" name="media_img" id="media_img">
-                <img src="{{ asset('assets/img/domains/'.$domainMedia->media_img) }}" alt="Current Image" style="height: 100px; width: auto;">
+                <img src="{{ asset('assets/img/domains/'.$domainMedia->media_img) }}" alt="Current Image" style="height: 100px; width: auto;margin: 20px 0px;">
             </div>
 
             <button type="submit" class="btn btn-primary">Update Media</button>

@@ -11315,6 +11315,7 @@
             z-index: 15;
             width: 100%;
             padding-top: 20px;
+            overflow-y: auto;
         }
 
         .app-sidebar .app-sidebar-bg {
@@ -25257,10 +25258,11 @@ Copyright (c) 2015 Daniel Eden*/
             }
 
             .app-header .app-header__logo {
-                display: none;
+                display: block !important;
                 order: 2;
                 background: 0 0 !important;
-                border: 0 !important
+                border: 0 !important;
+                margin-top: 15px;
             }
 
             .app-header .app-header__content {
@@ -25279,7 +25281,7 @@ Copyright (c) 2015 Daniel Eden*/
             }
 
             .app-header .app-header__content .header-btn-lg {
-                margin-left: .5rem;
+                margin-left: 0rem;
                 padding: 0 .5rem
             }
 
@@ -25756,15 +25758,16 @@ Copyright (c) 2015 Daniel Eden*/
         --bs-btn-disabled-border-color: #ec681b;
     } */
 
-    .app-main .app-main__inner .table-responsive {
+    /* .app-main .app-main__inner .table-responsive {
         max-width: 1440px;
         margin: 0 auto;
     }
-    
+     */
   
     @media only screen and (max-width: 991px) {
         .header-user-info {
             display: block;
+            margin: 0px !important;
         }
         .btn,
         table.dataTable th, table.dataTable td {
@@ -25774,5 +25777,27 @@ Copyright (c) 2015 Daniel Eden*/
         }
         .header-btn-lg .widget-content .widget-content-left .widget-heading {
             color: #000 !important;
+        }
+    }
+
+    .widget-content .widget-content-left.header-user-info .widget-heading {
+        color: #000000 !important;
+    }
+   .header-mobile-open .dropdown-menu.dropdown-menu-right {
+        right: 15px !important;
+        bottom: inherit !important;
+        top: 19% !important;
+        width: 180px !important;
+        left: inherit !important;
+    }
+    .form-control:focus {
+        box-shadow: none !important;
+    }
+    @media screen and (max-width: 576px) {
+        .app-wrapper-footer {
+            margin-top: 20px;
+        }
+        .app-page-title .page-title-heading {
+            font-size: 1.4rem;
         }
     }
