@@ -22,7 +22,7 @@
             <div class="col-lg-3 col-md-6">
                 <div class="logo-sec mb-5">
                     <a href="{{ route('index') }}">
-                        <img src="{{ asset('assets/img/logo/logo.png') }}" alt="{{ config('app.name') }}" />
+                        <img src="{{ asset('assets/img/logo/logo.png') }}" alt="{{ config('app.name') }}" title="Logo" />
                     </a>
                 </div>
                 <ul class="social-list list-inline">
@@ -42,8 +42,8 @@
                 <div class="useful-link">
                     <h4>BUY DOMAINS</h4>
                     <ul class="list-inline">
-                        <li><a href="{{ route('buydomain') }}">BUY DOMAINS</a></li>
-                        <li><a href="{{ route('overview') }}">OVERVIEW</a></li>
+                        <li><a href="{{ route('buydomain') }}" title="BUY DOMAINS">BUY DOMAINS</a></li>
+                        <li><a href="{{ route('overview') }}" title="OVERVIEW">OVERVIEW</a></li>
                     </ul>
                 </div>
             </div>
@@ -68,18 +68,18 @@
                 <div class="useful-link ms-lg-5 ms-0">
                     <h4>CUSTOMER SERVICES</h4>
                     <ul class="list-inline">
-                        <li><a href="{{ route('blog') }}">BLOG</a></li>
-                        <li><a href="{{ route('contactus') }}">Contact Us</a></li>
-                        <li><a href="{{ route('aboutus') }}">About Us</a></li>
-                        <li><a href="{{ route('faqs.index') }}">Faq</a></li>
+                        <li><a href="{{ route('blog') }}" title="BLOG">BLOG</a></li>
+                        <li><a href="{{ route('contactus') }}" title="Contact Us">Contact Us</a></li>
+                        <li><a href="{{ route('aboutus') }}" title="About Us">About Us</a></li>
+                        <li><a href="{{ route('faqs.index') }}" title="Faq">Faq</a></li>
                     </ul>
                 </div>
             </div>
         </div>
         <div class="copyright">
             <p>Copyright © {{ date('Y') }} All rights reserved | Designed and Crafted by<a class="ms-1"
-                    href="{{ route('index') }}">{{ config('app.name') }}</a> <a
-                    href="{{ route('privacypolicy') }}">Privacy Policy</a> <a href="{{ route('terms') }}">
+                    href="{{ route('index') }}" title="{{ config('app.name') }}">{{ config('app.name') }}</a> <a
+                    href="{{ route('privacypolicy') }}" title="Privacy Policy">Privacy Policy</a> <a href="{{ route('terms') }}" title="Terms">
                     Terms</a></p>
         </div>
     </div>

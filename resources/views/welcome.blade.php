@@ -26,7 +26,8 @@
     </style>
     <section class="Banner-section">
         <div class="hero-image">
-            <img src="{{ asset('assets/img/home/hero_img.png') }}" alt="{{ config('app.name') }}" />
+            <img src="{{ asset('assets/img/home/hero_img.png') }}" alt="{{ config('app.name') }}"
+                title="{{ config('app.name') }}" />
         </div>
         <div class="banner-caption">
             <h2>Choose best domains for<br> your business</h2>
@@ -38,8 +39,9 @@
             </div>
         </div>
         <div class="Scrolldown">
-            <a href="#DomainsId">
-                <img src="{{ asset('assets/img/home/scroll-down.png') }}">
+            <a href="#DomainsId"  title="{{ config('app.name') }}">
+                <img src="{{ asset('assets/img/home/scroll-down.png') }}" alt="{{ config('app.name') }}"
+                    title="{{ config('app.name') }}">
             </a>
         </div>
     </section>
@@ -77,15 +79,16 @@
                                     <div class="domain-image">
                                         @if ($alldomain->media_image)
                                             <img src="{{ asset('assets/img/domains/' . $alldomain->media_image) }}"
-                                                alt="{{ config('app.name') }}" />
+                                                alt="{{ config('app.name') }}" title="{{ config('app.name') }}" />
                                         @else
                                             <img src="{{ asset('assets/img/domain/defaultdomain.png') }}"
-                                                alt="{{ config('app.name') }}" />
+                                                alt="{{ config('app.name') }}" title="{{ config('app.name') }}" />
                                         @endif
                                         <p>{{ $alldomain->name }}</p>
                                     </div>
                                     <div class="buy-btn mt-3">
-                                        <a href="{{ route('singledomain', $alldomain->id) }}" class="btn btn-primary">View</a>
+                                        <a href="{{ route('singledomain', $alldomain->id) }}"
+                                            class="btn btn-primary">View</a>
                                     </div>
                                 </div>
                             </div>
@@ -102,15 +105,16 @@
                                     <div class="domain-image">
                                         @if ($domain->media_image)
                                             <img src="{{ asset('assets/img/domains/' . $domain->media_image) }}"
-                                                alt="{{ config('app.name') }}" />
+                                                alt="{{ config('app.name') }}" title="{{ config('app.name') }}" />
                                         @else
                                             <img src="{{ asset('assets/img/domain/defaultdomain.png') }}"
-                                                alt="{{ config('app.name') }}" />
+                                                alt="{{ config('app.name') }}" title="{{ config('app.name') }}" />
                                         @endif
                                         <p>{{ $domain->name }}</p>
                                     </div>
                                     <div class="buy-btn mt-3">
-                                        <a href="{{ route('singledomain', $domain->id) }}" class="btn btn-primary">View</a>
+                                        <a href="{{ route('singledomain', $domain->id) }}"
+                                            class="btn btn-primary">View</a>
                                     </div>
                                 </div>
                             </div>
@@ -127,15 +131,16 @@
                                     <div class="domain-image">
                                         @if ($domain->media_image)
                                             <img src="{{ asset('assets/img/domains/' . $domain->media_image) }}"
-                                                alt="{{ config('app.name') }}" />
+                                                alt="{{ config('app.name') }}" title="{{ config('app.name') }}" />
                                         @else
                                             <img src="{{ asset('assets/img/domain/defaultdomain.png') }}"
-                                                alt="{{ config('app.name') }}" />
+                                                alt="{{ config('app.name') }}" title="{{ config('app.name') }}" />
                                         @endif
                                         <p>{{ $domain->name }}</p>
                                     </div>
                                     <div class="buy-btn mt-3">
-                                        <a href="{{ route('singledomain', $domain->id) }}" class="btn btn-primary">View</a>
+                                        <a href="{{ route('singledomain', $domain->id) }}"
+                                            class="btn btn-primary">View</a>
                                     </div>
                                 </div>
                             </div>
@@ -151,15 +156,16 @@
                                     <div class="domain-image">
                                         @if ($domain->media_image)
                                             <img src="{{ asset('assets/img/domains/' . $domain->media_image) }}"
-                                                alt="{{ config('app.name') }}" />
+                                                alt="{{ config('app.name') }}" title="{{ config('app.name') }}" />
                                         @else
                                             <img src="{{ asset('assets/img/domain/defaultdomain.png') }}"
-                                                alt="{{ config('app.name') }}" />
+                                                alt="{{ config('app.name') }}" title="{{ config('app.name') }}" />
                                         @endif
                                         <p>{{ $domain->name }}</p>
                                     </div>
                                     <div class="buy-btn mt-3">
-                                        <a href="{{ route('singledomain', $domain->id) }}" class="btn btn-primary">View</a>
+                                        <a href="{{ route('singledomain', $domain->id) }}"
+                                            class="btn btn-primary">View</a>
                                     </div>
                                 </div>
                             </div>
@@ -203,7 +209,8 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="services-card">
                         <div class="icon-svg mb-3">
-                            <img src="{{ asset('assets/img/home/sell.svg') }}" />
+                            <img src="{{ asset('assets/img/home/sell.svg') }}" alt="{{ config('app.name') }}"
+                                title="{{ config('app.name') }}" />
                         </div>
                         <div class="services-text">
                             <h4>SELL DOMAINS</h4>
@@ -216,20 +223,22 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="services-card">
                         <div class="icon-svg mb-3">
-                            <img src="{{ asset('assets/img/home/buy.svg') }}" />
+                            <img src="{{ asset('assets/img/home/buy.svg') }}" alt="{{ config('app.name') }}"
+                                title="BUY DOMAINS" />
                         </div>
                         <div class="services-text">
                             <h4>BUY DOMAINS</h4>
                             <p>Buy Domain is always the best part to have it but you should know what to buy, where to buy
                                 and what is cost, so we help you.</p>
-                            <a href="{{ route('buydomain') }}" class="btn">Read More</a>
+                            <a href="{{ route('buydomain') }}" class="btn" title="config('app.name') }}" >Read More</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="services-card">
                         <div class="icon-svg mb-3">
-                            <img src="{{ asset('assets/img/home/offer.svg') }}" />
+                            <img src="{{ asset('assets/img/home/offer.svg') }}" alt="{{ config('app.name') }}"
+                                title="CURRENT OFFERS" />
                         </div>
                         <div class="services-text">
                             <h4>CURRENT OFFERS</h4>
@@ -253,7 +262,8 @@
                         <h4>BRAND DOMAINS</h4>
                         <ul class="list-inline">
                             @foreach ($brandDomainslist as $brandDomainslistitem)
-                                <li><img src="{{ asset('assets/img/home/check.svg') }}" /><span>{{ $brandDomainslistitem->name }}
+                                <li><img src="{{ asset('assets/img/home/check.svg') }}" alt="{{ config('app.name') }}"
+                                        title="BRAND DOMAINS" /><span>{{ $brandDomainslistitem->name }}
                                     </span></li>
                             @endforeach
                             <div class="more-btn text-center">
@@ -267,7 +277,8 @@
                         <h4>TOP DOMAINS</h4>
                         <ul class="list-inline">
                             @foreach ($topDomainslist as $topDomainslistitem)
-                                <li><img src="{{ asset('assets/img/home/check.svg') }}" /><span>{{ $topDomainslistitem->name }}
+                                <li><img src="{{ asset('assets/img/home/check.svg') }}" alt="{{ config('app.name') }}"
+                                        title="TOP DOMAINS" /><span>{{ $topDomainslistitem->name }}
                                     </span></li>
                             @endforeach
                             <div class="more-btn text-center">
@@ -281,7 +292,8 @@
                         <h4>FETURED DOMAINS</h4>
                         <ul class="list-inline">
                             @foreach ($featuredDomainslist as $featuredDomainslistitem)
-                                <li><img src="{{ asset('assets/img/home/check.svg') }}" /><span>{{ $featuredDomainslistitem->name }}
+                                <li><img src="{{ asset('assets/img/home/check.svg') }}" alt="{{ config('app.name') }}"
+                                        title="FETURED DOMAINS" /><span>{{ $featuredDomainslistitem->name }}
                                     </span></li>
                             @endforeach
                             <div class="more-btn text-center">
@@ -305,7 +317,9 @@
                         <div class="col-lg-4 col-md-6">
                             <div class="list-categories">
                                 <a href="{{ route('domainlistcateory', $category->id) }}"><img
-                                        src="{{ asset('assets/img/home/color-arrow.svg') }}">{{ $category->name }}</a>
+                                        src="{{ asset('assets/img/home/color-arrow.svg') }}"
+                                        alt="{{ config('app.name') }}"
+                                        title= "{{ config('app.name') }}">{{ $category->name }}</a>
                             </div>
                         </div>
                     @endforeach
@@ -323,7 +337,8 @@
                     <div class="col-lg-3 col-md-6">
                         <div class="cardbody">
                             <div class="card-image step1">
-                                <img src="{{ asset('assets/img/home/step1.svg') }}" alt="{{ config('app.name') }}" />
+                                <img src="{{ asset('assets/img/home/step1.svg') }}" alt="{{ config('app.name') }}"
+                                    title="Step 1" />
                                 <div class="count-num">
                                     <p>1</p>
                                 </div>
@@ -337,7 +352,8 @@
                     <div class="col-lg-3 col-md-6">
                         <div class="cardbody">
                             <div class="card-image step2">
-                                <img src="{{ asset('assets/img/home/step2.svg') }}" alt="{{ config('app.name') }}" />
+                                <img src="{{ asset('assets/img/home/step2.svg') }}" alt="{{ config('app.name') }}"
+                                    title="Step 2" />
                                 <div class="count-num">
                                     <p>2</p>
                                 </div>
@@ -351,7 +367,8 @@
                     <div class="col-lg-3 col-md-6">
                         <div class="cardbody">
                             <div class="card-image step3">
-                                <img src="{{ asset('assets/img/home/step3.svg') }}" alt="{{ config('app.name') }}" />
+                                <img src="{{ asset('assets/img/home/step3.svg') }}" alt="{{ config('app.name') }}"
+                                    title="Step 3" />
                                 <div class="count-num">
                                     <p>3</p>
                                 </div>
@@ -365,7 +382,8 @@
                     <div class="col-lg-3 col-md-6">
                         <div class="cardbody">
                             <div class="card-image">
-                                <img src="{{ asset('assets/img/home/step4.svg') }}" alt="{{ config('app.name') }}" />
+                                <img src="{{ asset('assets/img/home/step4.svg') }}" alt="{{ config('app.name') }}"
+                                    title="Step 4" />
                                 <div class="count-num">
                                     <p>4</p>
                                 </div>
@@ -403,8 +421,7 @@
                 if (typeId == 0) {
                     const url = `{{ url('domain-listing') }}`;
                     window.location.href = url;
-                }
-                else {
+                } else {
                     const url = `{{ url('domain-listing-type-wise') }}/${typeId}`;
                     window.location.href = url;
                 }

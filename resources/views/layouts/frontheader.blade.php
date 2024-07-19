@@ -29,8 +29,8 @@
 <header class="Header-1">
     <nav class="navbar navbar-expand-lg bg-white">
         <div class="container">
-            <a class="navbar-brand" href="{{ route('index') }}"><img src="{{ asset('assets/img/logo/logo.png') }}"
-                    alt="{{ config('app.name') }}" /></a>
+            <a class="navbar-brand" href="{{ route('index') }}" title="{{ config('app.name') }}"><img src="{{ asset('assets/img/logo/logo.png') }}"
+                    alt="{{ config('app.name') }}" title="Logo" /></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -54,15 +54,15 @@
                              <ul class="dropdown-menu">
                             @if ($categories->count() > 0)
                                 @foreach ($categories as $category)
-                                    <li><a class="dropdown-item" href="{{ route('domainlistcateory', $category->id) }}">{{ $category->name }}</a></li> @endforeach
+                                    <li><a class="dropdown-item" href="{{ route('domainlistcateory', $category->id) }}" title="{{ config('app.name') }}">{{ $category->name }}</a></li> @endforeach
                             @endif
                         </ul>
                     </li>
                     <li class="nav-item">
-    <a class="nav-link" aria-expanded="false" href="{{ route('premiumdomains') }}">Premium Domain Names</a>
+    <a class="nav-link" aria-expanded="false" href="{{ route('premiumdomains') }}" title="Premium domains">Premium Domain Names</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" aria-expanded="false" href="{{ route('selldomain') }}">Sell Domains</a>
+        <a class="nav-link" aria-expanded="false" href="{{ route('selldomain') }}" title="Sell domain">Sell Domains</a>
     </li>
     {{-- <li class="nav-item">
         <a class="nav-link" aria-expanded="false" href="{{ route('domainauctions') }}">Auctions</a>
@@ -78,15 +78,15 @@
         </a>
         <ul class="dropdown-menu">
             @if (Auth::check())
-                <li><a class="dropdown-item" href="{{ route('myaccount') }}">My account</a>
+                <li><a class="dropdown-item" href="{{ route('myaccount') }}" title="My account">My account</a>
                 </li>
-                <li><a class="dropdown-item" href="{{ route('logout') }}"
+                <li><a class="dropdown-item" href="{{ route('logout') }}" title="Logout"
                         onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
                 </li>
             @else
-                <li><a class="dropdown-item" href="{{ route('login') }}">Login</a>
+                <li><a class="dropdown-item" href="{{ route('login') }}" title="Login">Login</a>
                 </li>
-                <li><a class="dropdown-item" href="{{ route('register') }}">Register</a>
+                <li><a class="dropdown-item" href="{{ route('register') }}" title="Register">Register</a>
                 </li>
             @endif
         </ul>
@@ -100,7 +100,8 @@
 
     <div class="d-flex right-btn">
         <a href="#" class="btn btn-primary">
-            <img src="{{ asset('assets/img/home/bag.png') }}" />
+            <img src="{{ asset('assets/img/home/bag.png') }}" alt="{{ config('app.name') }}"
+                title="{{ config('app.name') }}" />
         </a>
     </div>
     </div>

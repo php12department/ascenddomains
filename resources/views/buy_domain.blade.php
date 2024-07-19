@@ -24,7 +24,7 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class="Domain-Image">
-                        <img src="{{ asset('assets/img/home/buyDomain.png') }}" alt="{{ config('app.name') }}" />
+                        <img src="{{ asset('assets/img/home/buyDomain.png') }}" alt="{{ config('app.name') }}" title="{{ config('app.name') }}" />
                     </div>
                 </div>
                 <div class="col-lg-6">
