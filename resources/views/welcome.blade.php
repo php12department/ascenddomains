@@ -210,7 +210,7 @@
                     <div class="services-card">
                         <div class="icon-svg mb-3">
                             <img src="{{ asset('assets/img/home/sell.svg') }}" alt="{{ config('app.name') }}"
-                                title="{{ config('app.name') }}" />
+                                title="{{ config('app.name') }}" style="width: 62px;height: 62px;"/>
                         </div>
                         <div class="services-text">
                             <h4>SELL DOMAINS</h4>
@@ -223,7 +223,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="services-card">
                         <div class="icon-svg mb-3">
-                            <img src="{{ asset('assets/img/home/buy.svg') }}" alt="{{ config('app.name') }}"
+                            <img src="{{ asset('assets/img/home/buy.svg') }}" alt="{{ config('app.name') }}" style="width: 62px;height: 62px;"
                                 title="BUY DOMAINS" />
                         </div>
                         <div class="services-text">
@@ -237,7 +237,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="services-card">
                         <div class="icon-svg mb-3">
-                            <img src="{{ asset('assets/img/home/offer.svg') }}" alt="{{ config('app.name') }}"
+                            <img src="{{ asset('assets/img/home/offer.svg') }}" style="width: 62px;height: 62px;" alt="{{ config('app.name') }}"
                                 title="CURRENT OFFERS" />
                         </div>
                         <div class="services-text">
@@ -262,7 +262,7 @@
                         <h4>BRAND DOMAINS</h4>
                         <ul class="list-inline">
                             @foreach ($brandDomainslist as $brandDomainslistitem)
-                                <li><img src="{{ asset('assets/img/home/check.svg') }}" alt="{{ config('app.name') }}"
+                                <li><img src="{{ asset('assets/img/home/check.svg') }}" style="height: 22px;width:22px;"  alt="{{ config('app.name') }}"
                                         title="BRAND DOMAINS" /><span>{{ $brandDomainslistitem->name }}
                                     </span></li>
                             @endforeach
@@ -277,7 +277,7 @@
                         <h4>TOP DOMAINS</h4>
                         <ul class="list-inline">
                             @foreach ($topDomainslist as $topDomainslistitem)
-                                <li><img src="{{ asset('assets/img/home/check.svg') }}" alt="{{ config('app.name') }}"
+                                <li><img src="{{ asset('assets/img/home/check.svg') }}" style="height: 22px;width:22px;" alt="{{ config('app.name') }}"
                                         title="TOP DOMAINS" /><span>{{ $topDomainslistitem->name }}
                                     </span></li>
                             @endforeach
@@ -292,7 +292,7 @@
                         <h4>FETURED DOMAINS</h4>
                         <ul class="list-inline">
                             @foreach ($featuredDomainslist as $featuredDomainslistitem)
-                                <li><img src="{{ asset('assets/img/home/check.svg') }}" alt="{{ config('app.name') }}"
+                                <li><img src="{{ asset('assets/img/home/check.svg') }}" style="height: 22px;width:22px;" alt="{{ config('app.name') }}"
                                         title="FETURED DOMAINS" /><span>{{ $featuredDomainslistitem->name }}
                                     </span></li>
                             @endforeach
@@ -317,7 +317,7 @@
                         <div class="col-lg-4 col-md-6">
                             <div class="list-categories">
                                 <a href="{{ route('domainlistcateory', $category->id) }}"><img
-                                        src="{{ asset('assets/img/home/color-arrow.svg') }}"
+                                        src="{{ asset('assets/img/home/color-arrow.svg') }}" style="height: 18px;width:27px;"
                                         alt="{{ config('app.name') }}"
                                         title= "{{ config('app.name') }}">{{ $category->name }}</a>
                             </div>
@@ -338,7 +338,7 @@
                         <div class="cardbody">
                             <div class="card-image step1">
                                 <img src="{{ asset('assets/img/home/step1.svg') }}" alt="{{ config('app.name') }}"
-                                    title="Step 1" />
+                                    title="Step 1"  style="width: 60px;height: 60px;"/>
                                 <div class="count-num">
                                     <p>1</p>
                                 </div>
@@ -352,7 +352,7 @@
                     <div class="col-lg-3 col-md-6">
                         <div class="cardbody">
                             <div class="card-image step2">
-                                <img src="{{ asset('assets/img/home/step2.svg') }}" alt="{{ config('app.name') }}"
+                                <img src="{{ asset('assets/img/home/step2.svg') }}" style="width: 60px;height: 60px;" alt="{{ config('app.name') }}"
                                     title="Step 2" />
                                 <div class="count-num">
                                     <p>2</p>
@@ -367,7 +367,7 @@
                     <div class="col-lg-3 col-md-6">
                         <div class="cardbody">
                             <div class="card-image step3">
-                                <img src="{{ asset('assets/img/home/step3.svg') }}" alt="{{ config('app.name') }}"
+                                <img src="{{ asset('assets/img/home/step3.svg') }}" style="width: 60px;height: 60px;" alt="{{ config('app.name') }}"
                                     title="Step 3" />
                                 <div class="count-num">
                                     <p>3</p>
@@ -382,7 +382,7 @@
                     <div class="col-lg-3 col-md-6">
                         <div class="cardbody">
                             <div class="card-image">
-                                <img src="{{ asset('assets/img/home/step4.svg') }}" alt="{{ config('app.name') }}"
+                                <img src="{{ asset('assets/img/home/step4.svg') }}" style="width: 60px;height: 60px;" alt="{{ config('app.name') }}"
                                     title="Step 4" />
                                 <div class="count-num">
                                     <p>4</p>

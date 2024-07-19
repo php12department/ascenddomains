@@ -5,13 +5,13 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
-    <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css">
+    {{-- <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"> --}}
      <!-- Favicon -->
      <link rel="shortcut icon" href="{{ asset('assets/img/logo/favicon.png') }}" type="image/x-icon" />
      <!-- Bootstrap CSS -->
-     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/bootstrap.min.css') }}" />
-     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/all.css">
+     {{-- <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/bootstrap.min.css') }}" /> --}}
+     {{-- <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/all.css"> --}}
      <link rel="stylesheet" href="https://cdn.datatables.net/2.0.2/css/dataTables.bootstrap5.css">
 
      <!-- Include Select2 CSS -->
@@ -30,7 +30,7 @@
     <nav class="navbar navbar-expand-lg bg-white">
         <div class="container">
             <a class="navbar-brand" href="{{ route('index') }}" title="{{ config('app.name') }}"><img src="{{ asset('assets/img/logo/logo.png') }}"
-                    alt="{{ config('app.name') }}" title="Logo" /></a>
+                    alt="{{ config('app.name') }}" title="Logo" style="width: 166px;height:36px" /></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -100,7 +100,7 @@
 
     <div class="d-flex right-btn">
         <a href="#" class="btn btn-primary">
-            <img src="{{ asset('assets/img/home/bag.png') }}" alt="{{ config('app.name') }}"
+            <img src="{{ asset('assets/img/home/bag.png') }}" alt="{{ config('app.name') }}" style="width: 20px;height: 22px;"
                 title="{{ config('app.name') }}" />
         </a>
     </div>

@@ -22,7 +22,7 @@
             <div class="col-lg-3 col-md-6">
                 <div class="logo-sec mb-5">
                     <a href="{{ route('index') }}">
-                        <img src="{{ asset('assets/img/logo/logo.png') }}" alt="{{ config('app.name') }}" title="Logo" />
+                        <img src="{{ asset('assets/img/logo/logo.png') }}" alt="{{ config('app.name') }}" title="Logo" style="width: 166px;height:36px"/>
                     </a>
                 </div>
                 <ul class="social-list list-inline">
